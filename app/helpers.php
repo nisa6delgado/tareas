@@ -1,10 +1,20 @@
 <?php
 
+function description($text)
+{
+	$text = preg_replace("/((http|https|www)[^\s]+)/", '<a style="color: #858796" target="_blank" href="$1">$0</a>', $text);
+    $text = preg_replace("/href=\"www/", 'href="http://www', $text);
+
+    $text = nl2br($text);
+
+	return $text;
+}
+
 function modal($file)
 {
 	$ext = ext($file);
 
-	if (in_array($ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx', 'pdf', 'html'])) {
+	if (in_array($ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx', 'pdf', 'html', 'txt'])) {
 		echo 'view-doc';
 	}
 }
@@ -18,7 +28,14 @@ function ext($file)
 
 function projects()
 {
-	$projects = App\Models\Project::orderBy('name', 'ASC')->get();
+	$projects = App\Models\Project::where('name', '!=', 'Otros')
+		->orderBy('name', 'ASC')
+		->get();
+
+	$other = App\Models\Project::where('name', 'Otros')->first();
+
+	$projects = $projects->push($other);
+
 	return $projects;
 }
 
