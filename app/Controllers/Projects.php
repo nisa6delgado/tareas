@@ -27,16 +27,18 @@ class Projects extends Controller
     public function index($slug)
     {
         $project = Project::where('slug', $slug)->first();
+
         return view('projects/index', compact('project'));
     }
 
     public function store()
     {
         Project::create([
-            'name'  => post('name'),
-            'color' => post('color'),
-            'icon'  => post('icon'),
-            'slug'  => Str::slug(post('name'))
+            'id_user'   => logged('id'),
+            'name'      => post('name'),
+            'color'     => post('color'),
+            'icon'      => post('icon'),
+            'slug'      => Str::slug(post('name'))
         ]);
     }
 

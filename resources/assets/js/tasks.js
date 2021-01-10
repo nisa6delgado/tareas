@@ -47,6 +47,46 @@ $('.store_task').submit(function (event) {
     });
 });
 
+$('.move_task').submit(function (event) {
+    event.preventDefault();
+
+    $(this).find('.move_task_button').html(`
+        <div class="text-center">
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+    `);
+
+    $.ajax({
+        type: 'POST',
+        url: '/tasks/move',
+        data: $(this).serialize(),
+        success: function (response) {
+            console.log(response);
+
+            Swal.fire({
+                title: '¡Tarea movida exitosamente!',
+                text: 'Se ha movido una tarea en este proyecto',
+                icon: 'success',
+                confirmButtonColor: 'black'
+            }).then(() => {
+                $('.modal').modal('hide');
+
+                $('.active').removeClass('active');
+                $('[href="/projects/' + response + '"]').parent().addClass('active');
+
+                $('.content').load('/projects/' + response, function (response, status, xhr) {
+                    $('.content').html(xhr.responseText);
+                });
+            });
+        },
+        error: function (error) {
+            $('body').html(error.responseText);
+        }
+    });
+});
+
 $('.update_task').submit(function (event) {
     event.preventDefault();
 

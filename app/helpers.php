@@ -29,10 +29,13 @@ function ext($file)
 function projects()
 {
 	$projects = App\Models\Project::where('name', '!=', 'Otros')
+		->where('id_user', logged('id'))
 		->orderBy('name', 'ASC')
 		->get();
 
-	$other = App\Models\Project::where('name', 'Otros')->first();
+	$other = App\Models\Project::where('name', 'Otros')
+		->where('id_user', logged('id'))
+		->first();
 
 	$projects = $projects->push($other);
 

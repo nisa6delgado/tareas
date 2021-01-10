@@ -23,7 +23,7 @@ class Project extends Model
      *
      * $var array
      */
-    protected $fillable = ['name', 'description', 'icon', 'color', 'slug'];
+    protected $fillable = ['id_user', 'name', 'description', 'icon', 'color', 'slug'];
 
     public function tasks()
     {

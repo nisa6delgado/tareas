@@ -1,17 +1,8 @@
 <?php
 
-$projects = App\Models\Project::orderBy('name')->get();
+$current = new Datetime();
 
-echo '<h1>Aplicación de tareas</h1>';
+$date = new Datetime('2020-12-01');
+$interval = $current->diff($date);
 
-foreach ($projects as $project) {
-  echo '<b>' . $project->name . '</b><br>';
-  
-  if ($project->tasks) {
-    echo '<ul>';
-    foreach ($project->tasks as $task) {
-      echo '<li>' . $task->title . '</li>';
-    }
-    echo '</ul>';
-  }  
-}
+echo $interval->format('%a');

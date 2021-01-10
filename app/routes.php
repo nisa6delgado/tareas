@@ -28,6 +28,7 @@ $route->get('/projects/delete/{id}', 'Projects@delete');
 $route->post('/tasks/store', 'Tasks@store');
 $route->post('/tasks/status', 'Tasks@status');
 $route->post('/tasks/update', 'Tasks@update');
+$route->post('/tasks/move', 'Tasks@move');
 $route->get('/tasks/delete/{id}', 'Tasks@delete');
 
 // Comments

@@ -63,6 +63,15 @@ class Tasks extends Controller
         return $project->slug;
     }
 
+    public function move()
+    {
+        $task = Task::find(post('id'));
+        $task->update(['id_project' => post('id_project')]);
+
+        $project = Project::find($task->id_project);
+        return $project->slug;
+    }
+
     public function delete($id)
     {
         $files = File::where('id_task', $id);

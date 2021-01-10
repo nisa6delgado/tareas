@@ -34,7 +34,7 @@
 
 					<div id="<?php echo 'collapseThree_' . $task->id; ?>" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 						<div class="card-body">
-							<p><?php echo nl2br($task->description); ?></p>
+							<p><?php echo description($task->description); ?></p>
 
 							<?php if ($task->files->count()): ?>
 								<hr>

@@ -74,20 +74,6 @@
 				</li>
 			<?php endforeach; ?>
 
-			<!--<li class="nav-item">
-				<a class="nav-link menu" href="/chats">
-					<i class="fas fa-comments"></i>
-					<span>Chat</span>
-				</a>
-			</li>
-
-			<li class="nav-item">
-				<a class="nav-link menu" href="/users">
-					<i class="fas fa-users"></i>
-					<span>Usuarios</span>
-				</a>
-			</li>-->
-
       		<hr class="sidebar-divider mt-3 mb-5">
 
 			<!-- Sidebar Toggler (Sidebar) -->

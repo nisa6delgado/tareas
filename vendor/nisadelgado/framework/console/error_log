@@ -1,0 +1,674 @@
+[25-Jun-2020 03:15:43 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[25-Jun-2020 03:16:11 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[25-Jun-2020 03:24:18 UTC] PHP Parse error:  syntax error, unexpected '');' (T_ENCAPSED_AND_WHITESPACE) in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 15
+[26-Jun-2020 01:21:24 UTC] PHP Parse error:  syntax error, unexpected 'while' (T_WHILE) in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:20:32 UTC] PHP Fatal error:  Uncaught Error: Class 'Arr' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:20
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Collection.php(1084): {closure}(Array, 0)
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(21): Illuminate\Support\Collection->sortBy(Object(Closure))
+#2 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#3 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 20
+[26-Jun-2020 06:21:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Arr' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:22
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Collection.php(1084): {closure}(Array, 0)
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(23): Illuminate\Support\Collection->sortBy(Object(Closure))
+#2 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#3 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 22
+[26-Jun-2020 06:21:38 UTC] PHP Notice:  Array to string conversion in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 25
+[26-Jun-2020 06:44:05 UTC] PHP Notice:  Array to string conversion in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:45:21 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, object given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:45:25 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:45:33 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:46:28 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:46:39 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:47:12 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, object given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 8
+[26-Jun-2020 06:47:26 UTC] PHP Notice:  Array to string conversion in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 10
+[26-Jun-2020 06:48:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function keys() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:4
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(9): table(Object(Illuminate\Database\Eloquent\Collection))
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 4
+[26-Jun-2020 06:48:37 UTC] PHP Warning:  array_keys() expects parameter 1 to be array, object given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 4
+[26-Jun-2020 06:49:12 UTC] PHP Fatal error:  Uncaught Exception: Property [fillable] does not exist on this collection instance. in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/EnumeratesValues.php:793
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(4): Illuminate\Support\Collection->__get('fillable')
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(9): table(Object(Illuminate\Database\Eloquent\Collection))
+#2 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#3 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/EnumeratesValues.php on line 793
+[26-Jun-2020 06:49:26 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 9
+[26-Jun-2020 06:49:28 UTC] PHP Fatal error:  Uncaught BadMethodCallException: Method Illuminate\Database\Eloquent\Collection::fillable does not exist. in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/Macroable.php:104
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(9): Illuminate\Support\Collection->__call('fillable', Array)
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/Macroable.php on line 104
+[26-Jun-2020 06:49:40 UTC] PHP Fatal error:  Uncaught BadMethodCallException: Method Illuminate\Database\Eloquent\Collection::fillable does not exist. in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/Macroable.php:104
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(9): Illuminate\Support\Collection->__call('fillable', Array)
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/Macroable.php on line 104
+[26-Jun-2020 06:49:46 UTC] PHP Fatal error:  Uncaught Exception: Property [fillable] does not exist on this collection instance. in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/EnumeratesValues.php:793
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(4): Illuminate\Support\Collection->__get('fillable')
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(9): table(Object(Illuminate\Database\Eloquent\Collection))
+#2 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#3 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/EnumeratesValues.php on line 793
+[26-Jun-2020 06:58:28 UTC] PHP Fatal error:  Uncaught Error: Class 'User' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[26-Jun-2020 06:58:39 UTC] PHP Fatal error:  Uncaught Error: Class 'User' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[26-Jun-2020 07:02:30 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[26-Jun-2020 07:03:28 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function File::download(), 0 passed in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3 and exactly 1 expected in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php:137
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(3): File::download()
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php on line 137
+[26-Jun-2020 07:06:09 UTC] PHP Parse error:  syntax error, unexpected '"', expecting ',' or ';' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[26-Jun-2020 07:06:32 UTC] PHP Parse error:  syntax error, unexpected '');' (T_ENCAPSED_AND_WHITESPACE) in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[26-Jun-2020 07:06:50 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php:145
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(5): File::download('https://tareas....')
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php on line 145
+[26-Jun-2020 07:07:04 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php:145
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(5): File::download('/home/nisadelga...')
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php on line 145
+[26-Jun-2020 07:07:26 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php:145
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(5): File::download('/home/nisadelga...')
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/file.php on line 145
+[26-Jun-2020 18:27:14 UTC] PHP Fatal error:  Uncaught Error: Class 'Task' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 14
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 18
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 30
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 14
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 18
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 30
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 14
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 18
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 30
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 14
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 18
+[26-Jun-2020 20:23:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 30
+[26-Jun-2020 20:24:00 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Illuminate\Support\Collection::get(), 0 passed in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 40 and at least 1 expected in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Collection.php:413
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(40): Illuminate\Support\Collection->get()
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Collection.php on line 413
+[26-Jun-2020 20:26:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function table() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:7
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 7
+[26-Jun-2020 20:28:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function table() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:7
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 7
+[26-Jun-2020 20:32:01 UTC] PHP Notice:  Undefined variable: array in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[26-Jun-2020 20:32:01 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 19
+[26-Jun-2020 20:57:38 UTC] PHP Fatal error:  Uncaught Error: Class 'Files' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[26-Jun-2020 20:57:44 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Models\Files' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[26-Jun-2020 20:58:04 UTC] PHP Recoverable fatal error:  Object of class stdClass could not be converted to string in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 37
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, integer given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, null given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, null given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, null given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[27-Jun-2020 20:09:44 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[27-Jun-2020 21:02:32 UTC] PHP Fatal error:  Uncaught BadMethodCallException: Method Illuminate\Database\Eloquent\Collection::table does not exist. in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/Macroable.php:104
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php(12): Illuminate\Support\Collection->__call('table', Array)
+#1 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include('/home/nisadelga...')
+#2 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/illuminate/support/Traits/Macroable.php on line 104
+[27-Jun-2020 21:49:11 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[27-Jun-2020 22:48:31 UTC] PHP Parse error:  syntax error, unexpected '123' (T_LNUMBER), expecting variable (T_VARIABLE) in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[27-Jun-2020 22:48:42 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 6
+[27-Jun-2020 23:04:20 UTC] PHP Parse error:  syntax error, unexpected 'var_export' (T_STRING) in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 12
+[27-Jun-2020 23:07:51 UTC] PHP Notice:  Undefined variable: openddir in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[27-Jun-2020 23:07:51 UTC] PHP Warning:  readdir() expects parameter 1 to be resource, null given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[27-Jun-2020 23:09:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_folder() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:9
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 9
+[27-Jun-2020 23:44:13 UTC] PHP Fatal error:  Uncaught Error: Class 'Notification' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[28-Jun-2020 01:02:20 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:02:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:02:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:02:36 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 6
+[28-Jun-2020 01:07:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 6
+[28-Jun-2020 01:07:31 UTC] PHP Warning:  ftp_login(): Login authentication failed in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 5
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:09:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:13:15 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:14:02 UTC] PHP Parse error:  syntax error, unexpected 'd' (T_STRING), expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 11
+[28-Jun-2020 01:14:05 UTC] PHP Parse error:  syntax error, unexpected 'd' (T_STRING), expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 11
+[28-Jun-2020 01:14:07 UTC] PHP Parse error:  syntax error, unexpected 'd' (T_STRING), expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 11
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, float given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, int given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:18:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, string given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, float given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, int given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[28-Jun-2020 01:20:45 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[28-Jun-2020 21:04:44 UTC] PHP Fatal error:  Uncaught Error: Class 'Project' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[02-Jul-2020 00:18:00 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 4
+[02-Jul-2020 00:18:03 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 4
+[02-Jul-2020 02:58:01 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 4
+[02-Jul-2020 02:58:03 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ';' or ',' in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 4
+[13-Jul-2020 12:34:49 UTC] PHP Fatal error:  Uncaught Error: Class 'Task' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:9
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 9
+[17-Jul-2020 14:06:41 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Models\Tasks' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[17-Jul-2020 14:08:05 UTC] PHP Fatal error:  Uncaught Error: Class 'Task' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[17-Jul-2020 14:08:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function update() on null in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[31-Jul-2020 17:58:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Task' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[01-Aug-2020 17:00:01 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Task' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3
+[16-Sep-2020 19:24:02 UTC] PHP Warning:  get_object_vars() expects parameter 1 to be object, array given in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 20
+[16-Sep-2020 19:24:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 24
+[16-Sep-2020 19:24:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/debug.php on line 36
+[17-Sep-2020 21:48:27 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Models\Coupon' not found in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php:3
+Stack trace:
+#0 /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/process.php(11): include()
+#1 {main}
+  thrown in /home/nisadelgado/public_html/tareas/vendor/nisadelgado/framework/console/result.php on line 3

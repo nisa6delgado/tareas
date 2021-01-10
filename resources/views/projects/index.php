@@ -41,7 +41,7 @@
 
 					<div id="<?php echo 'collapseThree_' . $task->id; ?>" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 						<div class="card-body">
-							<p><?php echo nl2br($task->description); ?></p>
+							<p><?php echo description($task->description); ?></p>
 
 							<?php if ($task->files->count()): ?>
 								<hr>
@@ -66,12 +66,16 @@
 							<?php endif; ?>
 
 							<button class="btn btn-info btn-sm" title="Gestión de archivos" data-toggle="modal" data-target="<?php echo '#files_' . $task->id; ?>"><i class="fa fa-file"></i></button>
+
+							<button title="Mover tarea a otro proyecto" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="<?php echo '#move_task_' . $task->id; ?>"><i class="fas fa-compress-alt"></i></button>
+
 							<button class="btn btn-danger btn-sm delete_task" title="Eliminar tarea" data-id="<?php echo $task->id; ?>" data-slug="<?php echo $project->slug; ?>"><i class="fa fa-trash"></i></button>
 						</div>
 					</div>
 				</div>
 
 				<?php include 'edit_task.php'; ?>
+				<?php include 'move_task.php'; ?>
 				<?php include 'comments.php'; ?>
 				<?php include 'files.php'; ?>
 			<?php endforeach; ?>
