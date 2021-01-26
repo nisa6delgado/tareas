@@ -17,8 +17,8 @@
 								<label for="id_project">Proyecto</label>
 								<select name="id_project" class="form-control" required>
 									<option value=""></option>
-									<?php foreach (projects() as $project): ?>
-										<option value="<?php echo $project->id; ?>"><?php echo $project->name; ?></option>
+									<?php foreach (projects() as $item): ?>
+										<option value="<?php echo $item->id; ?>"><?php echo $item->name; ?></option>
 									<?php endforeach; ?>
 								</select>
 							</div>
