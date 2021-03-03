@@ -23,6 +23,7 @@ function ext($file)
 {
 	$ext = pathinfo($file, PATHINFO_EXTENSION);
 	$ext = strtolower($ext);
+	$ext = explode('?', $ext)[0];
 	return $ext;
 }
 
