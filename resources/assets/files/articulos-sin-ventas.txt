@@ -1,0 +1,9 @@
+* La columna precio esta en cero
+
+* La columa Total lote esta tambien en cero, me imagino porque esa usa el precio y el precio esta en cero
+
+* Cuando se va a generar el reporte acepta un numero negativo, seria bueno controlar eso para que el usuario por error no meta un valor errado
+
+* Segun el requerimiento falta la columna "dias ultima compra" que es la resta de la fecha de hoy - fecha ultima compra, en otras palabras cuantos dias han pasado desde que se compro el articulo
+
+* Cuando la columna precio salga hay que validar si se ordena numericamente igual que la columna "total lote"

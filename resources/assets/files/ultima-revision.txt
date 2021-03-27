@@ -1,0 +1,11 @@
+Buenas noches Nisaul
+
+Creo que ahora si tenemos los articulos correcto en el reporte, todo esta bien, esta pre-aprobado para subirlo, solo 3 detalles minusculos
+
+* La formula "dias en tienda" la voy a reformular otra vez, seria asi: hoy - (la menor de las fechas entre lote y compra)
+* la formula "dias reposicion" esta fallando de como te la redacte por whastapp, pero tambien la voy a reformular, aqui no nos importa la fecha del usuario, aqui sera asi, si fecha compra es mayor que fecha lote seria fecha compra menos fecha lote, sino un guion
+* con este nuevo cambio que hicimos ayer producto del primer error de filtrado de las fechas deberiamos acomodar el reporte por "dias en tienda" que es la columna que ahora va indicar en verdad que tan viejo/estancado esta el producto en la tienda.
+
+Edwin este reporte va para : lideres de tienda, compras, gerencia, costos, inventario, mercadeo
+
+Gracias una vez mas
