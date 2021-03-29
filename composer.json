@@ -17,8 +17,7 @@
         "illuminate/pagination": "8.20.1",
         "illuminate/routing": "8.20.1",
         "jenssegers/blade": "dev-master",
-        "nisadelgado/framework": "1.0.0",
-        "kunalvarma05/dropbox-php-sdk": "^0.2.1"
+        "nisadelgado/framework": "1.0.0"
     },
     "autoload": {
         "psr-4": {
