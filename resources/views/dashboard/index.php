@@ -9,6 +9,10 @@
 		<button class="btn btn-secondary btn-sm float-right" title="Agregar nuevo proyecto" data-toggle="modal" data-target="#create_project">
 			<i class="fa fa-plus"></i>
 		</button>
+		
+		<a href="/servers/backup" class="btn btn-secondary btn-sm float-right mr-1" title="Generar respaldo">
+		    <i class="fa fa-download"></i>
+		</a>
 	</h1>
 
 	Tareas pendientes

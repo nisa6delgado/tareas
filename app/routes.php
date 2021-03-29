@@ -51,4 +51,5 @@ $route->get('/users/delete/{id}', 'Users@delete');
 $route->get('/code/{file}', 'Codes@view');
 
 // Crons
-$route->get('/crons/clear', 'Crons@clear');
+$route->get('/servers/clear', 'Servers@clear');
+$route->get('/servers/backup', 'Servers@backup');
