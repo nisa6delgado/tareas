@@ -16,7 +16,7 @@ class Servers extends Controller
         
         $host = 'localhost';
         $username = 'nisadelg_root';
-        $password = 'zulia..2010';
+        $password = 'D8MWM}xNVydv';
         $database = 'nisadelg_tareas';
         $tables = '*';
         
