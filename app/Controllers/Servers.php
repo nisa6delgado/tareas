@@ -99,7 +99,7 @@ class Servers extends Controller
         
         $zip->close();
         
-        \File::download('vendor/nisadelgado/framework/backups/files.zip', 'backup ' . date('d-m-Y h.ia') . '.zip');
+        \File::download('vendor/nisadelgado/framework/backups/backup.zip', 'backup ' . date('d-m-Y h.ia') . '.zip');
     }
     
     public function clear()
