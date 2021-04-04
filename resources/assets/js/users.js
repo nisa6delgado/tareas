@@ -219,6 +219,14 @@ $('.update').submit(function (event) {
 				icon: 'success',
 				confirmButtonColor: 'black'
 			}).then(() => {
+				$('.content').html(`
+					<div class="text-center">
+						<div class="spinner-border mt-5" style="width: 10rem; height: 10rem;" role="status">
+							<span class="sr-only">Cargando...</span>
+						</div>
+					</div>
+				`);
+				
 				$('.content').load('/users', function (response, status, xhr) {
 					$('.content').html(xhr.responseText);
 				});

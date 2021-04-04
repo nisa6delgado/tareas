@@ -47,6 +47,14 @@ $('.menu').click(function (event) {
 $('.profile').click(function (event) {
 	event.preventDefault();
 
+	$('.content').html(`
+		<div class="text-center">
+			<div class="spinner-border mt-5" style="width: 10rem; height: 10rem;" role="status">
+				<span class="sr-only">Cargando...</span>
+			</div>
+		</div>
+	`);
+
 	route = $('.profile').attr('href');
 
 	$('.content').load(route, function (response, status, xhr) {
