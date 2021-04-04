@@ -15,7 +15,7 @@
 
 						<div class="col-md-8 text-center">
 							<label for="user">
-								<img src="{{ ($user->photo != '') ? $user->photo : asset('img/app/user.png') }}" class="user_photo">
+								<img src="<?php echo ($user->photo != '') ? $user->photo : asset('img/app/user.png'); ?>" class="user_photo">
 							</label>
 
 							<input type="file" name="photo" id="user">
@@ -30,7 +30,7 @@
 						</div>
 
 						<div class="col-md-8">
-							<input type="text" class="form-control" name="name" required value="{{ $user->name }}">
+							<input type="text" class="form-control" name="name" required value="<?php echo $user->name; ?>">
 						</div>
 					</div>
 
@@ -42,7 +42,7 @@
 						</div>
 
 						<div class="col-md-8">
-							<input type="email" class="form-control" name="email" required value="{{ $user->email }}">
+							<input type="email" class="form-control" name="email" required value="<?php echo $user->email; ?>">
 						</div>
 					</div>
 
@@ -87,7 +87,7 @@
 			</div>
 		
 			<div class="row mt-4">
-				<input type="hidden" name="id" value="{{ $user->id }}">
+				<input type="hidden" name="id" value="<?php echo $user->id; ?>">
 
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary submit">
