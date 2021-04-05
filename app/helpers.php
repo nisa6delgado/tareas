@@ -5,7 +5,7 @@ function description($text)
 	$text = preg_replace("/((http|https|www)[^\s]+)/", '<a style="color: #858796" target="_blank" href="$1">$0</a>', $text);
 	$text = preg_replace("/href=\"www/", 'href="http://www', $text);
 	
-	$text = str_replace('[', '<img src="/resources/assets/files/', $text);
+	$text = str_replace('[', '<img class="img-responsive" src="/resources/assets/files/', $text);
 	$text = str_replace(']', '">', $text);
 
 	$text = nl2br($text);
