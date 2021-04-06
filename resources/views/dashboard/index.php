@@ -45,7 +45,7 @@
 								<b>Archivos adjuntos</b>
 								<br><br>
 								<?php foreach ($task->files as $file): ?>
-									<a title="Clic aquí para ver archivo" <?php lightbox($file->file, $task->title); ?> target="_blank" class="d-sm-block mr-3 attach <?php modal($file->file); ?>" href="<?php echo url('/resources/assets/files/' . $file->file . '?v=' . rand(9, 999999)); ?>">
+									<a title="Clic aquí para ver archivo" <?php lightbox($file->file, $task->title); ?> target="_blank" class="d-block d-sm-inline mr-3 attach <?php modal($file->file); ?>" href="<?php echo url('/resources/assets/files/' . $file->file . '?v=' . rand(9, 999999)); ?>">
 										<i class="<?php echo icon_file($file->file); ?>"></i> <?php echo $file->file; ?>
 									</a>
 								<?php endforeach; ?>
