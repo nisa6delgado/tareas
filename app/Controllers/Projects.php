@@ -34,7 +34,7 @@ class Projects extends Controller
     public function store()
     {
         Project::create([
-            'id_user'   => logged('id'),
+            'id_user'   => auth()->id,
             'name'      => post('name'),
             'color'     => post('color'),
             'icon'      => post('icon'),
