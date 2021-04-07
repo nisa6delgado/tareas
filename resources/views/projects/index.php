@@ -24,7 +24,7 @@
 	<?php if ($project->tasks->count()): ?>
 		<div id="accordion">
 			<?php foreach ($project->tasks as $task): ?>
-				<div class="card text-justify">
+				<div class="card">
 					<div class="card-header text-justify" id="headingThree">
 						<h5 class="mb-0 text-justify">
 							<button title="Click aquí para ver más información" class="btn btn-link collapsed text-left" data-toggle="collapse" data-target="#<?php echo 'collapseThree_' . $task->id; ?>" aria-expanded="false" aria-controls="collapseThree">
