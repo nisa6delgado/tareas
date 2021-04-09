@@ -40,7 +40,7 @@
 						<div class="card-body">
 							<p><?php echo description($task->description); ?></p>
 
-							<?php if ($task->files->count() && !strpos($task->description, '![')): ?>
+							<?php if ($task->files->count() && strpos($task->description, '![') === false): ?>
 								<hr>
 								<b>Archivos adjuntos</b>
 								<br><br>
