@@ -29,9 +29,6 @@
 <!-- Lightbox -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
 
-<!-- Font Awesome Icon Picker -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/css/fontawesome-iconpicker.css">
-
 <!-- Custom styles for this template-->
 <link rel="stylesheet" href="<?php asset('css/style.css'); ?>">
 
@@ -173,11 +170,6 @@
 
 	<!-- SweetAlert -->
 	<script src="<?php node('sweetalert2/dist/sweetalert2.js'); ?>"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.js">
 
 	<!-- Custom scripts for all pages-->
 	<script src="<?php asset('js/main.js'); ?>"></script>
