@@ -170,6 +170,8 @@
 
 	<!-- SweetAlert -->
 	<script src="<?php node('sweetalert2/dist/sweetalert2.js'); ?>"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.js·"></script>
 
 	<!-- Custom scripts for all pages-->
 	<script src="<?php asset('js/main.js'); ?>"></script>
