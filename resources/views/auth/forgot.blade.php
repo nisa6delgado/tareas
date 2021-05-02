@@ -11,20 +11,20 @@
 <meta name="author" content="">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="<?php asset('img/app/favicon.png" '); ?>">
+<link rel="icon" type="image/png" href="{{ asset('img/app/favicon.png"') }}">
 <meta name="theme-color" content="black">
 
 <title>Tareas</title>
 
 <!-- Custom fonts for this template-->
-<link rel="stylesheet" href="<?php node('@fortawesome/fontawesome-free/css/all.css'); ?>">
+<link rel="stylesheet" href="{{ node('@fortawesome/fontawesome-free/css/all.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 <!-- SweetAlert -->
-<link rel="stylesheet" href="<?php node('sweetalert2/dist/sweetalert2.css'); ?>">
+<link rel="stylesheet" href="{{ node('sweetalert2/dist/sweetalert2.css') }}">
 
 <!-- Custom styles for this template-->
-<link rel="stylesheet" href="<?php asset('css/style.css'); ?>">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -72,19 +72,19 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="<?php node('jquery/dist/jquery.js'); ?>"></script>
-<script src="<?php node('bootstrap/dist/js/bootstrap.bundle.js'); ?>"></script>
+<script src="{{ node('jquery/dist/jquery.js') }}"></script>
+<script src="{{ node('bootstrap/dist/js/bootstrap.bundle.js') }}"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="<?php node('jquery.easing/jquery.easing.js'); ?>"></script>
+<script src="{{ node('jquery.easing/jquery.easing.js') }}"></script>
 
 <!-- SweetAlert -->
-<script src="<?php node('sweetalert2/dist/sweetalert2.js'); ?>"></script>
+<script src="{{ node('sweetalert2/dist/sweetalert2.js') }}"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="<?php asset('js/main.js'); ?>"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
-<script src="<?php asset('js/forgot.js'); ?>"></script>
+<script src="{{ asset('js/forgot.js') }}"></script>
 
 </body>
 </html>

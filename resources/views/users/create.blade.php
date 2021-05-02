@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-12 mb-4 text-center">
 				<label for="user">
-					<img src="<?php asset('img/app/user.png'); ?>" class="user_photo">
+					<img src="{{ asset('img/app/user.png') }}" class="user_photo">
 				</label>
 
 				<input type="file" name="photo" id="user">
@@ -68,4 +68,4 @@
 	</form>
 </div>
 
-<script src="<?php asset('js/users.js'); ?>"></script>
+<script src="{{ asset('js/users.js') }}"></script>

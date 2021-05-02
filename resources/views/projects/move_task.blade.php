@@ -1,4 +1,4 @@
-<div class="modal fade" id="<?php echo 'move_task_' . $task->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{ 'move_task_' . $task->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,7 +8,7 @@
 				</button>
 			</div>
 			<form class="move_task">
-				<input type="hidden" name="id" value="<?php echo $task->id; ?>">
+				<input type="hidden" name="id" value="{{ $task->id }}">
 
 				<div class="modal-body">
 					<div class="row">
@@ -17,9 +17,9 @@
 								<label for="id_project">Proyecto</label>
 								<select name="id_project" class="form-control" required>
 									<option value=""></option>
-									<?php foreach (projects() as $item): ?>
-										<option value="<?php echo $item->id; ?>"><?php echo $item->name; ?></option>
-									<?php endforeach; ?>
+									@foreach (projects() as $item)
+										<option value="{{ $item->id }}">{{ $item->name }}</option>
+									@endforeach
 								</select>
 							</div>
 						</div>

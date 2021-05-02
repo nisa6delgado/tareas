@@ -1,4 +1,4 @@
-<div class="modal fade" id="<?php echo 'edit_task_' . $task->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{ 'edit_task_' . $task->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,19 +8,19 @@
 				</button>
 			</div>
 			<form class="update_task">
-				<input type="hidden" name="id" value="<?php echo $task->id; ?>">
+				<input type="hidden" name="id" value="{{ $task->id }}">
 
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="title">Título</label>
-								<input type="text" name="title" value="<?php echo $task->title; ?>" class="form-control" required>
+								<input type="text" name="title" value="{{ $task->title }}" class="form-control" required>
 							</div>
 
 							<div class="form-group">
 								<label for="description">Descripción</label>
-								<textarea name="description" class="form-control"><?php echo $task->description; ?></textarea>
+								<textarea name="description" class="form-control">{{ $task->description }}</textarea>
 							</div>
 						</div>
 					</div>

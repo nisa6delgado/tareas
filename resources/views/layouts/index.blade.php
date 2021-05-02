@@ -11,26 +11,26 @@
 <meta name="author" content="">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="<?php asset('img/app/favicon.png'); ?>">
+<link rel="icon" type="image/png" href="{{ asset('img/app/favicon.png') }}">
 <meta name="theme-color" content="black">
 
 <title>Tareas</title>
 
 <!-- Custom fonts for this template-->
-<link rel="stylesheet" href="<?php node('@fortawesome/fontawesome-free/css/all.css'); ?>">
+<link rel="stylesheet" href="{{ node('@fortawesome/fontawesome-free/css/all.css') }}">
 <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 <!-- Datatables -->
-<link rel="stylesheet" href="<?php node('datatables.net-bs4/css/dataTables.bootstrap4.css'); ?>">
+<link rel="stylesheet" href="{{ node('datatables.net-bs4/css/dataTables.bootstrap4.css') }}">
 
 <!-- SweetAlert -->
-<link rel="stylesheet" href="<?php node('sweetalert2/dist/sweetalert2.css'); ?>">
+<link rel="stylesheet" href="{{ node('sweetalert2/dist/sweetalert2.css') }}">
 
 <!-- Lightbox -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
 
 <!-- Custom styles for this template-->
-<link rel="stylesheet" href="<?php asset('css/style.css'); ?>">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -62,14 +62,14 @@
 
 			<div class="sidebar-heading mt-3">Proyectos</div>
 
-			<?php foreach (projects() as $project): ?>
+			@foreach (projects() as $project)
 				<li class="nav-item">
-					<a class="nav-link menu" href="<?php echo '/projects/' . $project->slug; ?>">
-						<i class="<?php echo $project->icon; ?>" style="<?php echo 'color: ' . $project->color; ?>"></i>
-						<span><?php echo $project->name; ?></span>
+					<a class="nav-link menu" href="{{ '/projects/' . $project->slug }}">
+						<i class="{{ $project->icon }}" style="{{ 'color: ' . $project->color }}"></i>
+						<span>{{ $project->name }}</span>
 					</a>
 				</li>
-			<?php endforeach; ?>
+			@endforeach
 
       		<hr class="sidebar-divider mt-3 mb-5">
 
@@ -101,13 +101,13 @@
             			<!-- Nav Item - User Information -->
             			<li class="nav-item dropdown no-arrow">
             				<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            					<span class="mr-2 d-none d-lg-inline text-gray-600 small username"><?php echo auth()->name; ?></span>
-            					<img class="img-profile rounded-circle" src="<?php echo (auth()->photo != '') ? auth()->photo : asset('img/app/user.png'); ?>">
+            					<span class="mr-2 d-none d-lg-inline text-gray-600 small username">{{ auth()->name }}</span>
+            					<img class="img-profile rounded-circle" src="{{ (auth()->photo != '') ? auth()->photo : asset('img/app/user.png') }}">
               				</a>
               				
               				<!-- Dropdown - User Information -->
               				<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              					<a class="dropdown-item profile" href="<?php echo '/users/edit/' . auth()->id ?>">
+              					<a class="dropdown-item profile" href="{{ '/users/edit/' . auth()->id }}">
               						<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
               						Perfil
               					</a>
@@ -152,31 +152,31 @@
 		<i class="fas fa-angle-up"></i>
 	</a>
 
-	<?php include 'logout.php'; ?>
+	@include('layouts.logout')
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="<?php node('jquery/dist/jquery.js'); ?>"></script>
-	<script src="<?php node('bootstrap/dist/js/bootstrap.bundle.js'); ?>"></script>
+	<script src="{{ node('jquery/dist/jquery.js') }}"></script>
+	<script src="{{ node('bootstrap/dist/js/bootstrap.bundle.js') }}"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="<?php node('jquery.easing/jquery.easing.js'); ?>"></script>
+	<script src="{{ node('jquery.easing/jquery.easing.js') }}"></script>
 
 	<!-- Datatables -->
-	<script src="<?php node('datatables.net/js/jquery.dataTables.js'); ?>"></script>
-	<script src="<?php node('datatables.net-bs4/js/dataTables.bootstrap4.js'); ?>"></script>
-	<script src="<?php node('datatables.net-fixedheader/js/dataTables.fixedHeader.js'); ?>"></script>
-	<script src="<?php node('datatables.net-responsive/js/dataTables.responsive.js'); ?>"></script>
-	<script src="<?php node('datatables.net-responsive-bs4/js/responsive.bootstrap4.js'); ?>"></script>
+	<script src="{{ node('datatables.net/js/jquery.dataTables.js') }}"></script>
+	<script src="{{ node('datatables.net-bs4/js/dataTables.bootstrap4.js') }}"></script>
+	<script src="{{ node('datatables.net-fixedheader/js/dataTables.fixedHeader.js') }}"></script>
+	<script src="{{ node('datatables.net-responsive/js/dataTables.responsive.js') }}"></script>
+	<script src="{{ node('datatables.net-responsive-bs4/js/responsive.bootstrap4.js') }}"></script>
 
 	<!-- SweetAlert -->
-	<script src="<?php node('sweetalert2/dist/sweetalert2.js'); ?>"></script>
+	<script src="{{ node('sweetalert2/dist/sweetalert2.js') }}"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.js"></script>
 
 	<!-- Custom scripts for all pages-->
-	<script src="<?php asset('js/main.js'); ?>"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
 
-	<script src="<?php asset('js/layout.js'); ?>"></script>
+	<script src="{{ asset('js/layout.js') }}"></script>
 
 </body>
 

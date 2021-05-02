@@ -1,4 +1,4 @@
-<div class="modal fade files_modal" id="<?php echo 'files_' . $task->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade files_modal" id="{{ 'files_' . $task->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,21 +8,21 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<?php if ($task->files->count()): ?>
+				@if ($task->files->count())
 					<ul class="list-group">
-						<?php foreach ($task->files as $file): ?>
+						@foreach ($task->files as $file)
 							<li class="list-group-item">
-								<i class="<?php echo icon_file($file->file); ?>"></i> <?php echo $file->file; ?>
+								<i class="{{ icon_file($file->file) }}"></i> {{ $file->file }}
 
-								<button type="button" data-id="<?php echo $file->id; ?>" data-slug="<?php echo $project->slug; ?>" class="btn btn-danger btn-sm float-right delete_file" alt="Eliminar archivo">
+								<button type="button" data-id="{{ $file->id }}" data-slug="{{ $project->slug }}" class="btn btn-danger btn-sm float-right delete_file" alt="Eliminar archivo">
 									<i class="fa fa-trash"></i>
 								</button>
 							</li>
-						<?php endforeach; ?>
+						@endforeach
 					</ul>
-				<?php else: ?>
+				@else
 					<div class="alert alert-info">Esta tarea no contiene archivos</div>
-				<?php endif; ?>
+				@endif
 
 				<hr>
 
@@ -32,7 +32,7 @@
 	                    <input type="file" name="files" multiple>
 	                </div>
 
-	                <input type="hidden" name="id_task" value="<?php echo $task->id; ?>">
+	                <input type="hidden" name="id_task" value="{{ $task->id }}">
 
 	                <div class="form-group">
 	                	<button class="btn btn-primary btn-sm upload_files_button">

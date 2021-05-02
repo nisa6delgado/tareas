@@ -9,24 +9,24 @@
             </div>
 
             <form class="edit_project">
-                <input type="hidden" name="id" value="<?php echo $project->id; ?>">
+                <input type="hidden" name="id" value="{{ $project->id }}">
 
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="name">Nombre</label>
-                                <input type="text" name="name" class="form-control" value="<?php echo $project->name; ?>" required>
+                                <input type="text" name="name" class="form-control" value="{{ $project->name }}" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="color">Color</label>
-                                <input type="text" name="color" class="form-control" value="<?php echo $project->color; ?>">
+                                <input type="text" name="color" class="form-control" value="{{ $project->color }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="icon">Ícono</label>
-                                <input type="text" name="icon" class="form-control" value="<?php echo $project->icon; ?>" required>
+                                <input type="text" name="icon" class="form-control" value="{{ $project->icon }}" required>
                             </div>
                         </div>
                     </div>

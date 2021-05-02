@@ -1,4 +1,4 @@
-<div class="modal fade" id="<?php echo 'comments_' . $task->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{ 'comments_' . $task->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,25 +10,25 @@
             <div class="modal-body">
                 <form class="send_comment">                    
                     <div class="comments">
-                        <?php if ($task->comments->count()): ?>
+                        @if ($task->comments->count())
                             <ul class="list-group">
-                                <?php foreach ($task->comments as $comment): ?>
+                                @foreach ($task->comments as $comment)
                                     <li class="list-group-item">
-                                        <?php echo $comment->comment; ?>
+                                        {{ $comment->comment }}
 
-                                        <button type="button" onClick="delete_comment(this, '<?php echo $comment->id; ?>')" class="btn btn-danger btn-sm float-right" title="Eliminar este comentario">
+                                        <button type="button" onClick="delete_comment(this, '{{ $comment->id }}')" class="btn btn-danger btn-sm float-right" title="Eliminar este comentario">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </li>
-                                <?php endforeach; ?>
+                                @endforeach
                             </ul>
-                        <?php else: ?>
+                        @else
                             <div class="alert alert-info">No se han registrado comentarios en esta tarea</div>
-                        <?php endif; ?>
+                        @endif
                     </div>
 
                     <div class="input-group mt-2">
-                        <input type="hidden" name="id_task" value="<?php echo $task->id; ?>">
+                        <input type="hidden" name="id_task" value="{{ $task->id }}">
 
                         <input type="text" class="form-control" required name="comment" placeholder="Escribe aquí tu comentario...">
 

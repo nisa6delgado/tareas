@@ -3,15 +3,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Agregar nueva tarea</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+
             <form class="store_task">
                 <div class="modal-body">
                     <div class="row">                    
                         <div class="col-md-12">
-                            <input type="hidden" name="id_project" value="<?php echo $project->id; ?>">
+                            <input type="hidden" name="id_project" value="{{ $project->id }}">
 
                             <div class="form-group">
                                 <label for="title">Título</label>
@@ -30,6 +31,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         <i class="fa fa-times"></i>
