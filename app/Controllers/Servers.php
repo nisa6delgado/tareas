@@ -14,10 +14,10 @@ class Servers extends Controller
         
         date_default_timezone_set('America/Caracas');
         
-        $host = 'localhost';
-        $username = 'nisadelg_root';
-        $password = 'QzmBx&aA8BfV';
-        $database = 'nisadelg_tareas';
+        $host = config('database', 'host');
+        $username = config('database', 'username');
+        $password = config('database', 'password');
+        $database = config('database', 'database');;
         $tables = '*';
         
         $connection = new \mysqli($host, $username, $password, $database);
