@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "276da6801647d6e451223925ed1883d9",
+    "content-hash": "07225b69b04968facb75d9a9276abecf",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -948,7 +948,7 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v8.34.0",
+            "version": "v8.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -999,69 +999,6 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2020-11-02T14:01:41+00:00"
-        },
-        {
-            "name": "jenssegers/blade",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jenssegers/blade.git",
-                "reference": "22a3700e9fc469c19dd1c5e5bd1b9138195e421f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/blade/zipball/22a3700e9fc469c19dd1c5e5bd1b9138195e421f",
-                "reference": "22a3700e9fc469c19dd1c5e5bd1b9138195e421f",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/view": "^5.5|^6.0|^7.0|^8.0",
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.0|^7.0",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Jenssegers\\Blade\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jens Segers",
-                    "homepage": "https://jenssegers.com"
-                }
-            ],
-            "description": "The standalone version of Laravel's Blade templating engine for use outside of Laravel.",
-            "keywords": [
-                "blade",
-                "laravel",
-                "render",
-                "template",
-                "view"
-            ],
-            "support": {
-                "issues": "https://github.com/jenssegers/blade/issues",
-                "source": "https://github.com/jenssegers/blade/tree/v1.4.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/jenssegers",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/jenssegers-blade",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2020-09-17T08:25:26+00:00"
         },
         {
             "name": "michelf/php-markdown",
@@ -3460,9 +3397,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "jenssegers/blade": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
