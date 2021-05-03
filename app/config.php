@@ -2,7 +2,7 @@
 
 return [
 	// General
-	'application_name' 	=> 'Base',
+	'application_name' 	=> 'Tareas',
 	'version'			=> '1.0.0',
 
 	// Region
@@ -11,7 +11,7 @@ return [
 	'charset'			=> 'utf-8',
 	
 	// Environment
-	'environment' 		=> 'development',
+	'environment' 		=> 'production',
 	'errors' 			=> true,
 
 	// Database
