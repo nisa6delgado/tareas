@@ -41,7 +41,7 @@
 
 					<div id="{{ 'collapseThree_' . $task->id }}" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 						<div class="card-body">
-							<p>{{ description($task->description) }}</p>
+							<p>{!! description($task->description) !!}</p>
 
 							@if($task->files->count())
 								<hr>
