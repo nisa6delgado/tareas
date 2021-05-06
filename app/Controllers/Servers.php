@@ -107,9 +107,7 @@ class Servers extends Controller
         $files = File::doesntHave('task')->get();
 
         foreach ($files as $file) {
-            if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file->file)) {
-                unlink($_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file->file);
-            }
+            unlink($_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file->file);
         }
 
         File::doesntHave('task')->delete();
