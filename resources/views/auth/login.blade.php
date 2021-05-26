@@ -60,22 +60,11 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Recuérdame</label>
-                                        </div>
-                                    </div>
                                     
                                     <button type="submit" class="btn btn-primary btn-block submit">Iniciar sesión</button>
 
                                     <hr>
                                 </form>
-
-                                <div class="text-center">
-                                    <a class="small" href="/forgot">¿Olvidó su contraseña?</a>
-                                </div>
                             </div>
                         </div>
                     </div>
