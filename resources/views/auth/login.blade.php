@@ -62,8 +62,6 @@
                                     </div>
                                     
                                     <button type="submit" class="btn btn-primary btn-block submit">Iniciar sesión</button>
-
-                                    <hr>
                                 </form>
                             </div>
                         </div>
