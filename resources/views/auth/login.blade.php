@@ -61,7 +61,7 @@
                                         </div>
                                     </div>
                                     
-                                    <button type="submit" class="btn btn-primary btn-block submit mb-3">Iniciar sesión</button>
+                                    <button type="submit" class="btn btn-primary btn-block submit mb-4">Iniciar sesión</button>
                                 </form>
                             </div>
                         </div>
