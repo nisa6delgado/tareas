@@ -14,13 +14,16 @@ return [
 	'environment' 		=> 'production',
 	'errors' 			=> true,
 
-	// Database
-	'database' 			=> [
-		'driver' 		=> 'mysql',
-		'host' 			=> 'localhost',
-		'username' 		=> 'root',
-		'database' 		=> 'tareas',
-		'password' 		=> ''
+	// Database.
+	'database' 		=> [
+		[
+			'name' 			=> 'default',
+			'driver' 		=> 'mysql',
+			'host' 			=> 'nisadelgado.com',
+			'username' 		=> 'nisadelg_root',
+			'database' 		=> 'nisadelg_tareas',
+			'password' 		=> 'G@1hZ1z(-r95'
+		]
 	],
 
 	// Facebook login

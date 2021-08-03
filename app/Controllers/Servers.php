@@ -13,12 +13,14 @@ class Servers extends Controller
         $this->clear();
         
         date_default_timezone_set('America/Caracas');
+
+        $config = include 'app/config.php';
         
-        $host = config('database', 'host');
-        $username = config('database', 'username');
-        $password = config('database', 'password');
-        $database = config('database', 'database');;
-        $tables = '*';
+        $host       = $config['database'][0]['host'];
+        $username   = $config['database'][0]['username'];
+        $password   = $config['database'][0]['password'];
+        $database   = $config['database'][0]['database'];
+        $tables     = '*';
         
         $connection = new \mysqli($host, $username, $password, $database);
         if ($connection->connect_error) {
