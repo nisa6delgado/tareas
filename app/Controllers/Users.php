@@ -3,6 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use App\Validations\UserStore;
+use App\Validations\UserUpdate;
+use Redirect;
+use View;
 
 class Users extends Controller
 {
@@ -19,86 +23,78 @@ class Users extends Controller
     /**
      * Show home page.
      *
-     * @return view
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
         $users = User::get();
-        return view('users/index', compact('users'));
+        return view('users.index', compact('users'));
     }
 
     /**
      * Show create user page.
      *
-     * @return view
+     * @return View
      */
-    public function create()
+    public function create(): View
     {
-        return view('users/create');
+        return view('users.create');
     }
 
     /**
      * Store user in database.
      *
-     * @return void\User
+     * @return Redirect
      */
-    public function store()
+    public function store(UserStore $validation): Redirect
     {
-        $file = files()->input('photo')->upload('resources/assets/img/users');
-
-        $user = User::where('email', post('email'))->first();
-
-        if ($user) {
-            return 'Correo electrónico existe';
-        }
+        $file = request('photo')->save('resources/assets/img');
 
         $user = User::create([
-            'name'     => post('name'),
-            'email'    => post('email'),
-            'password' => md5(post('password')),
-            'photo'    => $file->filename,
+            'name'          => request('name'),
+            'email'         => request('email'),
+            'password'      => md5(request('password')),
+            'photo'         => $file->filename,
+            'date_create'   => now('Y-m-d H:i:s'),
+            'date_update'   => now('Y-m-d H:i:s')
         ]);
 
         $user->update(['hash' => md5($user->id)]);
+
+        return redirect('/dashboard/users')->with('info', __('users.store'));
     }
 
     /**
      * Show edit user page.
      *
-     * @return view
+     * @param int $id
+     * @return View
      */
-    public function edit($id)
+    public function edit(int $id): View
     {
         $user = User::find($id);
-        return view('users/edit', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     /**
      * Update user in database.
      *
-     * @return void\User
+     * @return Redirect
      */
-    public function update()
+    public function update(UserUpdate $validation): Redirect
     {
-        $file = files()->input('photo')->upload('resources/assets/img/users');
+        $file = request('photo')->save('resources/assets/img');
 
-        $user = User::where('email', post('email'))
-            ->where('id', '!=', post('id'))
-            ->first();
-
-        if ($user) {
-            return 'Correo electrónico existe';
-        }
-
-        $user = User::find(post('id'));
+        $user = User::find(request('id'));
         $user->update([
-            'name'  => post('name'),
-            'email' => post('email'),
+            'name'  => request('name'),
+            'email' => request('email'),
+            'date_update'   => now('Y-m-d H:i:s')
         ]);
 
-        if (post('password')) {
+        if (request('password')) {
             $user->update([
-                'password' => md5(post('password')),
+                'password' => md5(request('password')),
             ]);
         }
 
@@ -108,21 +104,28 @@ class Users extends Controller
             ]);
         }
 
-        if ($user->id == auth()->id) {
+        if ($user->id == session('id')) {
             session('name', $user->name);
             session('photo', $user->photo);
-
-            return $user;
         }
+
+        return redirect('/dashboard/users')->with('info', __('users.update'));
     }
 
     /**
      * Delete user in database.
      *
-     * @return void
+     * @param int $id
+     * @return Redirect
      */
-    public function delete($id)
+    public function delete(int $id): Redirect
     {
+        if ($id == session('id')) {
+            return redirect('/dashboard/users')->with('error', __('users.in_use'));
+        }
+
         User::find($id)->delete();
+
+        return redirect('/dashboard/users')->with('info', __('users.delete'));
     }
 }

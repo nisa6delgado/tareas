@@ -2,76 +2,86 @@
 
 namespace App\Controllers;
 
+use Facebook;
+use Google;
+use Redirect;
+use View;
+
 class Auth extends Controller
 {
     /**
      * Show login form.
      *
-     * @return view
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        return view('auth/login');
+        return view('auth.login');
     }
 
     /**
      * Show register form.
      *
-     * @return view
+     * @return View|Redirect
      */
     public function register()
     {
-        return view('auth/register');
-    }
+        if (post()) {
+            return register(request());
+        }
 
-    /**
-     * Register user.
-     *
-     * @return void
-     */
-    public function logup()
-    {
-        logup(post());
+        return view('auth.register');
     }
 
     /**
      * Login user.
      *
-     * @return void
+     * @return Redirect
      */
-    public function login()
+    public function login(): Redirect
     {
-        login(post());
+        return login(request());
     }
 
     /**
      * Login user with Facebook account.
      *
-     * @return redirect
+     * @return Facebook
      */
-    public function facebook()
+    public function facebook(): ?Facebook
     {
-        facebook()->login();
+        return facebook()->login();
+    }
+
+    /**
+     * Login user with Google account.
+     *
+     * @return Google
+     */
+    public function google(): ?Google
+    {
+        return google()->login();
     }
 
     /**
      * Show and process forgot password form.
      *
-     * @param view|void
+     * @return View|Redirect
      */
-    public function forgot()
+    public function forgot_password()
     {
         if (post()) {
             return forgot();
         }
 
-        return view('auth/forgot');
+        return view('auth.forgot-password');
     }
 
     /**
      * Show and process recover password form.
      *
-     * @param view|void
+     * @param string $id
+     * @return View|Redirect
      */
     public function recover($id)
     {
@@ -79,15 +89,15 @@ class Auth extends Controller
             return recover();
         }
 
-        return view('auth/recover', compact('id'));
+        return view('auth.recover', compact('id'));
     }
 
     /**
      * Logout user.
      *
-     * @return redirect
+     * @return Redirect
      */
-    public function logout()
+    public function logout(): Redirect
     {
         logout();
         return redirect('/login');

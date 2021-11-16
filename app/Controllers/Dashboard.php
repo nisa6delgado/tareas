@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Task;
+use View;
 
 class Dashboard extends Controller
 {
@@ -19,11 +20,11 @@ class Dashboard extends Controller
 	/**
 	 * Show home page.
 	 *
-	 * @return view
+	 * @return View
 	 */
-    public function index()
+    public function index(): View
     {
     	$tasks = Task::where('status', 0)->orderBy('id', 'DESC')->limit(10)->get();
-    	return view('dashboard/index', compact('tasks'));
+    	return view('dashboard.index', compact('tasks'));
     }
 }

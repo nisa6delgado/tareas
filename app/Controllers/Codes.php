@@ -2,9 +2,16 @@
 
 namespace App\Controllers;
 
+use View;
+
 class Codes extends Controller
 {
-	public function view($file)
+	/**
+     * File viewers.
+     *
+     * @return View
+     */
+	public function view(string $file): View
 	{
 		$fopen = fopen($_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file, 'r');
 
@@ -17,6 +24,6 @@ class Codes extends Controller
 
 		$ext = explode('.', $file)[1];
 
-		return view('codes/view', compact('content', 'ext'));
+		return view('codes.view', compact('content', 'ext'));
 	}
 }
