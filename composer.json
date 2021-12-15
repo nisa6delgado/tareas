@@ -4,6 +4,7 @@
     "type": "project",
     "license": "MIT",
     "version": "1.2.35",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Nisa Delgado",
@@ -11,18 +12,24 @@
         }
     ],
     "require": {
-        "filp/whoops": "2.14.4",
+        "guzzlehttp/guzzle": "7.4.0",
         "illuminate/database": "8.75.0",
         "illuminate/pagination": "8.75.0",
         "illuminate/routing": "8.75.0",
         "illuminate/validation": "8.75.0",
         "illuminate/view": "8.75.0",
         "league/flysystem": "2.3.2",
-        "maximebf/debugbar": "1.17.3",
         "michelf/php-markdown": "1.9.1",
         "nisadelgado/framework": "1.2.35",
-        "phpmailer/phpmailer": "6.5.3",
-        "phpunit/phpunit": "9.5.10"
+        "phpmailer/phpmailer": "6.5.3"
+    },
+    "require-dev": {
+        "fakerphp/faker": "1.16.0",
+        "filp/whoops": "2.14.4",
+        "maximebf/debugbar": "1.17.3",
+        "phpstan/phpstan": "1.2.0",
+        "phpunit/phpunit": "9.5.10",
+        "psy/psysh": "0.10.12"
     },
     "autoload": {
         "psr-4": {
