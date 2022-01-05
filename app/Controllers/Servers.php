@@ -79,8 +79,6 @@ class Servers extends Controller
                     $return .= ");\n";
                 }
             }
-        
-            $return .= ");\n";
         }
         
         $filename = $_SERVER['DOCUMENT_ROOT'] . '/vendor/nisadelgado/framework/backups/database.sql';
