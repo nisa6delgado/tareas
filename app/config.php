@@ -3,7 +3,7 @@
 return [
 	// General
 	'application_name' 	=> 'Tareas',
-	'version'			=> '1.0.59',
+	'version'			=> '1.2.35',
 
 	// Region
 	'language' 			=> 'es',
@@ -12,10 +12,7 @@ return [
 	
 	// Environment
 	'environment' 		=> 'production',
-	'errors' 			=> false,
-
-	// Redirect after login
-	'redirect_login' 	=> '/dashboard',
+	'errors' 			=> true,
 
 	// Database.
 	'database' 		=> [
@@ -25,28 +22,19 @@ return [
 			'host' 			=> 'nisadelgado.com',
 			'username' 		=> 'nisadelg_root',
 			'database' 		=> 'nisadelg_tareas',
-			'password' 		=> 'MlbZKQJqcS-W'
+			'password' 		=> 'G@1hZ1z(-r95'
 		]
 	],
 
-	// Needed to send emails locally.
-	'smtp' 				=> [
-		'host' 			=> '',
-		'username' 		=> '',
-		'password'		=> '',
-		'port'			=> ''
+	// Facebook login
+	'facebook'			=> [
+		'app_id' 		=> '',
+		'app_secret' 	=> ''
 	],
 
-	// Login with social networks
-	'google' => [
+	// Google login
+	'google'			=> [
 		'client_id' 	=> '',
-		'client_secret' => '',
-		'redirect' 		=> ''
+		'client_secret' => ''
 	],
-
-	'facebook' => [
-		'app_id'		=> '',
-		'app_secret'	=> '',
-		'redirect' 		=> ''
-	]
 ];

@@ -2,6 +2,8 @@
 
 namespace App\Middleware;
 
+use Closure;
+
 class Auth
 {
 	/**
@@ -11,14 +13,11 @@ class Auth
 	 * @param  Closure $next
 	 * @return Closure
 	 */
-    public function handle($request, $next)
+    public function handle($request, Closure $next)
     {
-        $url = server('REQUEST_URI') ?? server('PATH_INFO');
-
         if (!auth()) {
-            return redirect("/login?redirect=$url");
+            return redirect('/login');
         }
-
         return $next($request);
     }
 }

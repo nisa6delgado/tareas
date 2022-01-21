@@ -24,12 +24,7 @@ class Dashboard extends Controller
 	 */
     public function index(): View
     {
-    	$tasks = Task::where('status', 0)
-    		->with('project')
-    		->orderBy('id', 'DESC')
-    		->limit(10)
-    		->get();
-    		
+    	$tasks = Task::where('status', 0)->orderBy('id', 'DESC')->limit(10)->get();
     	return view('dashboard.index', compact('tasks'));
     }
 }

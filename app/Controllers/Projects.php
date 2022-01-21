@@ -27,9 +27,7 @@ class Projects extends Controller
      */
     public function index($slug): View
     {
-        $project = Project::where('slug', $slug)
-            ->with('tasks')
-            ->first();
+        $project = Project::where('slug', $slug)->first();
 
         return view('projects/index', compact('project'));
     }
