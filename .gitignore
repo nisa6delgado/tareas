@@ -3,6 +3,7 @@
 /node_modules
 /resources/assets/files
 /vendor
+/app/config.php
 .ftpconfig
 .ftpquota
 error_log
