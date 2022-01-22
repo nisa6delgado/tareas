@@ -3,7 +3,7 @@
     "description": "Gestión de proyectos y lista de tareas",
     "type": "project",
     "license": "MIT",
-    "version": "1.0.61",
+    "version": "1.0.63",
     "minimum-stability": "dev",
     "authors": [
         {
