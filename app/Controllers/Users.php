@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Models\User;
 use App\Validations\UserStore;
 use App\Validations\UserUpdate;
-use Redirect;
-use View;
 
 class Users extends Controller
 {
@@ -25,7 +23,7 @@ class Users extends Controller
      *
      * @return View
      */
-    public function index(): View
+    public function index()
     {
         $users = User::get();
         return view('users.index', compact('users'));
@@ -36,7 +34,7 @@ class Users extends Controller
      *
      * @return View
      */
-    public function create(): View
+    public function create()
     {
         return view('users.create');
     }
@@ -46,7 +44,7 @@ class Users extends Controller
      *
      * @return Redirect
      */
-    public function store(UserStore $validation): Redirect
+    public function store(UserStore $validation)
     {
         $file = request('photo')->save('resources/assets/img');
 
@@ -70,7 +68,7 @@ class Users extends Controller
      * @param int $id
      * @return View
      */
-    public function edit(int $id): View
+    public function edit(int $id)
     {
         $user = User::find($id);
         return view('users.edit', compact('user'));
@@ -81,7 +79,7 @@ class Users extends Controller
      *
      * @return Redirect
      */
-    public function update(UserUpdate $validation): Redirect
+    public function update(UserUpdate $validation)
     {
         $file = request('photo')->save('resources/assets/img');
 
@@ -118,7 +116,7 @@ class Users extends Controller
      * @param int $id
      * @return Redirect
      */
-    public function delete(int $id): Redirect
+    public function delete(int $id)
     {
         if ($id == session('id')) {
             return redirect('/dashboard/users')->with('error', __('users.in_use'));

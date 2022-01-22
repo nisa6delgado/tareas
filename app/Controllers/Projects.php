@@ -6,7 +6,6 @@ use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
 use Illuminate\Support\Str;
-use View;
 
 class Projects extends Controller
 {
@@ -25,7 +24,7 @@ class Projects extends Controller
      *
      * @return View
      */
-    public function index($slug): View
+    public function index($slug)
     {
         $project = Project::where('slug', $slug)->first();
 

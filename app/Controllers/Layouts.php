@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use View;
-
 class Layouts extends Controller
 {
 	/**
@@ -21,7 +19,7 @@ class Layouts extends Controller
 	 *
 	 * @return View
 	 */
-    public function index(): View
+    public function index()
     {
         return view('layouts/index');
     }
