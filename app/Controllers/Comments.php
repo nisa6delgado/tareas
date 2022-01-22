@@ -16,7 +16,12 @@ class Comments extends Controller
         $this->middleware('Auth');
     }
 
-    public function store()
+    /**
+     * Create a comment.
+     *
+     * @return Comment
+     */
+    public function store(): Comment
     {
         $comment = Comment::create([
             'id_task' => post('id_task'),
@@ -26,7 +31,12 @@ class Comments extends Controller
         return $comment;
     }
 
-    public function delete($id)
+    /**
+     * Delete a comment.
+     *
+     * @return void
+     */
+    public function delete(int $id): void
     {
         Comment::find($id)->delete();
     }

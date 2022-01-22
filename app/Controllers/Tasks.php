@@ -18,7 +18,12 @@ class Tasks extends Controller
         $this->middleware('Auth');
     }
 
-    public function store()
+    /**
+     * Create a task.
+     *
+     * @return string
+     */
+    public function store(): string
     {
         $task = Task::create([
             'id_project'  => post('id_project'),
@@ -43,7 +48,12 @@ class Tasks extends Controller
         return $project->slug;
     }
 
-    public function update()
+    /**
+     * Update a task.
+     *
+     * @return string
+     */
+    public function update(): string
     {
         $task = Task::find(post('id'));
         $task->update([
@@ -54,7 +64,12 @@ class Tasks extends Controller
         return $task->project->slug;
     }
 
-    public function status()
+    /**
+     * Change status to task.
+     *
+     * @return string
+     */
+    public function status()string
     {
         $task = Task::find(post('id'));
         $task->update(['status' => post('status')]);
@@ -63,7 +78,12 @@ class Tasks extends Controller
         return $project->slug;
     }
 
-    public function move()
+    /**
+     * Move task to other project.
+     *
+     * @return string
+     */
+    public function move(): string
     {
         $task = Task::find(post('id'));
         $task->update(['id_project' => post('id_project')]);
@@ -72,7 +92,12 @@ class Tasks extends Controller
         return $project->slug;
     }
 
-    public function delete($id)
+    /**
+     * Delete a task.
+     *
+     * @return void
+     */
+    public function delete(int $id): void
     {
         $files = File::where('id_task', $id);
 

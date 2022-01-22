@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use View;
+
 class Layouts extends Controller
 {
 	/**
@@ -17,9 +19,9 @@ class Layouts extends Controller
 	/**
 	 * Show layout page.
 	 *
-	 * @return view
+	 * @return View
 	 */
-    public function index()
+    public function index(): View
     {
         return view('layouts/index');
     }

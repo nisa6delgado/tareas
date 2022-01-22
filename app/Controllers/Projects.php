@@ -6,6 +6,7 @@ use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
 use Illuminate\Support\Str;
+use View;
 
 class Projects extends Controller
 {
@@ -22,16 +23,21 @@ class Projects extends Controller
     /**
      * Show home page.
      *
-     * @return view
+     * @return View
      */
-    public function index($slug)
+    public function index($slug): View
     {
         $project = Project::where('slug', $slug)->first();
 
         return view('projects/index', compact('project'));
     }
 
-    public function store()
+    /**
+     * Create a project.
+     *
+     * @return void
+     */
+    public function store(): void
     {
         Project::create([
             'id_user'   => auth()->id,
@@ -42,7 +48,12 @@ class Projects extends Controller
         ]);
     }
 
-    public function update()
+    /**
+     * Update a proect.
+     *
+     * @return void
+     */
+    public function update(): void
     {
         $project = Project::find(post('id'));
         $project->update([
@@ -53,7 +64,12 @@ class Projects extends Controller
         ]);
     }
 
-    public function delete($id)
+    /**
+     * Delete a proect.
+     *
+     * @return void
+     */
+    public function delete(int $id): void
     {
         $tasks = Task::where('id_project', $id);
 

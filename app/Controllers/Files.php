@@ -16,7 +16,12 @@ class Files extends Controller
         $this->middleware('Auth');
     }
 
-    public function store()
+    /**
+     * Create a file.
+     *
+     * @return void
+     */
+    public function store(): void
     {
     	$files = files()->input('files')->upload('resources/assets/files');
 
@@ -30,7 +35,12 @@ class Files extends Controller
         }
     }
 
-    public function delete($id)
+    /**
+     * Delete a file.
+     *
+     * @return void
+     */
+    public function delete(int $id): void
     {
         $file = File::find($id);
 
