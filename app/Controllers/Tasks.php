@@ -69,7 +69,7 @@ class Tasks extends Controller
      *
      * @return string
      */
-    public function status()string
+    public function status(): string
     {
         $task = Task::find(post('id'));
         $task->update(['status' => post('status')]);
