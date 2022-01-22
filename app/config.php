@@ -22,7 +22,7 @@ return [
 			'host' 			=> 'nisadelgado.com',
 			'username' 		=> 'nisadelg_root',
 			'database' 		=> 'nisadelg_tareas',
-			'password' 		=> 'G@1hZ1z(-r95'
+			'password' 		=> '&pRj@hL.gR[A'
 		]
 	],
 

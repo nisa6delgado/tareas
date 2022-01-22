@@ -16,14 +16,14 @@ $('.user').submit(function () {
 		url: '/login',
 		data: data,
 		success: function (response) {
-			if (response == 'Datos incorrectos') {
+		    if (response == 'Datos incorrectos') {
 				Swal.fire({
-					title: '隆Datos incorrectos!',
+					title: '¡Datos incorrectos!',
 					icon: 'error',
 					confirmButtonColor: 'black'
 				});
 
-				$('.submit').html('Iniciar sesi贸n');
+				$('.submit').html('Iniciar sesión');
 
 				return false;
 			}

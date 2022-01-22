@@ -8,7 +8,12 @@ use App\Models\Task;
 
 class Servers extends Controller
 {
-    public function backup()
+    /**
+     * Make a files/database backup.
+     *
+     * @return void
+     */
+    public function backup(): void
     {
         $this->clear();
         
@@ -74,8 +79,6 @@ class Servers extends Controller
                     $return .= ");\n";
                 }
             }
-        
-            $return .= ");\n";
         }
         
         $filename = $_SERVER['DOCUMENT_ROOT'] . '/vendor/nisadelgado/framework/backups/database.sql';
@@ -103,8 +106,13 @@ class Servers extends Controller
         
         \File::download('vendor/nisadelgado/framework/backups/backup.zip', 'backup ' . date('d-m-Y h.ia') . '.zip');
     }
-    
-    public function clear()
+
+    /**
+     * Delete unused files.
+     *
+     * @return void
+     */    
+    public function clear(): void
     {
         $files = File::doesntHave('task')->get();
 
