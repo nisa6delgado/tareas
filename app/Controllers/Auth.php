@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Facebook;
 use Google;
+use Redirect;
 
 class Auth extends Controller
 {
@@ -25,7 +26,7 @@ class Auth extends Controller
     public function register()
     {
         if (post()) {
-            return register(request());
+            return register(post());
         }
 
         return view('auth.register');
@@ -38,7 +39,7 @@ class Auth extends Controller
      */
     public function login(): Redirect
     {
-        return login(request());
+        return login(post());
     }
 
     /**
