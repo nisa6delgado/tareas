@@ -20,13 +20,13 @@ return [
 	// Database.
 	'database' 		=> [
 		[
-			'name' 			=> 'default',
-			'driver' 		=> 'mysql',
-			'host' 			=> 'nisadelgado.com',
-			'username' 		=> 'nisadelg_root',
-			'database' 		=> 'nisadelg_tareas',
-			'password' 		=> '&pRj@hL.gR[A'
-		]
+            'name'          => 'default',
+            'driver'        => 'mysql',
+            'host'          => 'nisadelgado.com',
+            'username'      => 'nisadelg_root',
+            'database'      => 'nisadelg_tareas',
+            'password'      => '&pRj@hL.gR[A'
+        ]
 	],
 
 	// Needed to send emails locally.
