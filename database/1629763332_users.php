@@ -22,3 +22,15 @@ App\Models\User::create([
 	'password'	=> '21232f297a57a5a743894a0e4a801fc3',
 	'hash'		=> 'c4ca4238a0b923820dcc509a6f75849b'
 ]);
+
+for ($i = 0; $i < 99; $i++) {
+    $name = faker()->name();
+
+    $user = App\Models\User::create([
+        'name'      => $title,
+        'email'     => faker()->email(),
+        'password'  => md5($title)
+    ]);
+
+    $user->update(['hash' => md5($user->id)]);
+}

@@ -1,91 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased">
+
 <head>
 
-<!-- Metadata -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="{{ asset('img/app/favicon.png"') }}">
-<meta name="theme-color" content="black">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Tareas</title>
+<link rel="icon" type="image/png" href="{{ globals('icon') }}">
+<meta name="theme-color" content="{{ globals('theme-color') }}">
 
-<!-- Custom fonts for this template-->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css">
 <link rel="stylesheet" href="{{ node('@fortawesome/fontawesome-free/css/all.css') }}">
-<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-<!-- SweetAlert -->
+<link rel="stylesheet" href="{{ node('@themesberg/flowbite/dist/flowbite.bundle.css') }}">
 <link rel="stylesheet" href="{{ node('sweetalert2/dist/sweetalert2.css') }}">
-
-<!-- Custom styles for this template-->
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
-<body class="bg-gradient-primary">
+<body x-data="app" class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+    <input type="hidden" id="color" value="{{ globals('color') }}">
 
-<div class="container">
+    <nav id="header" class="bg-white fixed w-full z-20 top-0 shadow">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
+            <div class="pl-4 md:pl-0">
+                <a class="flex items-center text-{{ globals('color') }}-600 text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
+                    <i class="fas fa-list mr-2"></i> Tareas
+                </a>
+            </div>
 
-<!-- Outer Row -->
-    <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-6 col-md-9">
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Iniciar sesión</h1>
-                                </div>
-                                
-                                <form class="user" method="POST" action="/login">
-                                    <div class="form-group">
-                                        <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" name="password" required placeholder="Contraseña">
-                                            <div class="input-group-append">
-                                                <button type="button" class="btn btn-secondary password" placeholder="Contraseña">
-                                                    <i class="fa fa-eye"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <button type="submit" class="btn btn-primary btn-block submit mb-4">Iniciar sesión</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+            <div class="pr-0 flex justify-end">
+                <div class="flex relative inline-block float-right">
+                    <div class="relative text-sm"></div>
                 </div>
             </div>
         </div>
+    </nav>
+
+    <!--Container-->
+    <div class="content container w-full flex flex-wrap mx-auto pt-8 lg:pt-16 mt-16">
+        <section class="w-full lg:w-3/12 mb-20 hidden sm:flex">
+        </section>
+
+        <section class="w-full lg:w-6/12 mb-20">
+            <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
+                <form method="POST">
+                    <x-form-input label="Usuario" key="user" value=""/>
+
+                    <x-form-input label="Contraseña" key="password" password value=""/>
+
+                    <x-form-button text="Iniciar sesión"/>
+                </form>
+            </div>
+        </section>
     </div>
-</div>
+    <!--/container-->
 
-<!-- Bootstrap core JavaScript-->
-<script src="{{ node('jquery/dist/jquery.js') }}"></script>
-<script src="{{ node('bootstrap/dist/js/bootstrap.bundle.js') }}"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="{{ node('jquery.easing/jquery.easing.js') }}"></script>
-
-<!-- SweetAlert -->
-<script src="{{ node('sweetalert2/dist/sweetalert2.js') }}"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="{{ asset('js/main.js') }}"></script>
-
-<script src="{{ asset('js/login.js') }}"></script>
-
+    <script src="{{ node('alpinejs/dist/cdn.js') }}" defer></script>
+    <script src="{{ node('sweetalert2/dist/sweetalert2.js') }}"></script>
+    <script src="{{ node('@themesberg/flowbite/dist/flowbite.bundle.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

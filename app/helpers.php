@@ -1,110 +1,80 @@
 <?php
 
-function description($text)
-{
-	$text = Michelf\MarkdownExtra::defaultTransform($text);
-	return $text;
-}
-
-function modal($file)
-{
-	$ext = ext($file);
-
-	if (in_array($ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx', 'pdf', 'html', 'txt', 'php', 'js', 'css', 'sql'])) {
-		echo 'view-doc';
-	}
-}
+use App\Models\Configuration;
+use App\Models\Project;
 
 function ext($file)
 {
-	$ext = pathinfo($file, PATHINFO_EXTENSION);
-	$ext = strtolower($ext);
-	$ext = explode('?', $ext)[0];
-	return $ext;
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
+    $ext = strtolower($ext);
+    $ext = explode('?', $ext)[0];
+    return $ext;
+}
+
+function globals($var)
+{
+    if (isset($_SESSION['user'][$var])) {
+        return $_SESSION['user'][$var];
+    } else {
+        $configuration = Configuration::where('key', $var)->first();
+        $_SESSION['user'][$var] = $configuration->value;
+        return $configuration->value;
+    }
+}
+
+function icon($file)
+{
+    $ext = ext($file);
+    $ext = strtolower($ext);
+
+    if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
+        return 'far fa-file-image';
+    }
+
+    if (in_array($ext, ['html', 'php', 'css', 'json', 'js', 'htaccess'])) {
+        return 'far fa-file-code';
+    }
+
+    if (in_array($ext, ['doc', 'docx'])) {
+        return 'far fa-file-word';
+    }
+
+    if (in_array($ext, ['ppt', 'pptx'])) {
+        return 'far fa-file-powerpoint';
+    }
+
+    if (in_array($ext, ['xls', 'xlsx'])) {
+        return 'far fa-file-excel';
+    }
+
+    if (in_array($ext, ['pdf'])) {
+        return 'far fa-file-pdf';
+    }
+
+    if (in_array($ext, ['zip', 'rar'])) {
+        return 'fas fa-file-archive';
+    }
+
+    return 'fa fa-file';
 }
 
 function projects()
 {
-	$projects = App\Models\Project::where('name', '!=', 'Otros')
-		->where('id_user', auth()->id)
-		->orderBy('name', 'ASC')
-		->get();
-
-
-	$other = App\Models\Project::where('name', 'Otros')
-		->where('id_user', auth()->id)
-		->first();
-
-
-	$projects = $projects->push($other);
-
-	return $projects;
+    $projects = Project::where('name', '!=', 'Otros')->orderBy('name')->get();
+    $other = Project::where('name', 'Otros')->first();
+    $projects = $projects->push($other);
+    return $projects;
 }
 
 function url($file)
 {
-	$ext = ext($file);
-	$ext = strtolower($ext);
+    $ext = ext($file);
+    $ext = strtolower($ext);
 
-	if (in_array($ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx'])) {
-		$file = str_replace(' ', '+', $file);
-		return 'https://view.officeapps.live.com/op/embed.aspx?src=https://tareas.nisadelgado.com' . $file;
-	}
+    if (in_array($ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx'])) {
+        $file = str_replace(' ', '+', $file);
+        return 'https://view.officeapps.live.com/op/embed.aspx?src=https://tareas.nisadelgado.com/resources/assets/files/' . $file;
+    }
 
-	if (in_array($ext, ['php', 'html', 'js', 'css', 'sql'])) {
-		$file = str_replace('/resources/assets/files/', '', $file);
-		return 'https://tareas.nisadelgado.com/code/' . $file;
-	}
-
-	return $file;
-}
-
-function lightbox($file, $title)
-{
-	$ext = ext($file);
-	$ext = strtolower($ext);
-
-	$title = Illuminate\Support\Str::slug($title);
-
-	if (in_array($ext, ['jpg', 'png', 'gif', 'jpeg'])) {
-		echo 'data-lightbox="' . $title . '" data-title="' . $file . '"';
-	} else {
-		echo '';
-	}
-}
-
-function icon_file($file)
-{
-	$ext = ext($file);
-	$ext = strtolower($ext);
-
-	if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif'])) {
-		return 'far fa-file-image';
-	}
-
-	if (in_array($ext, ['html', 'php', 'css', 'json', 'js', 'htaccess'])) {
-		return 'far fa-file-code';
-	}
-
-	if (in_array($ext, ['doc', 'docx'])) {
-		return 'far fa-file-word';
-	}
-
-	if (in_array($ext, ['ppt', 'pptx'])) {
-		return 'far fa-file-powerpoint';
-	}
-
-	if (in_array($ext, ['xls', 'xlsx'])) {
-		return 'far fa-file-excel';
-	}
-
-	if (in_array($ext, ['pdf'])) {
-		return 'far fa-file-pdf';
-	}
-
-	if (in_array($ext, ['zip', 'rar'])) {
-		return 'fas fa-file-archive';
-	}
-
-	return 'fa fa-file';
+    return '/resources/assets/files/' . $file;
 }

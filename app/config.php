@@ -1,52 +1,52 @@
 <?php
 
 return [
-	// General
-	'application_name' 	=> 'Tareas',
-	'version'			=> '1.0.63',
+	// General.
+	'application_name' 	=> 'Base PHP',
+	'version'			=> '1.2.60',
 
-	// Region
+	// Region.
 	'language' 			=> 'es',
 	'timezone' 			=> 'America/Caracas',
 	'charset'			=> 'utf-8',
 	
-	// Environment
-	'environment' 		=> 'production',
+	// Environment.
+	'environment' 		=> 'development',
 	'errors' 			=> true,
 
-    // Redirect after login
-    'redirect_login'    => '/dashboard',
+	// Redirect after login
+	'redirect_login' 	=> '/dashboard',
 
 	// Database.
-	'database' 		=> [
+	'database' 			=> [
 		[
-            'name'          => 'default',
-            'driver'        => 'mysql',
-            'host'          => 'nisadelgado.com',
-            'username'      => 'nisadelg_root',
-            'database'      => 'nisadelg_tareas',
-            'password'      => '&pRj@hL.gR[A'
+            'name'      => 'default',
+            'driver'    => 'mysql',
+            'host'      => 'nisadelgado.com',
+            'username'  => 'nisadelg_root',
+            'password'  => '&pRj@hL.gR[A',
+            'database'  => 'nisadelg_tareas',
         ]
 	],
 
 	// Needed to send emails locally.
-    'smtp'              => [
-        'host'          => '',
-        'username'      => '',
-        'password'      => '',
-        'port'          => ''
-    ],
+	'smtp' 				=> [
+		'host' 			=> '',
+		'username' 		=> '',
+		'password'		=> '',
+		'port'			=> ''
+	],
 
-    // Login with social networks
-    'google' => [
-        'client_id'     => '',
-        'client_secret' => '',
-        'redirect'      => ''
-    ],
+	// Login with social networks
+	'google' => [
+		'client_id' 	=> '',
+		'client_secret' => '',
+		'redirect' 		=> ''
+	],
 
-    'facebook' => [
-        'app_id'        => '',
-        'app_secret'    => '',
-        'redirect'      => ''
-    ]
+	'facebook' => [
+		'app_id'		=> '',
+		'app_secret'	=> '',
+		'redirect' 		=> ''
+	]
 ];

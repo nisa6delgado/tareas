@@ -10,46 +10,38 @@
 |
 */
 
+// Home
 $route->auth();
 
-// Layout
-$route->get('/', 'Layouts@index');
+// Home
+$route->get('/', 'Home@index');
 
-// Dashboard
-$route->get('/dashboard', 'Dashboard@index');
+// Configurations
+$route->get('/configurations', 'Configurations@edit');
+$route->post('/configurations', 'Configurations@update');
 
 // Projects
-$route->get('/projects/{slug}', 'Projects@index');
+$route->get('/projects/create', 'Projects@create');
 $route->post('/projects/store', 'Projects@store');
 $route->post('/projects/update', 'Projects@update');
-$route->get('/projects/delete/{id}', 'Projects@delete');
+
+$route->get('/projects/show/{slug}', 'Projects@show');
+$route->get('/projects/edit/{slug}', 'Projects@edit');
+$route->get('/projects/delete/{slug}', 'Projects@delete');
 
 // Tasks
+$route->get('/tasks/create/{slug}', 'Tasks@create');
 $route->post('/tasks/store', 'Tasks@store');
-$route->post('/tasks/status', 'Tasks@status');
-$route->post('/tasks/update', 'Tasks@update');
-$route->post('/tasks/move', 'Tasks@move');
-$route->get('/tasks/delete/{id}', 'Tasks@delete');
 
-// Comments
-$route->post('/comments/store', 'Comments@store');
-$route->get('/comments/delete/{id}', 'Comments@delete');
+$route->get('/tasks/show/{slug}/{id}', 'Tasks@show');
+
+$route->get('/tasks/edit/{slug}/{id}', 'Tasks@edit');
+$route->post('/tasks/update', 'Tasks@update');
+
+$route->get('/tasks/delete/{slug}/{id}', 'Tasks@delete');
+
+// Status
+$route->get('/status/{id_task}/{status}', 'Status@update');
 
 // Files
-$route->post('/files/store', 'Files@store');
 $route->get('/files/delete/{id}', 'Files@delete');
-
-// Users
-$route->get('/users', 'Users@index');
-$route->get('/users/create', 'Users@create');
-$route->post('/users/store', 'Users@store');
-$route->get('/users/edit/{id}', 'Users@edit');
-$route->post('/users/update', 'Users@update');
-$route->get('/users/delete/{id}', 'Users@delete');
-
-// Code
-$route->get('/code/{file}', 'Codes@view');
-
-// Crons
-$route->get('/servers/clear', 'Servers@clear');
-$route->get('/servers/backup', 'Servers@backup');

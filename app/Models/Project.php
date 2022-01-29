@@ -5,28 +5,46 @@ namespace App\Models;
 class Project extends Model
 {
     /**
-     * The table associated with model.
+     * The table associated with the model.
      *
-     * $var string
+     * @var string
      */
     protected $table = 'projects';
 
-    /**
-     * The primary key of the model.
+     /**
+     * The primary key associated with the table.
      *
-     * $var string
+     * @var string
      */
     protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
      *
-     * $var array
+     * @var array
      */
-    protected $fillable = ['id_user', 'name', 'description', 'icon', 'color', 'slug'];
+    protected $fillable = ['name', 'icon', 'color', 'slug'];
 
+    /**
+     * Get the tasks for the task.
+     */
     public function tasks()
     {
         return $this->hasMany('Task', 'id_project');
+    }
+
+    /**
+     * Get the default color.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getColorAttribute($value)
+    {
+        if (!$value) {
+            return 'black';
+        }
+
+        return $value;
     }
 }

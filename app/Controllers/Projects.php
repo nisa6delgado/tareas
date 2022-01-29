@@ -5,14 +5,15 @@ namespace App\Controllers;
 use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
-use Illuminate\Support\Str;
+use View;
+use Redirect;
 
 class Projects extends Controller
 {
     /**
      * Verify if user is logged.
      *
-     * @return void
+     * @return auth
      */
     public function __construct()
     {
@@ -20,70 +21,110 @@ class Projects extends Controller
     }
 
     /**
-     * Show home page.
+     * Display the specified resource.
+     *
+     * @param  string  $slug
+     * @return View
+     */
+    public function show(string $slug): View
+    {
+        $project = Project::where('slug', $slug)
+            ->with('tasks')
+            ->orderByDesc('id')
+            ->first();
+
+        return view('projects.show', compact('project'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
      *
      * @return View
      */
-    public function index($slug)
+    public function create(): View
+    {
+        return view('projects.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Redirect
+     */
+    public function store(): Redirect
+    {
+        $slug = str()->slug(request('name'));
+
+        Project::create([
+            'name'  => request('name'),
+            'icon'  => request('icon'),
+            'color' => request('color'),
+            'slug'  => $slug
+        ]);
+
+        return redirect('/projects/show/' . $slug);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  string  $slug
+     * @return View
+     */
+    public function edit(string $slug): View
+    {
+        $project = Project::where('slug', $slug)->first();
+        return view('projects.edit', compact('project'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @return Redirect
+     */
+    public function update(): Redirect
+    {
+        $slug = str()->slug(request('name'));
+
+        $project = Project::where('slug', request('slug'))->first();
+        $project->update([
+            'name'  => request('name'),
+            'icon'  => request('icon'),
+            'color' => request('color'),
+            'slug'  => $slug
+        ]);
+
+        return redirect('/projects/show/' . $slug);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  string  $slug
+     * @return Redirect
+     */
+    public function delete(string $slug): Redirect
     {
         $project = Project::where('slug', $slug)->first();
 
-        return view('projects/index', compact('project'));
-    }
-
-    /**
-     * Create a project.
-     *
-     * @return void
-     */
-    public function store(): void
-    {
-        Project::create([
-            'id_user'   => auth()->id,
-            'name'      => post('name'),
-            'color'     => post('color'),
-            'icon'      => post('icon'),
-            'slug'      => Str::slug(post('name'))
-        ]);
-    }
-
-    /**
-     * Update a proect.
-     *
-     * @return void
-     */
-    public function update(): void
-    {
-        $project = Project::find(post('id'));
-        $project->update([
-            'name'  => post('name'),
-            'color' => post('color'),
-            'icon'  => post('icon'),
-            'slug'  => Str::slug(post('name')),
-        ]);
-    }
-
-    /**
-     * Delete a proect.
-     *
-     * @return void
-     */
-    public function delete(int $id): void
-    {
-        $tasks = Task::where('id_project', $id);
+        $tasks = Task::where('id_project', $project->id)->get();
 
         foreach ($tasks as $task) {
-            $files = File::where('id_task', $task->id);
+            $files = File::where('id_task', $task->id)->get();
 
-            foreach ($files as $file) {
-                unlink($_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file->file);
+            if ($files->count()) {
+                foreach ($files as $file) {
+                    storage()->delete('resources/assets/files/' . $file->file);
+                }
+
+                File::where('id_task', $task->id)->delete();
             }
 
-            File::where('id_task', $task->id)->delete();
+            Task::find($task->id)->delete();
         }
 
-        Task::where('id_project', $id)->delete();
+        Project::where('slug', $slug)->delete();
 
-        Project::find($id)->delete();
+        return redirect('/');
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-class File extends Model
+class Configuration extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'files';
+    protected $table = 'configurations';
 
      /**
      * The primary key associated with the table.
@@ -23,5 +23,5 @@ class File extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_task', 'file'];
+    protected $fillable = ['key', 'value'];
 }

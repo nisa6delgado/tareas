@@ -5,38 +5,39 @@ namespace App\Models;
 class Task extends Model
 {
     /**
-     * The table associated with model.
+     * The table associated with the model.
      *
-     * $var string
+     * @var string
      */
     protected $table = 'tasks';
 
-    /**
-     * The primary key of the model.
+     /**
+     * The primary key associated with the table.
      *
-     * $var string
+     * @var string
      */
     protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
      *
-     * $var array
+     * @var array
      */
     protected $fillable = ['id_project', 'title', 'description', 'status'];
 
+    /**
+     * Get the project that owns the task.
+     */
     public function project()
     {
         return $this->belongsTo('Project', 'id_project');
     }
 
+    /**
+     * Get the files for the task.
+     */
     public function files()
     {
         return $this->hasMany('File', 'id_task');
-    }
-
-    public function comments()
-    {
-        return $this->hasMany('Comment', 'id_task');
     }
 }

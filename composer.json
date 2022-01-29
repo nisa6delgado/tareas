@@ -1,9 +1,9 @@
 {
-    "name": "nisadelgado/tareas",
-    "description": "Gestión de proyectos y lista de tareas",
+    "name": "nisadelgado/base",
+    "description": "Estructura base para proyectos PHP",
     "type": "project",
     "license": "MIT",
-    "version": "1.0.63",
+    "version": "1.2.60",
     "minimum-stability": "dev",
     "authors": [
         {
@@ -13,22 +13,24 @@
     ],
     "require": {
         "guzzlehttp/guzzle": "7.4.1",
-        "illuminate/database": "v9.0.0-beta.3",
-        "illuminate/pagination": "v9.0.0-beta.3",
-        "illuminate/routing": "v9.0.0-beta.3",
-        "illuminate/validation": "v9.0.0-beta.3",
-        "illuminate/view": "v9.0.0-beta.3",
-        "league/flysystem": "3.0.1",
-        "michelf/php-markdown": "1.9.1",
+        "illuminate/database": "8.77.1",
+        "illuminate/pagination": "8.77.1",
+        "illuminate/routing": "8.77.1",
+        "illuminate/validation": "8.77.1",
+        "illuminate/view": "8.77.1",
+        "league/flysystem": "2.3.2",
         "nisadelgado/framework": "1.2.60",
-        "phpmailer/phpmailer": "6.5.3"
+        "phpmailer/phpmailer": "6.5.3",
+        "league/commonmark": "2.1.1"
     },
     "require-dev": {
+        "beyondcode/expose": "2.0.2",
         "fakerphp/faker": "1.17.0",
         "maximebf/debugbar": "1.17.3",
-        "phpstan/phpstan": "1.4.2",
-        "phpunit/phpunit": "9.5.12",
-        "psy/psysh": "0.11.1"
+        "phpstan/phpstan": "1.3.0",
+        "phpunit/phpunit": "9.5.11",
+        "psy/psysh": "0.11.0",
+        "spatie/ignition": "1.0.2"
     },
     "autoload": {
         "psr-4": {

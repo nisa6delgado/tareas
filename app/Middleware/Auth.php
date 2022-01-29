@@ -2,22 +2,21 @@
 
 namespace App\Middleware;
 
-use Closure;
-
 class Auth
 {
-	/**
-	 * Verify if user is logged.
-	 *
-	 * @param  Request $request
-	 * @param  Closure $next
-	 * @return Closure
-	 */
-    public function handle($request, Closure $next)
+    /**
+     * Handle an incoming request.
+     *
+     * @param  $request
+     * @param  $next
+     * @return mixed
+     */
+    public function handle($request, $next)
     {
-        if (!auth()) {
+        if (!session('authenticate')) {
             return redirect('/login');
         }
+
         return $next($request);
     }
 }

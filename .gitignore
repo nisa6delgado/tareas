@@ -1,10 +1,10 @@
 /.idea
 /.vscode
 /node_modules
-/resources/assets/files
 /vendor
 .ftpconfig
 .ftpquota
 error_log
 desktop.ini
+npm-debug.log
 sftp-config.json

@@ -5,13 +5,15 @@ namespace App\Controllers;
 use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
+use View;
+use Redirect;
 
 class Tasks extends Controller
 {
     /**
      * Verify if user is logged.
      *
-     * @return void
+     * @return auth
      */
     public function __construct()
     {
@@ -19,94 +21,123 @@ class Tasks extends Controller
     }
 
     /**
-     * Create a task.
+     * Display the specified resource.
      *
-     * @return string
+     * @param  string $slug
+     * @param  int $id
+     * @return View
      */
-    public function store(): string
+    public function show(string $slug, int $id): View
     {
+        $task = Task::find($id);
+        return view('tasks.show', compact('task'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return View
+     */
+    public function create($slug): View
+    {
+        $project = Project::where('slug', $slug)->first();
+        return view('tasks.create', compact('project'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Redirect
+     */
+    public function store(): Redirect
+    {
+        $project = Project::where('slug', request('slug'))->first();
+
         $task = Task::create([
-            'id_project'  => post('id_project'),
-            'title'       => post('title'),
-            'description' => post('description'),
-            'status'      => 0,
+            'id_project'    => $project->id,
+            'title'         => request('title'),
+            'description'   => request('description'),
+            'status'        => 0
         ]);
 
-        $files = files()->input('files')->upload('resources/assets/files');
+        $slug = $project->slug;
 
-        if (set($files->filenames)) {
-            foreach (json($files->filenames) as $file) {
+        $files = request('files')->save('resources/assets/files');
+
+        if ($files->filename) {
+            foreach($files->filename as $file) {
                 File::create([
-                    'id_task' => $task->id,
-                    'file'    => $file,
+                    'id_task'   => $task->id,
+                    'file'      => $file
                 ]);
             }
         }
 
-        $project = Project::find(post('id_project'));
-
-        return $project->slug;
+        return redirect('/projects/show/' . $slug);
     }
 
     /**
-     * Update a task.
+     * Show the form for editing the specified resource.
      *
-     * @return string
+     * @param  string   $slug
+     * @param  int      $id
+     * @return View
      */
-    public function update(): string
+    public function edit(string $slug, int $id): View
     {
-        $task = Task::find(post('id'));
+        $task = Task::find($id);
+        return view('tasks.edit', compact('task'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @return Redirect
+     */
+    public function update(): Redirect
+    {
+        $task = Task::find(request('id'));
         $task->update([
-            'title'        => post('title'),
-            'description' => post('description'),
+            'title'         => request('title'),
+            'description'   => request('description'),
+            'status'        => 0
         ]);
 
-        return $task->project->slug;
+        $files = request('files')->save('resources/assets/files');
+
+        if ($files->filename) {
+            foreach($files->filename as $file) {
+                File::create([
+                    'id_task'   => $task->id,
+                    'file'      => $file
+                ]);
+            }
+        }
+
+        return redirect('/tasks/show/' . $task->project->slug . '/' . $task->id);
     }
 
     /**
-     * Change status to task.
+     * Remove the specified resource from storage.
      *
-     * @return string
+     * @param  string   $slug
+     * @param  int      $id
+     * @return Redirect
      */
-    public function status(): string
+    public function delete(string $slug, int $id): Redirect
     {
-        $task = Task::find(post('id'));
-        $task->update(['status' => post('status')]);
+        $files = File::where('id_task', $id)->get();
 
-        $project = Project::find($task->id_project);
-        return $project->slug;
-    }
-
-    /**
-     * Move task to other project.
-     *
-     * @return string
-     */
-    public function move(): string
-    {
-        $task = Task::find(post('id'));
-        $task->update(['id_project' => post('id_project')]);
-
-        $project = Project::find($task->id_project);
-        return $project->slug;
-    }
-
-    /**
-     * Delete a task.
-     *
-     * @return void
-     */
-    public function delete(int $id): void
-    {
-        $files = File::where('id_task', $id);
-
-        foreach ($files as $file) {
-            unlink($_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file->file);
+        if ($files->count()) {
+            foreach ($files as $file) {
+                storage()->delete('resources/assets/files/' . $file->file);
+            }
         }
 
         File::where('id_task', $id)->delete();
 
         Task::find($id)->delete();
+
+        return redirect('/projects/show/' . $slug);
     }
 }
