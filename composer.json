@@ -1,10 +1,10 @@
 {
-    "name": "nisadelgado/base",
-    "description": "Estructura base para proyectos PHP",
+    "name": "nisadelgado/tareas",
+    "description": "Gestión de proyectos y listas de tareas",
     "type": "project",
     "license": "MIT",
-    "version": "1.2.60",
-    "minimum-stability": "dev",
+    "version": "1.0.71",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Nisa Delgado",
