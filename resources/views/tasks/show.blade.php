@@ -44,9 +44,11 @@
 
         <hr class="bg-gray-300 my-6">
 
-        <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
-            {!! str()->markdown($task->description ?? '') !!}
-        </div>
+        @if($task->description)
+            <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
+                {!! str()->markdown($task->description ?? '') !!}
+            </div>
+        @endif
 
         @if($task->files->count())
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
