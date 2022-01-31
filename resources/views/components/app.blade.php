@@ -31,7 +31,7 @@
                 </a>
             </div>
 
-            <div class="pr-0 flex justify-end">
+            <div class="pr-0 flex justify-end hidden sm:flex">
                 <div class="flex relative inline-block float-right">
                     <div class="relative text-sm">
                         <a data-tooltip-target="configuration" href="/configurations">
