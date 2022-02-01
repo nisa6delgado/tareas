@@ -20,16 +20,15 @@ class Status extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  string   $slug
      * @param  int      $id_task
      * @param  string   $status
      * @return Redirect
      */
-    public function update(string $slug, int $id_task, string $status): Redirect
+    public function update(int $id_task, string $status): Redirect
     {
         $task = Task::find($id_task);
         $status = ($status == 'done') ? 1 : 0;
         $task->update(['status' => $status]);
-        return redirect('/projects/status/' . $slug . '/' . $id_task);
+        return redirect('/tasks/show/' . $task->project->slug . '/' . $id_task);
     }
 }

@@ -14,7 +14,7 @@
 
                     @if($task->status)
                         <x-title-button
-                            href="{{ '/tasks/status/' . $task->id . '/undone' }}"
+                            href="{{ '/status/' . $task->id . '/undone' }}"
                             title="Marcar tarea como pendiente"
                             color="gray"
                             icon="far fa-circle"
@@ -22,7 +22,7 @@
                         />
                     @else
                         <x-title-button
-                            href="{{ '/tasks/status/' . $task->id . '/done' }}"
+                            href="{{ '/status/' . $task->id . '/done' }}"
                             title="Marcar tarea como realizada"
                             color="green"
                             icon="fa fa-check"
