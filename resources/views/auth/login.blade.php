@@ -46,6 +46,10 @@
 
         <section class="w-full lg:w-6/12 mb-20">
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
+                @if(messages('error'))
+                    <div class="bg-red-100 p-3 mb-4 text-center rounded">{{ message('error') }}</div>
+                @endif
+
                 <form method="POST">
                     <x-form-input label="Usuario" key="user" value=""/>
 

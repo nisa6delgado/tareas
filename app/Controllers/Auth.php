@@ -33,6 +33,6 @@ class Auth extends Controller
             return redirect('/');
         }
 
-        return redirect('/login');
+        return redirect('/login')->with('error', 'Datos incorrectos');
     }
 }
