@@ -9,11 +9,11 @@
             <form method="POST" action="/projects/update">
                 <input type="hidden" name="slug" value="{{ $project->slug }}">
 
-                <x-form-input label="Nombre" key="name" value="{{ $project->name }}"/>
+                <x-form-input required label="Nombre" key="name" value="{{ $project->name }}"/>
 
-                <x-form-input label="Ícono" key="icon" value="{{ $project->icon }}"/>
+                <x-form-input required label="Ícono" key="icon" value="{{ $project->icon }}"/>
 
-                <x-form-input label="Color" key="color" value="{{ $project->color }}"/>
+                <x-form-input required label="Color" key="color" value="{{ $project->color }}"/>
 
                 <x-form-button/>
             </form>

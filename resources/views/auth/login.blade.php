@@ -51,9 +51,9 @@
                 @endif
 
                 <form method="POST">
-                    <x-form-input label="Usuario" key="user" value=""/>
+                    <x-form-input required label="Usuario" key="user" value=""/>
 
-                    <x-form-input label="Contraseña" key="password" password value=""/>
+                    <x-form-input required label="Contraseña" key="password" password value=""/>
 
                     <x-form-button text="Iniciar sesión"/>
                 </form>

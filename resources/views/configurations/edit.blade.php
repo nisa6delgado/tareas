@@ -14,12 +14,14 @@
                             key="{{ $configuration->key }}"
                             value="{{ $configuration->value }}"
                             password
+                            required
                         />
                     @else
                         <x-form-input
                             label="{{ $configuration->key }}"
                             key="{{ $configuration->key }}"
                             value="{{ $configuration->value }}"
+                            required
                         />
                     @endif
                 @endforeach

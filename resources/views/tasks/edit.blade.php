@@ -9,7 +9,7 @@
             <form enctype="multipart/form-data" method="POST" action="/tasks/update">
                 <input type="hidden" name="id" value="{{ $task->id }}">
 
-                <x-form-input label="Título" key="title" value="{{ $task->title }}"/>
+                <x-form-input required label="Título" key="title" value="{{ $task->title }}"/>
 
                 <x-form-textarea label="Descripción" key="description" value="{!! $task->description !!}"/>
 

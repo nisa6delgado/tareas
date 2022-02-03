@@ -5,6 +5,6 @@
         </label>
     </div>
     <div class="md:w-2/3">
-        <input class="form-input block w-full focus:bg-white" id="{{ $key }}" name="{{ $key }}" type="{{ isset($password) ? 'password' : 'text' }}" value="{{ $value }}">
+        <input class="form-input block w-full focus:bg-white" id="{{ $key }}" name="{{ $key }}" type="{{ isset($password) ? 'password' : 'text' }}" {{ isset($required) ? 'required' : '' }} value="{{ $value }}">
     </div>
 </div>

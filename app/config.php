@@ -19,10 +19,10 @@ return [
 		[
             'name'      => 'default',
             'driver'    => 'mysql',
-            'host'      => 'nisadelgado.com',
-            'username'  => 'nisadelg_root',
-            'password'  => '&pRj@hL.gR[A',
-            'database'  => 'nisadelg_tareas',
+            'host'      => 'localhost',
+            'username'  => 'root',
+            'password'  => '',
+            'database'  => 'tareas',
         ]
 	]
 ];

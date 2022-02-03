@@ -2,6 +2,7 @@
 /.vscode
 /node_modules
 /vendor
+/app/config.php
 .ftpconfig
 .ftpquota
 error_log

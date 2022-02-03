@@ -9,7 +9,7 @@
             <form enctype="multipart/form-data" method="POST" action="/tasks/store">
                 <input type="hidden" name="slug" value="{{ $project->slug }}">
 
-                <x-form-input label="Título" key="title" value=""/>
+                <x-form-input required label="Título" key="title" value=""/>
 
                 <x-form-textarea label="Descripción" key="description" value=""></x-form-textarea>
 
