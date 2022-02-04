@@ -61,8 +61,6 @@ function icon($file)
 function projects()
 {
     $projects = Project::where('name', '!=', 'Otros')->orderBy('name')->get();
-    $other = Project::where('name', 'Otros')->first();
-    $projects = $projects->push($other);
     return $projects;
 }
 
