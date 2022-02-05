@@ -10,4 +10,6 @@ $schema->create('files', function ($table) {
     $table->foreign('id_task')
         ->references('id')
         ->on('tasks');
+
+    $table->index('file');
 });
