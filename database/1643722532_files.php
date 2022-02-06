@@ -1,8 +1,8 @@
 <?php
 
-$schema->dropIfExists('files');
+$schema['default']->dropIfExists('files');
 
-$schema->create('files', function ($table) {
+$schema['default']->create('files', function ($table) {
 	$table->id();
     $table->int('id_task');
     $table->string('file')->unique();

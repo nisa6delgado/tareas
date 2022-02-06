@@ -27,7 +27,7 @@
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
             <div class="pl-4 md:pl-0">
                 <a class="flex items-center text-{{ globals('color') }}-600 text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
-                    <i class="fas fa-list mr-2"></i> Tareas
+                    <i class="fas fa-tasks mr-2"></i> Tareas
                 </a>
             </div>
 

@@ -1,8 +1,8 @@
 <?php
 
-$schema->dropIfExists('configurations');
+$schema['default']->dropIfExists('configurations');
 
-$schema->create('configurations', function ($table) {
+$schema['default']->create('configurations', function ($table) {
 	$table->id();
     $table->string('key')->unique();
     $table->string('value')->nullable();
