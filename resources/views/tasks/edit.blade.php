@@ -1,4 +1,4 @@
-<x-app active="{{ $task->project->slug }}">
+<x-template active="{{ $task->project->slug }}">
     <section class="w-full lg:w-4/5 mb-20">
         <!--Title-->
         <x-title icon="{{ $task->project->icon }}" title="{{ $task->title }} » Editar tarea"/>
@@ -9,11 +9,11 @@
             <form enctype="multipart/form-data" method="POST" action="/tasks/update">
                 <input type="hidden" name="id" value="{{ $task->id }}">
 
-                <x-form-input required label="Título" key="title" value="{{ $task->title }}"/>
+                <x-input required label="Título" key="title" value="{{ $task->title }}"/>
 
-                <x-form-textarea label="Descripción" key="description" value="{!! $task->description !!}"/>
+                <x-textarea label="Descripción" key="description" value="{!! $task->description !!}"/>
 
-                <x-form-file label="Archivos adjuntos" multiple key="files[]"/>
+                <x-input-file label="Archivos adjuntos" multiple key="files[]"/>
 
                 <div class="md:flex mb-6">
                     <div class="md:w-1/3"></div>
@@ -33,8 +33,8 @@
                     </div>
                 </div>
 
-                <x-form-button/>
+                <x-button/>
             </form>
         </div>
     </section>
-</x-app>
+</x-template>

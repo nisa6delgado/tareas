@@ -1,4 +1,4 @@
-<x-app active="configuration">
+<x-template active="configuration">
     <section class="w-full lg:w-4/5 mb-20">
         <!--Title-->
         <x-title icon="fa fa-wrench" title="Configuración"/>
@@ -9,7 +9,7 @@
             <form method="POST">
                 @foreach($configurations as $configuration)
                     @if($configuration->key == 'password')
-                        <x-form-input
+                        <x-input
                             label="{{ $configuration->key }}"
                             key="{{ $configuration->key }}"
                             value="{{ $configuration->value }}"
@@ -17,7 +17,7 @@
                             required
                         />
                     @else
-                        <x-form-input
+                        <x-input
                             label="{{ $configuration->key }}"
                             key="{{ $configuration->key }}"
                             value="{{ $configuration->value }}"
@@ -26,8 +26,8 @@
                     @endif
                 @endforeach
 
-                <x-form-button/>
+                <x-button/>
             </form>
         </div>
     </section>
-</x-app>
+</x-template>

@@ -1,4 +1,4 @@
-<x-app active="{{ $project->slug }}">
+<x-template active="{{ $project->slug }}">
     <section class="w-full lg:w-4/5 mb-20">
         <!--Title-->
         <x-title icon="{{ $project->icon }}" title="{{ $project->name }} » Crear nueva tarea"/>
@@ -9,14 +9,14 @@
             <form enctype="multipart/form-data" method="POST" action="/tasks/store">
                 <input type="hidden" name="slug" value="{{ $project->slug }}">
 
-                <x-form-input required label="Título" key="title" value=""/>
+                <x-input required label="Título" key="title" value=""/>
 
-                <x-form-textarea label="Descripción" key="description" value=""></x-form-textarea>
+                <x-textarea label="Descripción" key="description" value=""/>
 
-                <x-form-file label="Archivos adjuntos" multiple key="files[]"/>
+                <x-input-file label="Archivos adjuntos" multiple key="files[]"/>
 
-                <x-form-button/>
+                <x-button/>
             </form>
         </div>
     </section>
-</x-app>
+</x-template>
