@@ -1,4 +1,4 @@
-<x-app active="{{ $project->slug }}">
+<x-template active="{{ $project->slug }}">
     <section class="w-full lg:w-4/5 mb-20">
         <!--Title-->
         <x-title icon="{{ $project->icon }}" title="{{ $project->name }} » Editar"/>
@@ -9,14 +9,14 @@
             <form method="POST" action="/projects/update">
                 <input type="hidden" name="slug" value="{{ $project->slug }}">
 
-                <x-form-input required label="Nombre" key="name" value="{{ $project->name }}"/>
+                <x-input required label="Nombre" key="name" value="{{ $project->name }}"/>
 
-                <x-form-input required label="Ícono" key="icon" value="{{ $project->icon }}"/>
+                <x-input required label="Ícono" key="icon" value="{{ $project->icon }}"/>
 
-                <x-form-input required label="Color" key="color" value="{{ $project->color }}"/>
+                <x-input required label="Color" key="color" value="{{ $project->color }}"/>
 
-                <x-form-button/>
+                <x-button/>
             </form>
         </div>
     </section>
-</x-app>
+</x-template>

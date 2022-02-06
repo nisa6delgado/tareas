@@ -1,10 +1,10 @@
-<x-app active="{{ $task->project->slug }}">
+<x-template active="{{ $task->project->slug }}">
     <section class="w-full lg:w-4/5 mb-20">
         <!--Title-->
         <x-title icon="{{ $task->project->icon }}" title="{{ $task->title }}">
             <x-slot name="buttons">
                 <div class="flex items-center ml-1">
-                    <x-title-button
+                    <x-link
                         href="{{ '/tasks/edit/' . $task->project->slug . '/' . $task->id }}"
                         title="Editar esta tarea"
                         color="gray"
@@ -13,7 +13,7 @@
                     />
 
                     @if($task->status)
-                        <x-title-button
+                        <x-link
                             href="{{ '/status/' . $task->id . '/undone' }}"
                             title="Marcar tarea como pendiente"
                             color="gray"
@@ -21,7 +21,7 @@
                             id="undone"
                         />
                     @else
-                        <x-title-button
+                        <x-link
                             href="{{ '/status/' . $task->id . '/done' }}"
                             title="Marcar tarea como realizada"
                             color="green"
@@ -30,7 +30,7 @@
                         />
                     @endif
 
-                    <x-title-button
+                    <x-link
                         href="{{ '/tasks/delete/' . $task->project->slug . '/' . $task->id }}"
                         title="Eliminar esta tarea"
                         color="red"
@@ -64,4 +64,4 @@
             </div>
         @endif
     </section>
-</x-app>
+</x-template>
