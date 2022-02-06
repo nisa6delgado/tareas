@@ -18,11 +18,11 @@ return [
 	'database' 			=> [
 		[
             'name'      => 'default',
-            'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'username'  => 'root',
+            'driver'    => 'sqlite',
+            'host'      => '',
+            'username'  => '',
             'password'  => '',
-            'database'  => 'tareas',
+            'database'  => 'resources/assets/files/database',
         ]
 	]
 ];

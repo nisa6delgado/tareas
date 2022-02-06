@@ -1,8 +1,8 @@
 <?php
 
-$schema->dropIfExists('projects');
+$schema['default']->dropIfExists('projects');
 
-$schema->create('projects', function ($table) {
+$schema['default']->create('projects', function ($table) {
 	$table->id();
     $table->string('name');
     $table->string('icon');

@@ -1,8 +1,8 @@
 <?php
 
-$schema->dropIfExists('tasks');
+$schema['default']->dropIfExists('tasks');
 
-$schema->create('tasks', function ($table) {
+$schema['default']->create('tasks', function ($table) {
 	$table->id();
     $table->int('id_project');
     $table->string('title');
