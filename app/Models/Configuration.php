@@ -23,5 +23,5 @@ class Configuration extends Model
      *
      * @var array
      */
-    protected $fillable = ['key', 'value'];
+    protected $fillable = ['key', 'value', 'date_create', 'date_update'];
 }

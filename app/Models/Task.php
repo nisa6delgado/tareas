@@ -23,7 +23,7 @@ class Task extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_project', 'title', 'description', 'status'];
+    protected $fillable = ['id_project', 'title', 'description', 'status', 'date_create', 'date_update'];
 
     /**
      * Get the project that owns the task.
