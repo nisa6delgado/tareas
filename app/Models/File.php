@@ -23,5 +23,5 @@ class File extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_task', 'file'];
+    protected $fillable = ['id_task', 'file', 'date_create', 'date_update'];
 }

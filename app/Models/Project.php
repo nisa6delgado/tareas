@@ -23,7 +23,7 @@ class Project extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'icon', 'color', 'slug'];
+    protected $fillable = ['name', 'icon', 'color', 'slug', 'date_create', 'date_update'];
 
     /**
      * Get the tasks for the task.
