@@ -57,7 +57,9 @@ class Tasks extends Controller
             'id_project'    => $project->id,
             'title'         => request('title'),
             'description'   => request('description'),
-            'status'        => 0
+            'status'        => 0,
+            'date_create'   => now('Y-m-d H:i:s'),
+            'date_update'   => now('Y-m-d H:i:s')
         ]);
 
         $slug = $project->slug;
@@ -100,7 +102,8 @@ class Tasks extends Controller
         $task->update([
             'title'         => request('title'),
             'description'   => request('description'),
-            'status'        => 0
+            'status'        => 0,
+            'date_update'   => now('Y-m-d H:i:s')
         ]);
 
         $files = request('files')->save('resources/assets/files');

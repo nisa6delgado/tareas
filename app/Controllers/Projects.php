@@ -56,10 +56,12 @@ class Projects extends Controller
         $slug = str()->slug(request('name'));
 
         Project::create([
-            'name'  => request('name'),
-            'icon'  => request('icon'),
-            'color' => request('color'),
-            'slug'  => $slug
+            'name'          => request('name'),
+            'icon'          => request('icon'),
+            'color'         => request('color'),
+            'slug'          => $slug,
+            'date_create'   => now('Y-m-d H:i:s'),
+            'date_update'   => now('Y-m-d H:i:s')
         ]);
 
         return redirect('/projects/show/' . $slug);
@@ -88,10 +90,11 @@ class Projects extends Controller
 
         $project = Project::where('slug', request('slug'))->first();
         $project->update([
-            'name'  => request('name'),
-            'icon'  => request('icon'),
-            'color' => request('color'),
-            'slug'  => $slug
+            'name'          => request('name'),
+            'icon'          => request('icon'),
+            'color'         => request('color'),
+            'slug'          => $slug,
+            'date_update'   => now('Y-m-d H:i:s')
         ]);
 
         return redirect('/projects/show/' . $slug);

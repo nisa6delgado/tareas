@@ -38,6 +38,7 @@ class Task extends Model
      */
     public function files()
     {
-        return $this->hasMany('File', 'id_task');
+        return $this->hasMany('File', 'id_task')
+            ->orderBy('file');
     }
 }
