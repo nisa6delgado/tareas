@@ -28,7 +28,11 @@ class Status extends Controller
     {
         $task = Task::find($id_task);
         $status = ($status == 'done') ? 1 : 0;
-        $task->update(['status' => $status]);
+        $task->update([
+            'status'        => $status,
+            'date_update'   => now('Y-m-d H:i:s')
+        ]);
+
         return redirect('/tasks/show/' . $task->project->slug . '/' . $id_task);
     }
 }

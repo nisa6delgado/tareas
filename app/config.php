@@ -22,7 +22,7 @@ return [
             'host'      => '',
             'username'  => '',
             'password'  => '',
-            'database'  => 'resources/assets/files/database',
+            'database'  => 'database/database',
         ]
 	]
 ];
