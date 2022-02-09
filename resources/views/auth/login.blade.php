@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Tareas</title>
 <link rel="icon" type="image/png" href="{{ globals('icon') }}">
-<meta name="theme-color" content="{{ globals('theme-color') }}">
+<meta name="theme-color" content="white">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,12 +21,10 @@
 </head>
 
 <body x-data="app" class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-    <input type="hidden" id="color" value="{{ globals('color') }}">
-
     <nav id="header" class="bg-white fixed w-full z-20 top-0 shadow">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
             <div class="pl-4 md:pl-0">
-                <a class="flex items-center text-{{ globals('color') }}-600 text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
+                <a class="flex items-center text-dark text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
                     <i class="fas fa-tasks mr-2"></i> Tareas
                 </a>
             </div>
