@@ -2,6 +2,7 @@
 
 use App\Models\Configuration;
 use App\Models\Project;
+use Illuminate\Support\Str;
 
 function ext($file)
 {
@@ -62,6 +63,11 @@ function projects()
 {
     $projects = Project::where('name', '!=', 'Otros')->orderBy('name')->get();
     return $projects;
+}
+
+function str()
+{
+    return new Str;
 }
 
 function url($file)

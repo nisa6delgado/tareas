@@ -10,7 +10,7 @@ function app() {
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Eliminar',
-                confirmButtonColor: color,
+                confirmButtonColor: 'black',
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {

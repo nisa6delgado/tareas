@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Tareas</title>
 <link rel="icon" type="image/png" href="{{ globals('icon') }}">
-<meta name="theme-color" content="{{ globals('theme-color') }}">
+<meta name="theme-color" content="white">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -21,12 +21,12 @@
 </head>
 
 <body x-data="app" class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-    <input type="hidden" id="color" value="{{ globals('color') }}">
+    <input type="hidden" id="color" value="black">
 
     <nav id="header" class="bg-white fixed w-full z-20 top-0 shadow">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
             <div class="pl-4 md:pl-0">
-                <a class="flex items-center text-{{ globals('color') }}-600 text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
+                <a class="flex items-center text-dark text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
                     <i class="fas fa-tasks mr-2"></i> Tareas
                 </a>
             </div>
@@ -58,18 +58,18 @@
         <div class="w-full lg:w-1/5 px-6 text-xl text-gray-800 leading-normal">
             <div class="w-full sticky inset-0 hidden overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 my-2 lg:my-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-10" id="menu-content" style="top: 5.5em">
                 <ul class="list-reset py-2 md:py-0">
-                    <li class="list-none py-1 md:my-2 hover:bg-{{ globals('color') }}-100 lg:hover:bg-transparent border-l-4 border-transparent {{ ($active == '/') ? 'font-bold border-' . globals('color') . '-600' : '' }}">
-                        <a href="/" class="block pl-4 align-middle text-gray-700 no-underline hover:text-{{ globals('color') }}-600 {{ ($active == '/') ? 'text-' . globals('color') . '-600' : '' }}">
-                            <i class="fa fa-home {{ ($active == '/') ? 'text-' . globals('color') . '-600' : '' }}"></i>
-                            <span class="pb-1 md:pb-0 text-sm {{ ($active == '/') ? 'text-' . globals('color') . '-600' : '' }}">Inicio</span>
+                    <li class="list-none py-1 md:my-2 hover:bg-black lg:hover:bg-transparent border-l-4 border-transparent {{ ($active == '/') ? 'font-bold border-black' : '' }}">
+                        <a href="/" class="block pl-4 align-middle text-black no-underline hover:text-dark {{ ($active == '/') ? 'text-dark' : '' }}">
+                            <i class="fa fa-home {{ ($active == '/') ? 'text-dark' : '' }}"></i>
+                            <span class="pb-1 md:pb-0 text-sm {{ ($active == '/') ? 'text-dark' : '' }}">Inicio</span>
                         </a>
                     </li>
 
                     @foreach(projects() as $project)
-                        <li class="list-none py-1 md:my-2 hover:bg-{{ globals('color') }}-100 lg:hover:bg-transparent border-l-4 border-transparent {{ ($active == $project->slug) ? 'font-bold border-' . globals('color') . '-600' : '' }}">
-                            <a href="{{ '/projects/show/' . $project->slug }}" class="block pl-4 align-middle text-gray-700 no-underline hover:text-{{ globals('color') }}-600">
-                                <i class="{{ ($active == $project->slug) ? 'text-' . globals('color') . '-600' : '' }} {{ $project->icon }}"></i>
-                                <span class="{{ ($active == $project->slug) ? 'text-' . globals('color') . '-600' : '' }} pb-1 md:pb-0 text-sm">{{ $project->name }}</span>
+                        <li class="list-none py-1 md:my-2 hover:bg-black lg:hover:bg-transparent border-l-4 border-transparent {{ ($active == $project->slug) ? 'font-bold border-black' : '' }}">
+                            <a href="{{ '/projects/show/' . $project->slug }}" class="block pl-4 align-middle text-black no-underline hover:text-dark">
+                                <i class="{{ ($active == $project->slug) ? 'text-dark' : '' }} {{ $project->icon }}"></i>
+                                <span class="{{ ($active == $project->slug) ? 'text-dark' : '' }} pb-1 md:pb-0 text-sm">{{ $project->name }}</span>
                             </a>
                         </li>
                     @endforeach
