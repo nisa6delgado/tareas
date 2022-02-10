@@ -3,8 +3,6 @@ function app() {
         confirmDelete (event, element, ajax = null) {
             event.preventDefault();
 
-            color: document.getElementById('color').value;
-
             Swal.fire({
                 title: '¿Está seguro que desea eliminar?',
                 icon: 'warning',
