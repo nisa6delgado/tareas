@@ -4,8 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="mobile-web-app-capable" content="yes">
+
 <title>Tareas</title>
 <link rel="icon" type="image/png" href="{{ globals('icon') }}">
 <meta name="theme-color" content="white">
@@ -21,8 +24,6 @@
 </head>
 
 <body x-data="app" class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-    <input type="hidden" id="color" value="black">
-
     <nav id="header" class="bg-white fixed w-full z-20 top-0 shadow">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
             <div class="pl-4 md:pl-0">
