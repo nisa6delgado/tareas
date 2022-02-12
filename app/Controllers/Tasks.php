@@ -70,7 +70,7 @@ class Tasks extends Controller
             foreach($files->filename as $file) {
                 File::create([
                     'id_task'   => $task->id,
-                    'file'      => $file
+                    'file'      => file_slug($file)
                 ]);
             }
         }
@@ -112,7 +112,7 @@ class Tasks extends Controller
             foreach($files->filename as $file) {
                 File::create([
                     'id_task'   => $task->id,
-                    'file'      => $file
+                    'file'      => file_slug($file)
                 ]);
             }
         }
