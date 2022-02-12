@@ -12,6 +12,20 @@ function ext($file)
     return $ext;
 }
 
+function file_slug($file)
+{
+    $pathinfo = pathinfo($file);
+    $filename = $pathinfo['filename'];
+    $extension = $pathinfo['extension'];
+
+    $old = $_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file;
+    $new = $_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . str()->slug($filename) . '.' . $extension;
+
+    rename($old, $new);
+
+    return str()->slug($filename) . '.' . $extension;
+}
+
 function globals($var)
 {
     if (isset($_SESSION['user'][$var])) {
