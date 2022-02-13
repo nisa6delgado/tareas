@@ -15,7 +15,7 @@
 
                 <x-input required label="Color" key="color" value="{{ $project->color }}"/>
 
-                <x-button/>
+                <x-button class="save"/>
             </form>
         </div>
     </section>

@@ -10,6 +10,7 @@
                         color="gray"
                         icon="fa fa-plus"
                         id="create"
+                        class="create"
                     />
 
                     <x-link
