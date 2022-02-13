@@ -13,7 +13,7 @@
 
                 <x-input required label="Color" key="color" value=""/>
 
-                <x-button/>
+                <x-button class="save"/>
             </form>
         </div>
     </section>

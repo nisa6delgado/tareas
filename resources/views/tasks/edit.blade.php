@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <x-button/>
+                <x-button class="save"/>
             </form>
         </div>
     </section>

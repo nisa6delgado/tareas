@@ -1,5 +1,46 @@
 function app() {
     return {
+        init () {
+            document.addEventListener('keydown', event => {
+                if (event.ctrlKey && event.key == 'a') {
+                    event.preventDefault();
+                    document.getElementsByClassName('create')[0].click();
+                }
+
+                if (event.ctrlKey && event.key == 'd') {
+                    event.preventDefault();
+                    document.getElementsByClassName('delete')[0].click();
+                }
+
+                if (event.ctrlKey && event.key == 'e') {
+                    event.preventDefault();
+                    document.getElementsByClassName('edit')[0].click();
+                }
+
+                if (event.ctrlKey && event.key == 'h') {
+                    event.preventDefault();
+                    window.location.href = '/';
+                }
+
+                if (event.ctrlKey && event.key == 'q') {
+                    event.preventDefault();
+
+                    if (document.getElementsByClassName('done')[0]) {
+                        document.getElementsByClassName('done')[0].click();
+                    }
+
+                    if (document.getElementsByClassName('undone')[0]) {
+                        document.getElementsByClassName('undone')[0].click();
+                    }
+                }
+
+                if (event.ctrlKey && event.key == 's') {
+                    event.preventDefault();
+                    document.getElementsByClassName('save')[0].click();
+                }
+            });
+        },
+
         confirmDelete (event, element, ajax = null) {
             event.preventDefault();
 

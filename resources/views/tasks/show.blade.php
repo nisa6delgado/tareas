@@ -10,6 +10,7 @@
                         color="gray"
                         icon="fa fa-edit"
                         id="edit"
+                        class="edit"
                     />
 
                     @if($task->status)
@@ -19,6 +20,7 @@
                             color="gray"
                             icon="far fa-circle"
                             id="undone"
+                            class="undone"
                         />
                     @else
                         <x-link
@@ -27,6 +29,7 @@
                             color="green"
                             icon="fa fa-check"
                             id="done"
+                            class="done"
                         />
                     @endif
 
@@ -37,6 +40,7 @@
                         icon="fa fa-trash"
                         delete="true"
                         id="delete"
+                        class="delete"
                     />
                 </div>
             </x-slot>

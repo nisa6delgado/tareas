@@ -26,7 +26,7 @@
                     @endif
                 @endforeach
 
-                <x-button/>
+                <x-button class="save"/>
             </form>
         </div>
     </section>

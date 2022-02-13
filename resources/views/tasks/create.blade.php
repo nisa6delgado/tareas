@@ -15,7 +15,7 @@
 
                 <x-input-file label="Archivos adjuntos" multiple key="files[]"/>
 
-                <x-button/>
+                <x-button class="save"/>
             </form>
         </div>
     </section>

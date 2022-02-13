@@ -10,6 +10,7 @@
                         color="gray"
                         icon="fa fa-plus"
                         id="create"
+                        class="create"
                     />
 
                     <x-link
@@ -18,6 +19,7 @@
                         color="gray"
                         icon="fa fa-edit"
                         id="edit"
+                        class="edit"
                     />
 
                     <x-link
@@ -27,6 +29,7 @@
                         icon="fa fa-trash"
                         delete="true"
                         id="delete"
+                        class="delete"
                     />
                 </div>
             </x-slot>
