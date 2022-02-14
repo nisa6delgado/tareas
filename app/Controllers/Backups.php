@@ -17,6 +17,11 @@ class Backups extends Controller
     {
         $files = scandir(server('DOCUMENT_ROOT') . '/resources/assets/files');
 
+        if (!file_exists(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip')) {
+            fopen(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip', 'w+');
+            fclose(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip');
+        }
+
         $zip = new ZipArchive();
         $zip->open(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip', ZipArchive::OVERWRITE);
 
