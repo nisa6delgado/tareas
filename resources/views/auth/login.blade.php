@@ -56,7 +56,7 @@
 
                     <x-input required label="Contraseña" key="password" password value=""/>
 
-                    <x-button text="Iniciar sesión"/>
+                    <x-button class="" text="Iniciar sesión"/>
                 </form>
             </div>
         </section>

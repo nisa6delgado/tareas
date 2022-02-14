@@ -18,8 +18,8 @@ function file_slug($file)
     $filename = $pathinfo['filename'];
     $extension = $pathinfo['extension'];
 
-    $old = $_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . $file;
-    $new = $_SERVER['DOCUMENT_ROOT'] . '/resources/assets/files/' . str()->slug($filename) . '.' . $extension;
+    $old = server('DOCUMENT_ROOT') . '/resources/assets/files/' . $file;
+    $new = server('DOCUMENT_ROOT') . '/resources/assets/files/' . str()->slug($filename) . '.' . $extension;
 
     rename($old, $new);
 

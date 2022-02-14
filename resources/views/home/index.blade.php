@@ -19,6 +19,7 @@
                         color="gray"
                         icon="fa fa-download"
                         id="download"
+                        class=""
                     />
                 </div>
             </x-slot>
