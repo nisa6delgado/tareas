@@ -14,34 +14,37 @@
 $route->auth();
 
 // Home
-$route->get('/', 'Home@index');
+$route->get('/', [Home::class, 'index']);
 
 // Configurations
-$route->get('/configurations', 'Configurations@edit');
-$route->post('/configurations', 'Configurations@update');
+$route->get('/configurations', [Configurations::class, 'edit']);
+$route->post('/configurations', [Configurations::class, 'update']);
 
 // Projects
-$route->get('/projects/create', 'Projects@create');
-$route->post('/projects/store', 'Projects@store');
-$route->post('/projects/update', 'Projects@update');
+$route->get('/projects/create', [Projects::class, 'create']);
+$route->post('/projects/store', [Projects::class, 'store']);
+$route->post('/projects/update', [Projects::class, 'update']);
 
-$route->get('/projects/show/{slug}', 'Projects@show');
-$route->get('/projects/edit/{slug}', 'Projects@edit');
-$route->get('/projects/delete/{slug}', 'Projects@delete');
+$route->get('/projects/show/{slug}', [Projects::class, 'show']);
+$route->get('/projects/edit/{slug}', [Projects::class, 'edit']);
+$route->get('/projects/delete/{slug}', [Projects::class, 'delete']);
 
 // Tasks
-$route->get('/tasks/create/{slug}', 'Tasks@create');
-$route->post('/tasks/store', 'Tasks@store');
+$route->get('/tasks/create/{slug}', [Tasks::class, 'create']);
+$route->post('/tasks/store', [Tasks::class, 'store']);
 
-$route->get('/tasks/show/{slug}/{id}', 'Tasks@show');
+$route->get('/tasks/show/{slug}/{id}', [Tasks::class, 'show']);
 
-$route->get('/tasks/edit/{slug}/{id}', 'Tasks@edit');
-$route->post('/tasks/update', 'Tasks@update');
+$route->get('/tasks/edit/{slug}/{id}', [Tasks::class, 'edit']);
+$route->post('/tasks/update', [Tasks::class, 'update']);
 
-$route->get('/tasks/delete/{slug}/{id}', 'Tasks@delete');
+$route->get('/tasks/delete/{slug}/{id}', [Tasks::class, 'delete']);
 
 // Status
-$route->get('/status/{id_task}/{status}', 'Status@update');
+$route->get('/status/{id_task}/{status}', [Status::class, 'update']);
 
 // Files
-$route->get('/files/delete/{id}', 'Files@delete');
+$route->get('/files/delete/{id}', [Files::class, 'delete']);
+
+// Backup
+$route->get('/backup', [Backups::class, 'generate']);
