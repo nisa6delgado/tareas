@@ -50,7 +50,7 @@
 
         @if($task->description)
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
-                {!! str()->markdown($task->description ?? '') !!}
+                {!! markdown($task->description) !!}
             </div>
         @endif
 
@@ -60,8 +60,8 @@
 
                 @foreach($task->files as $file)
                     <span class="mr-2">
-                        <a target="_blank" href="{{ url($file->file) }}">
-                            <i class="{{ icon($file->file) }}"></i> {{ $file->file }}
+                        <a target="_blank" href="{{ $file->url }}">
+                            <i class="{{ $file->icon }}"></i> {{ $file->file }}
                         </a>
                     </span>
                 @endforeach
