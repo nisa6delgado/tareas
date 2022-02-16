@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="{{ node('@fortawesome/fontawesome-free/css/all.css') }}">
 <link rel="stylesheet" href="{{ node('flowbite/dist/flowbite.css') }}">
 <link rel="stylesheet" href="{{ node('sweetalert2/dist/sweetalert2.css') }}">
+<link rel="stylesheet" href="{{ node('perfect-scrollbar/css/perfect-scrollbar.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
@@ -86,6 +87,7 @@
     <script src="{{ node('alpinejs/dist/cdn.js') }}" defer></script>
     <script src="{{ node('sweetalert2/dist/sweetalert2.js') }}"></script>
     <script src="{{ node('flowbite/dist/flowbite.js') }}"></script>
+    <script src="{{ node('perfect-scrollbar/dist/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

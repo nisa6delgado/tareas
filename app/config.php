@@ -12,7 +12,7 @@ return [
 	
 	// Environment.
 	'environment' 		=> 'production',
-	'errors' 			=> false,
+	'errors' 			=> true,
 
 	// Database.
 	'database' 			=> [
