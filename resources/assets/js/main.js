@@ -2,7 +2,7 @@ function app() {
     return {
         init () {
             document.addEventListener('keydown', event => {
-                if (event.ctrlKey && event.key == 'a') {
+                if (event.ctrlKey && event.key == 'm') {
                     event.preventDefault();
                     document.getElementsByClassName('create')[0].click();
                 }

@@ -2,6 +2,7 @@
 
 use App\Models\Configuration;
 use App\Models\Project;
+use League\CommonMark\GithubFlavoredMarkdownConverter;
 
 function file_slug($file)
 {
@@ -28,8 +29,18 @@ function globals($var)
     }
 }
 
+function markdown($text)
+{
+    $converter = new GithubFlavoredMarkdownConverter([
+        'html_input' => 'strip',
+        'allow_unsafe_links' => false,
+    ]);
+
+    return $converter->convert($text);
+}
+
 function projects()
 {
-    $projects = Project::where('name', '!=', 'Otros')->orderBy('name')->get();
+    $projects = Project::orderBy('name')->get();
     return $projects;
 }
