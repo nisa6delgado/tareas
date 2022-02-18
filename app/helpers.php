@@ -4,7 +4,7 @@ use App\Models\Configuration;
 use App\Models\Project;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 
-function file_slug($file)
+function file_slug(string $file): string
 {
     $pathinfo = pathinfo($file);
     $filename = $pathinfo['filename'];
@@ -18,7 +18,7 @@ function file_slug($file)
     return str()->slug($filename) . '.' . $extension;
 }
 
-function globals($var)
+function globals(string $var): string
 {
     if (isset($_SESSION['user'][$var])) {
         return $_SESSION['user'][$var];
@@ -29,7 +29,7 @@ function globals($var)
     }
 }
 
-function markdown($text)
+function markdown(string $text): string
 {
     $converter = new GithubFlavoredMarkdownConverter([
         'html_input' => 'strip',
@@ -39,7 +39,7 @@ function markdown($text)
     return $converter->convert($text);
 }
 
-function projects()
+function projects(): object
 {
     $projects = Project::orderBy('name')->get();
     return $projects;
