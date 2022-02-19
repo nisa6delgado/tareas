@@ -35,4 +35,15 @@ class Auth extends Controller
 
         return redirect('/login')->with('error', 'Datos incorrectos');
     }
+
+    /**
+     * Logout user.
+     *
+     * @return Redirect
+     */
+    public function logout(): Redirect
+    {
+        logout();
+        return redirect('/login');
+    }
 }
