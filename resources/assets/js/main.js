@@ -2,9 +2,9 @@ function app() {
     return {
         init () {
             document.addEventListener('keydown', event => {
-                if (event.ctrlKey && event.key == 'm') {
+                if (event.ctrlKey && event.key == 'b') {
                     event.preventDefault();
-                    document.getElementsByClassName('create')[0].click();
+                    window.history.back();
                 }
 
                 if (event.ctrlKey && event.key == 'd') {
@@ -22,6 +22,21 @@ function app() {
                     window.location.href = '/';
                 }
 
+                if (event.ctrlKey && event.key == 'l') {
+                    event.preventDefault();
+                    window.location.href = '/logout';
+                }
+
+                if (event.ctrlKey && event.key == 'm') {
+                    event.preventDefault();
+                    document.getElementsByClassName('create')[0].click();
+                }
+
+                if (event.ctrlKey && event.key == 'o') {
+                    event.preventDefault();
+                    window.location.href = '/backup';
+                }
+
                 if (event.ctrlKey && event.key == 'q') {
                     event.preventDefault();
 
@@ -37,6 +52,11 @@ function app() {
                 if (event.ctrlKey && event.key == 's') {
                     event.preventDefault();
                     document.getElementsByClassName('save')[0].click();
+                }
+
+                if (event.ctrlKey && event.key == 'y') {
+                    event.preventDefault();
+                    window.location.href = '/configurations';
                 }
             });
         },
