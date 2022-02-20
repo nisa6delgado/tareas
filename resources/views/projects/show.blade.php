@@ -37,14 +37,18 @@
 
         <hr class="bg-gray-300 my-6">
 
-        @foreach($project->tasks as $task)
-            <x-task
-                circle="true"
-                status="{{ $task->status }}"
-                title="{!! $task->title !!}"
-                slug="{{ $project->slug }}"
-                id="{{ $task->id }}"
-            />
-        @endforeach
+        @if($project->tasks->count())
+            @foreach($project->tasks as $task)
+                <x-task
+                    circle="true"
+                    status="{{ $task->status }}"
+                    title="{!! $task->title !!}"
+                    slug="{{ $project->slug }}"
+                    id="{{ $task->id }}"
+                />
+            @endforeach
+        @else
+            <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white text-center">No hay tareas</div>
+        @endif
     </section>
 </x-template>
