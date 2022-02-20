@@ -52,6 +52,8 @@
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
                 {!! markdown($task->description) !!}
             </div>
+        @else
+            <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white text-center">No hay descripción</div>
         @endif
 
         @if($task->files->count())
