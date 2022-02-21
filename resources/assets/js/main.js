@@ -22,6 +22,11 @@ function app() {
                     window.location.href = '/';
                 }
 
+                if (event.ctrlKey && event.key == 'j') {
+                    event.preventDefault();
+                    document.getElementsByClassName('file')[0].click();
+                }
+
                 if (event.ctrlKey && event.key == 'l') {
                     event.preventDefault();
                     window.location.href = '/logout';

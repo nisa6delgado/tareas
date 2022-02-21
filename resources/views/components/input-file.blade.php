@@ -5,6 +5,6 @@
         </label>
     </div>
     <div class="md:w-2/3">
-        <input type="file" {{ (isset($multiple)) ? 'multiple' : '' }} name="{{ (isset($multiple)) ? $key. '[]' : $key }}">
+        <input class="file" type="file" {{ (isset($multiple)) ? 'multiple' : '' }} name="{{ (isset($multiple)) ? $key. '[]' : $key }}">
     </div>
 </div>
