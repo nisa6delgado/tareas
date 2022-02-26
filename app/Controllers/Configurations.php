@@ -40,9 +40,10 @@ class Configurations extends Controller
             $value = ($key == 'password') ? md5($value) : $value;
 
             $configuration = Configuration::where('key', $key)->first();
+
             $configuration->update([
-                'value' => $value,
-                'date_update' => now('Y-m-d H:i:s')
+                'value'         => $value,
+                'date_update'   => now('Y-m-d H:i:s')
             ]);
         }
 

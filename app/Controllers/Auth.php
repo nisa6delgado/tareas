@@ -25,10 +25,10 @@ class Auth extends Controller
      */
     public function login(): Redirect
     {
-        $user = Configuration::where('key', 'user')->first()->value;
-        $password = Configuration::where('key', 'password')->first()->value;
+        $user       = Configuration::where('key', 'user')->first()->value;
+        $password   = Configuration::where('key', 'password')->first()->value;
 
-        if ($user == request('user') && $password == md5(request('password'))) {
+        if ($user == request('user') && $password == encrypt(request('password'))) {
             session('authenticate', 1);
             return redirect('/');
         }
