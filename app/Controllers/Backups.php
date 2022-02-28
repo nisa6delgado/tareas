@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use Redirect;
-use Storage;
 use ZipArchive;
 
 class Backups extends Controller
@@ -15,26 +14,26 @@ class Backups extends Controller
      */
     public function generate(): void
     {
-        $files = scandir(server('DOCUMENT_ROOT') . '/resources/assets/files');
+        $files = storage()->dir('resources/assets/files');
 
-        if (!file_exists(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip')) {
-            $fopen = fopen(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip', 'w+');
-            fclose($fopen);
+        if (!storage()->exists('resources/assets/files/backups/backup.zip')) {
+            storage()->file('resources/assets/files/backups/backup.zip');
         }
 
         $zip = new ZipArchive();
-        $zip->open(server('DOCUMENT_ROOT') . '/resources/assets/files/backups/backup.zip', ZipArchive::OVERWRITE);
+        $zip->open(server('root') . '/resources/assets/files/backups/backup.zip', ZipArchive::OVERWRITE);
 
         foreach ($files as $file) {
-            if (filetype(server('DOCUMENT_ROOT') . '/resources/assets/files/' . $file) == 'file') {
-                $zip->addFile(server('DOCUMENT_ROOT') . '/resources/assets/files/' . $file, $file);
+            if ($file['type'] != 'dir') {
+                $filename = storage()->basename($file['path']) . '.' . storage()->extension($file['path']);
+                $zip->addFile('/'.$file['path'], $filename);
             }
         }
 
-        $zip->addFile(server('DOCUMENT_ROOT') . '/database/database.sqlite', 'database.sqlite');
+        $zip->addFile(server('root') . '/database/database.sqlite', 'database.sqlite');
 
         $zip->close();
 
-        Storage::download('resources/assets/files/backups/backup.zip', 'backup.zip');
+        storage()->download('resources/assets/files/backups/backup.zip', 'backup.zip');
     }
 }
