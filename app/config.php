@@ -3,7 +3,7 @@
 return [
 	// General.
 	'application_name' 	=> 'Tareas',
-	'version'			=> '1.0.71',
+	'version'			=> '1.1.2',
 
 	// Region.
 	'language' 			=> 'es',
@@ -12,7 +12,7 @@ return [
 	
 	// Environment.
 	'environment' 		=> 'production',
-	'errors' 			=> true,
+	'errors' 			=> false,
 
 	// Database.
 	'database' 			=> [
