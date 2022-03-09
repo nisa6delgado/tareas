@@ -5,6 +5,6 @@
         </label>
     </div>
     <div class="md:w-2/3">
-        <textarea class="form-textarea block w-full focus:bg-white" id="{{ $key }}" name="{{ $key }}" rows="8">{{ $value }}</textarea>
+        <textarea class="block w-full focus:bg-white" id="{{ $key }}" name="{{ $key }}" rows="8">{{ $value }}</textarea>
     </div>
 </div>
