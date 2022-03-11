@@ -15,7 +15,6 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css">
 <link rel="stylesheet" href="{{ node('@fortawesome/fontawesome-free/css/all.css') }}">
 <link rel="stylesheet" href="{{ node('flowbite/dist/flowbite.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
