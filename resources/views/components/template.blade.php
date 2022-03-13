@@ -66,10 +66,10 @@
                     </li>
 
                     @foreach(projects() as $project)
-                        <li class="list-none py-1 md:my-2 hover:bg-black lg:hover:bg-transparent border-l-4 border-transparent {{ ($active == $project->slug) ? 'font-bold border-black' : '' }}">
+                        <li style="{{ ($active == $project->slug) ? 'border-color: ' . $project->color : '' }}" class="list-none py-1 md:my-2 hover:bg-black lg:hover:bg-transparent border-l-4 border-transparent {{ ($active == $project->slug) ? 'font-bold' : '' }}">
                             <a href="{{ '/projects/show/' . $project->slug }}" class="block pl-4 align-middle text-black no-underline hover:text-dark">
-                                <i class="{{ ($active == $project->slug) ? 'text-dark' : '' }} {{ $project->icon }}"></i>
-                                <span class="{{ ($active == $project->slug) ? 'text-dark' : '' }} pb-1 md:pb-0 text-sm">{{ $project->name }}</span>
+                                <i style="{{ ($active == $project->slug) ? 'color: ' . $project->color : '' }} " class="{{ $project->icon }}"></i>
+                                <span style="{{ ($active == $project->slug) ? 'color: ' . $project->color : '' }} " class="pb-1 md:pb-0 text-sm">{{ $project->name }}</span>
                             </a>
                         </li>
                     @endforeach
