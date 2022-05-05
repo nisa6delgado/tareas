@@ -3,7 +3,7 @@
 return [
 	// General.
 	'application_name' 	=> 'Tareas',
-	'version'			=> '1.1.16',
+	'version'			=> '1.1.17',
 
 	// Region.
 	'language' 			=> 'es',
