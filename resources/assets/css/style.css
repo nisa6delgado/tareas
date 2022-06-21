@@ -10,14 +10,6 @@ table {
     margin-bottom: 15px;
 }
 
-ul {
-    margin-bottom: 30px !important;
-}
-
-hr {
-    margin-bottom: 30px !important;
-}
-
 tr:hover {
     background-color: #edf2f7;
 }
