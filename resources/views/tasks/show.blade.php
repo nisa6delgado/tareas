@@ -62,7 +62,7 @@
 
                 @foreach($task->files as $file)
                     <span class="mr-2">
-                        <a target="_blank" href="{{ $file->url }}">
+                        <a href="{{ '/files/show/' . $file->id }}">
                             <i class="{{ $file->icon }}"></i> {{ $file->file }}
                         </a>
                     </span>
