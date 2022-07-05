@@ -44,6 +44,7 @@ $route->get('/tasks/delete/{slug}/{id}', [Tasks::class, 'delete']);
 $route->get('/status/{id_task}/{status}', [Status::class, 'update']);
 
 // Files
+$route->get('/files/show/{id}', [Files::class, 'show']);
 $route->get('/files/delete/{id}', [Files::class, 'delete']);
 
 // Backup

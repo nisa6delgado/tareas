@@ -26,6 +26,14 @@ class File extends Model
     protected $fillable = ['id_task', 'file', 'date_create', 'date_update'];
 
     /**
+     * Get the task for the file.
+     */
+    public function task()
+    {
+        return $this->belongsTo('Task', 'id_task');
+    }
+
+    /**
      * Get the ext file.
      *
      * @return string
@@ -86,5 +94,20 @@ class File extends Model
         }
 
         return '/resources/assets/files/' . $this->file;
+    }
+
+    /**
+     * Get the content into iframe.
+     *
+     * @return string
+     */
+    public function getContentAttribute()
+    {
+        if (in_array($this->ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx'])) {
+            $file = str()->replace(' ', '+', $this->file);
+            return '<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://tareas.nisadelgado.com/resources/assets/files/' . $this->file . '"></iframe>';
+        }
+
+        return '<iframe src="/resources/assets/files/' . $this->file . '"></iframe>';
     }
 }

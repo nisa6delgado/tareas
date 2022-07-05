@@ -11,8 +11,8 @@ return [
 	'charset'			=> 'utf-8',
 	
 	// Environment.
-	'environment' 		=> 'production',
-	'errors' 			=> false,
+	'environment' 		=> 'development',
+	'errors' 			=> true,
 
 	// Database.
 	'database' 			=> [
