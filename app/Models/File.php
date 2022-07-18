@@ -108,6 +108,11 @@ class File extends Model
             return '<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://tareas.nisadelgado.com/resources/assets/files/' . $this->file . '"></iframe>';
         }
 
+        if (in_array($this->ext, ['png', 'jpg', 'gif', 'jpeg', 'svg'])) {
+            $file = str()->replace(' ', '+', $this->file);
+            return '<img class="w-full" src="/resources/assets/files/' . $this->file . '"></img>';
+        }
+
         return '<iframe src="/resources/assets/files/' . $this->file . '"></iframe>';
     }
 }
