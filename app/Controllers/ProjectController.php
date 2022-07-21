@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
+use App\Validations\ProjectStoreValidation;
 use View;
 use Redirect;
 
@@ -49,9 +50,10 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param ProjectStoreValidation $validation
      * @return Redirect
      */
-    public function store(): Redirect
+    public function store(ProjectStoreValidation $validation): Redirect
     {
         $slug = str()->slug(request('name'));
 

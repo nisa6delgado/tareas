@@ -5,6 +5,8 @@
 
         <hr class="bg-gray-300 my-6">
 
+        <x-validation-errors/>
+
         <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
             <form method="POST" action="/projects/store">
                 <x-input required label="Nombre" key="name" value=""/>
