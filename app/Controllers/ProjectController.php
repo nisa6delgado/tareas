@@ -6,6 +6,7 @@ use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
 use App\Validations\ProjectStoreValidation;
+use App\Validations\ProjectUpdateValidation;
 use View;
 use Redirect;
 
@@ -84,13 +85,14 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
+     * @param ProjectUpdateValidation $validation
      * @return Redirect
      */
-    public function update(): Redirect
+    public function update(ProjectUpdateValidation $validation): Redirect
     {
         $slug = str()->slug(request('name'));
 
-        $project = Project::where('slug', request('slug'))->first();
+        $project = Project::find(request('id'));
         $project->update([
             'name'          => request('name'),
             'icon'          => request('icon'),

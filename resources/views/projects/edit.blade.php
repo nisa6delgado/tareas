@@ -5,9 +5,11 @@
 
         <hr class="bg-gray-300 my-6">
 
+        <x-validation-errors/>
+
         <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
             <form method="POST" action="/projects/update">
-                <input type="hidden" name="slug" value="{{ $project->slug }}">
+                <input type="hidden" name="id" value="{{ $project->id }}">
 
                 <x-input required label="Nombre" key="name" value="{{ $project->name }}"/>
 
