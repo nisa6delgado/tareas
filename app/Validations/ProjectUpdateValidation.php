@@ -2,7 +2,7 @@
 
 namespace App\Validations;
 
-class ProjectStoreValidation extends Validation
+class ProjectUpdateValidation extends Validation
 {
 	/**
 	* Get the validation rules that apply to the request.
@@ -12,7 +12,10 @@ class ProjectStoreValidation extends Validation
 	public function rules(): array
 	{
 		return [
-			'name'  => 'required|unique:projects',
+			'name'  => [
+				'required',
+				Rule::unique('projects')->ignore(request('id'))
+			],
 			'icon'  => 'required',
 			'color' => 'required'
 		];
