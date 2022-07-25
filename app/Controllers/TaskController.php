@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
+use App\Validations\TaskStoreValidation;
 use View;
 use Redirect;
 
@@ -36,9 +37,10 @@ class TaskController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param string $slug
      * @return View
      */
-    public function create($slug): View
+    public function create(string $slug): View
     {
         $project = Project::where('slug', $slug)->first();
         return view('tasks.create', compact('project'));
@@ -47,9 +49,10 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param TaskStoreValidation $validation
      * @return Redirect
      */
-    public function store(): Redirect
+    public function store(TaskStoreValidation $validation): Redirect
     {
         $project = Project::where('slug', request('slug'))->first();
 

@@ -5,6 +5,8 @@
 
         <hr class="bg-gray-300 my-6">
 
+        <x-validation-errors/>
+
         <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
             <form enctype="multipart/form-data" method="POST" action="/tasks/store">
                 <input type="hidden" name="slug" value="{{ $project->slug }}">
