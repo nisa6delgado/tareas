@@ -6,6 +6,7 @@ use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
 use App\Validations\TaskStoreValidation;
+use App\Validations\TaskUpdateValidation;
 use View;
 use Redirect;
 
@@ -101,7 +102,7 @@ class TaskController extends Controller
      *
      * @return Redirect
      */
-    public function update(): Redirect
+    public function update(TaskUpdateValidation $validation): Redirect
     {
         $task = Task::find(request('id'));
         $task->update([
