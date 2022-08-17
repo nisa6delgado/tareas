@@ -11,9 +11,9 @@
             <form enctype="multipart/form-data" method="POST" action="/tasks/store">
                 <input type="hidden" name="slug" value="{{ $project->slug }}">
 
-                <x-input required label="Título" key="title" value=""/>
+                <x-input required label="Título" key="title" value="{{ old('title') }}"/>
 
-                <x-textarea label="Descripción" key="description" value=""/>
+                <x-textarea label="Descripción" key="description" value="{{ old('description') }}"/>
 
                 <x-input-file label="Archivos adjuntos" multiple key="files[]"/>
 

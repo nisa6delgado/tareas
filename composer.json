@@ -18,7 +18,7 @@
         "illuminate/validation": "9.23.0",
         "illuminate/view": "9.23.0",
         "league/flysystem": "3.2.0",
-        "nisadelgado/framework": "1.4.6",
+        "base-php/core": "1.4.6",
         "league/commonmark": "2.3.5"
     },
     "require-dev": {
@@ -31,17 +31,17 @@
             "App\\": "app/"
         },
         "files": [
-            "vendor/nisadelgado/framework/autoload.php"
+            "vendor/base-php/core/autoload.php"
         ]
     },
     "repositories": [
         {
             "type": "package",
             "package": {
-                "name": "nisadelgado/framework",
+                "name": "base-php/core",
                 "version": "1.4.6",
                 "dist": {
-                    "url": "https://github.com/nisa6delgado/framework/archive/refs/heads/main.zip",
+                    "url": "https://github.com/base-php/core/archive/refs/heads/main.zip",
                     "type": "zip"
                 }
             }
