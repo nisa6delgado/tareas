@@ -50,9 +50,9 @@
                 @endif
 
                 <form method="POST">
-                    <x-input required label="Usuario" key="user" value=""/>
+                    <x-input required label="Usuario" key="user" value="{{ old('user') }}"/>
 
-                    <x-input required label="Contraseña" key="password" password value=""/>
+                    <x-input required label="Contraseña" key="password" password value="{{ old('password') }}"/>
 
                     <x-button class="save" text="Iniciar sesión"/>
                 </form>
