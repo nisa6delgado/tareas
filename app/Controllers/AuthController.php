@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Configuration;
+use App\Validations\LoginValidation;
 use View;
 use Redirect;
 
@@ -23,7 +24,7 @@ class AuthController extends Controller
      *
      * @return Redirect
      */
-    public function login(): Redirect
+    public function login(LoginValidation $validation): Redirect
     {
         $user       = Configuration::where('key', 'user')->first()->value;
         $password   = Configuration::where('key', 'password')->first()->value;
