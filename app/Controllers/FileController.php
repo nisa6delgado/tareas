@@ -31,6 +31,18 @@ class FileController extends Controller
     }
 
     /**
+     * Download the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return void
+     */
+    public function download(int $id): void
+    {
+        $file = File::find($id);
+        storage()->download('resources/assets/files/' . $file->file, $file->file);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
