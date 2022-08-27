@@ -88,9 +88,9 @@ class File extends Model
      */
     public function getUrlAttribute()
     {
-        if (in_array($this->ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx'])) {
+        if (in_array($this->ext, ['pptx', 'ppt', 'doc', 'docx', 'xls', 'xlsx', 'png', 'jpg', 'gif', 'jpeg', 'svg'])) {
             $file = str()->replace(' ', '+', $this->file);
-            return 'https://view.officeapps.live.com/op/embed.aspx?src=https://tareas.nisadelgado.com/resources/assets/files/' . $this->file;
+            return '/files/show/' . $this->id;
         }
 
         return '/resources/assets/files/' . $this->file;
