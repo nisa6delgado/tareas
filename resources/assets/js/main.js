@@ -52,6 +52,10 @@ function app() {
                     if (document.getElementsByClassName('undone')[0]) {
                         document.getElementsByClassName('undone')[0].click();
                     }
+
+                    if (document.getElementsByClassName('download')[0]) {
+                        document.getElementsByClassName('download')[0].click();
+                    }
                 }
 
                 if (event.ctrlKey && event.key == 's') {
