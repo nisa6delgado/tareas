@@ -3,7 +3,8 @@
         <!--Title-->
         <x-title icon="{{ $file->icon }}" title="{{ $file->file }}">
             <x-slot name="buttons">
-                <x-link
+                <div class="flex items-center">
+                    <x-link
                         href="{{ '/files/download/' . $file->id }}"
                         title="Descargar archivo"
                         color="gray"
@@ -11,6 +12,17 @@
                         id="download"
                         class="download"
                     />
+
+                    <x-link
+                        href="{{ '/files/delete/' . $file->id . '?redirect=1' }}"
+                        title="Eliminar este archivo"
+                        color="red"
+                        icon="fa fa-trash"
+                        delete="true"
+                        id="delete"
+                        class="delete"
+                    />                    
+                </div>
             </x-slot>
         </x-title>
 
