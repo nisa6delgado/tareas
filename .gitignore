@@ -3,6 +3,8 @@
 /node_modules
 /vendor
 /app/config.php
+/database/database.sqlite
+/resources/assets/files/backups
 .ftpconfig
 .ftpquota
 error_log
