@@ -3,7 +3,7 @@
     "description": "Gestión de proyectos y listas de tareas",
     "type": "project",
     "license": "MIT",
-    "version": "1.1.42",
+    "version": "1.1.44",
     "minimum-stability": "stable",
     "authors": [
         {
@@ -12,18 +12,18 @@
         }
     ],
     "require": {
-        "base-php/core": "1.4.53",
-        "illuminate/database": "9.33.0",
-        "illuminate/pagination": "9.33.0",
-        "illuminate/routing": "9.33.0",
-        "illuminate/validation": "9.33.0",
-        "illuminate/view": "9.33.0",
-        "league/flysystem": "3.5.2",
-        "league/commonmark": "2.3.5"
+        "base-php/core": "1.4.76",
+        "illuminate/database": "9.38.0",
+        "illuminate/pagination": "9.38.0",
+        "illuminate/routing": "9.38.0",
+        "illuminate/validation": "9.38.0",
+        "illuminate/view": "9.38.0",
+        "league/flysystem": "3.10.2",
+        "league/commonmark": "2.3.6"
     },
     "require-dev": {
         "psy/psysh": "0.11.8",
-        "phpunit/phpunit": "9.5.25",
+        "phpunit/phpunit": "9.5.26",
         "spatie/ignition": "1.4.1"
     },
     "autoload": {
@@ -39,7 +39,7 @@
             "type": "package",
             "package": {
                 "name": "base-php/core",
-                "version": "1.4.53",
+                "version": "1.4.76",
                 "dist": {
                     "url": "https://github.com/base-php/core/archive/refs/heads/main.zip",
                     "type": "zip"
