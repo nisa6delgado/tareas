@@ -26,8 +26,16 @@ class FileController extends Controller
     public function delete(int $id): void
     {
         $file = File::find($id);
+
+        $id_task = $file->id_task;
+        $slug = $file->task->project->slug;
+
         storage()->delete('resources/assets/files/' . $file->file);
         $file->delete();
+
+        if (request('redirect')) {
+            return redirect('/tasks/show/' . $slug . '/' . $id_task);
+        }
     }
 
     /**
