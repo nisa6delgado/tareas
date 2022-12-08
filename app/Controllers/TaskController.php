@@ -116,12 +116,23 @@ class TaskController extends Controller
 
         if ($files->filename) {
             foreach($files->filename as $file) {
-                File::create([
-                    'id_task'       => $task->id,
-                    'file'          => file_slug($file),
-                    'date_create'   => now('Y-m-d H:i:s'),
-                    'date_update'   => now('Y-m-d H:i:s')
-                ]);
+                $model = File::where('id_task', $task->id)
+                    ->where('file', file_slug($file))
+                    ->first();
+
+                if ($model) {
+                    $model->update([
+                        'date_update' => now('Y-m-d H:i:s')
+                    ]);
+
+                } else {
+                    File::create([
+                        'id_task'       => $task->id,
+                        'file'          => file_slug($file),
+                        'date_create'   => now('Y-m-d H:i:s'),
+                        'date_update'   => now('Y-m-d H:i:s')
+                    ]);
+                }
             }
         }
 
