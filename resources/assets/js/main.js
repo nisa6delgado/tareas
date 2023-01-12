@@ -95,6 +95,15 @@ function app() {
                     return window.location.href = element.href;
                 }
             });
+        },
+
+        move (event, element) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Función en desarrollo...',
+                icon: 'info',
+                confirmButtonColor: 'black',
+            });
         }
     }
 }

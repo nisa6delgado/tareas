@@ -14,6 +14,16 @@
                     />
 
                     <x-link
+                        href="{{ '/tasks/edit/' . $task->project->slug . '/' . $task->id }}"
+                        title="Mover a otro proyecto"
+                        color="gray"
+                        icon="fa-solid fa-up-down-left-right"
+                        move="true"
+                        id="move"
+                        class="edit"
+                    />
+
+                    <x-link
                         href="{{ '/tasks/delete/' . $task->project->slug . '/' . $task->id }}"
                         title="Eliminar esta tarea"
                         color="red"
