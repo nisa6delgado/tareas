@@ -22,6 +22,7 @@
         "league/commonmark": "2.3.8"
     },
     "require-dev": {
+        "laravel/pint": "1.4.0",
         "psy/psysh": "0.11.10",
         "phpunit/phpunit": "9.5.27",
         "spatie/ignition": "1.4.1"
