@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\File;
+use Redirect;
 use View;
 
 class FileController extends Controller
@@ -21,9 +22,9 @@ class FileController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return void
+     * @return ?Redirect
      */
-    public function delete(int $id): void
+    public function delete(int $id): ?Redirect
     {
         $file = File::find($id);
 
