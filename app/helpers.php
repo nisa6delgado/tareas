@@ -48,7 +48,10 @@ function markdown(string $text): string
         'allow_unsafe_links' => false,
     ]);
 
-    return $converter->convert($text);
+    $converter = $converter->convert($text);
+    $converter = str_replace('<a href', '<a target="_blank" href', $converter);
+
+    return $converter;
 }
 
 /**
