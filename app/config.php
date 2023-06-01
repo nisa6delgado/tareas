@@ -3,7 +3,7 @@
 return [
 	// General.
 	'application_name' => 'Tareas',
-	'version' => '1.1.66',
+	'version' => '1.1.67',
 	'maintenance' => false,
 
 	// Region.
@@ -13,7 +13,7 @@ return [
 	
 	// Environment.
 	'environment' => 'production',
-	'errors' => true,
+	'errors' => false,
 
 	// Database.
 	'database' => [
