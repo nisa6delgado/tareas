@@ -54,7 +54,7 @@
     </nav>
 
     <!--Container-->
-    <div class="content container w-full flex flex-wrap mx-auto pt-8 lg:pt-16 mt-16">
+    <div class="content container w-full flex flex-wrap mx-auto pt-8 lg:pt-16">
         <div class="w-full lg:w-1/5 px-6 text-xl text-gray-800 leading-normal">
             <div class="w-full sticky inset-0 hidden overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 my-2 lg:my-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-10" id="menu-content" style="top: 5.5em">
                 <ul class="list-reset py-2 md:py-0">
