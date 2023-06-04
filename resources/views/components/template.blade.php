@@ -23,7 +23,7 @@
 </head>
 
 <body x-data="app" class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-    <nav id="header" class="bg-white fixed w-full z-20 top-0 shadow">
+    <nav id="header" class="bg-white fixed w-full z-0 top-0 shadow">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
             <div class="pl-4 md:pl-0">
                 <a class="flex items-center text-dark text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
@@ -46,7 +46,7 @@
                             </div>
                         </a>
 
-                        <x-tooltip text="Configuración" id="configuration"/>
+                        <x-tooltip text="Configuraci贸n" id="configuration"/>
                     </div>
                 </div>
             </div>
