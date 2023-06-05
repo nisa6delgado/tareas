@@ -48,4 +48,4 @@ $route->get('/files/download/{id}', [FileController::class, 'download']);
 $route->get('/files/delete/{id}', [FileController::class, 'delete']);
 
 // Backup
-$route->get('/backup', [BackupController::class, 'generate']);
+$route->get('/backup', [BackupController::class, 'index']);

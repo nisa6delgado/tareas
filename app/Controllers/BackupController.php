@@ -12,7 +12,7 @@ class BackupController extends Controller
      *
      * @return void
      */
-    public function generate(): void
+    public function index(): void
     {
         $files = storage()->dir('resources/assets/files');
 
