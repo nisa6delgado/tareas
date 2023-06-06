@@ -22,6 +22,23 @@ class FileController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
+     * @return View|void
+     */
+    public function show(int $id): View|void
+    {
+        if (request('download')) {
+            $file = File::find($id);
+            storage()->download('resources/assets/files/' . $file->file, $file->file);
+        }
+
+        $file = File::find($id);
+        return view('files/show', compact('file'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
      * @return ?Redirect
      */
     public function delete(int $id): ?Redirect
@@ -37,29 +54,5 @@ class FileController extends Controller
         if (request('redirect')) {
             return redirect('/tasks/show/' . $slug . '/' . $id_task);
         }
-    }
-
-    /**
-     * Download the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return void
-     */
-    public function download(int $id): void
-    {
-        $file = File::find($id);
-        storage()->download('resources/assets/files/' . $file->file, $file->file);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return void
-     */
-    public function show(int $id): View
-    {
-        $file = File::find($id);
-        return view('files/show', compact('file'));
     }
 }

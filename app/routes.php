@@ -44,7 +44,6 @@ $route->post('/tasks/move', [MoveController::class, 'update']);
 
 // File
 $route->get('/files/show/{id}', [FileController::class, 'show']);
-$route->get('/files/download/{id}', [FileController::class, 'download']);
 $route->get('/files/delete/{id}', [FileController::class, 'delete']);
 
 // Backup
