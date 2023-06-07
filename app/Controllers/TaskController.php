@@ -93,8 +93,9 @@ class TaskController extends Controller
      */
     public function edit(string $slug, int $id): View
     {
+        $projects = Project::get();
         $task = Task::find($id);
-        return view('tasks.edit', compact('task'));
+        return view('tasks.edit', compact('projects', 'task'));
     }
 
     /**
@@ -106,6 +107,7 @@ class TaskController extends Controller
     {
         $task = Task::find(request('id'));
         $task->update([
+            'id_project'    => request('id_project'),
             'title'         => request('title'),
             'description'   => request('description'),
             'status'        => 0,
