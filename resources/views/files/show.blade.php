@@ -5,7 +5,7 @@
             <x-slot name="buttons">
                 <div class="flex items-center">
                     <x-link
-                        href="{{ '/files/download/' . $file->id }}"
+                        href="{{ '/files/show/' . $file->id . '?download=1' }}"
                         title="Descargar archivo"
                         color="gray"
                         icon="fa fa-download"
