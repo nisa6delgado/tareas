@@ -13,8 +13,9 @@
 
                 <x-input required label="Título" key="title" value="{{ $task->title }}"/>
 
-                <x-textarea label="Descripción" key="description" value="{!! $task->description !!}"/>
+                <x-select required label="Proyecto" key="id_project" value="{{ $task->id_project }}" options="{!! $projects !!}"/>
 
+                <x-textarea label="Descripción" key="description" value="{!! $task->description !!}"/>
                 <x-input-file label="Archivos adjuntos" multiple key="files[]"/>
 
                 <div class="md:flex mb-6">
