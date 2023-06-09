@@ -3,8 +3,6 @@
         <!--Title-->
         <x-title icon="fa fa-plus" title="Crear nuevo proyecto"/>
 
-        <hr class="bg-gray-300 my-6">
-
         <x-validation-errors/>
 
         <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">

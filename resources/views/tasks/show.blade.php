@@ -26,8 +26,6 @@
             </x-slot>
         </x-title>
 
-        <hr class="bg-gray-300 my-6">
-
         @if($task->description)
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
                 {!! markdown($task->description) !!}
