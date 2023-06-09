@@ -35,8 +35,6 @@
             </x-slot>
         </x-title>
 
-        <hr class="bg-gray-300 my-6">
-
         @if($project->tasks->count())
             @foreach($project->tasks as $task)
                 <x-task

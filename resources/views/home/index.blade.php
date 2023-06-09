@@ -25,8 +25,6 @@
             </x-slot>
         </x-title>
 
-        <hr class="bg-gray-300 my-6">
-
         @foreach($tasks as $task)
             <x-task
                 id="{{ $task->id }}"
