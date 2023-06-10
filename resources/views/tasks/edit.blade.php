@@ -34,7 +34,21 @@
                     </div>
                 </div>
 
-                <x-button class="save"/>
+                <div class="md:flex md:items-center">
+                    <div class="md:w-1/3"></div>
+                    <div class="md:w-2/3">
+                        <x-button class="save"/>
+
+                        <x-link
+                            id="back"
+                            href="/tasks/show/notas/{{ $task->id }}"
+                            class="back py-2 px-4"
+                            color="gray"
+                            icon="fa fa-arrow-left"
+                            content="Ir a atrás"
+                        />
+                    </div>
+                </div>
             </form>
         </div>
     </section>
