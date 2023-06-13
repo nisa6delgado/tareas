@@ -5,6 +5,15 @@
             <x-slot name="buttons">
                 <div class="flex items-center">
                     <x-link
+                        href="/"
+                        title="Ir a atrás"
+                        color="gray"
+                        icon="fa fa-arrow-left"
+                        id="back"
+                        class="back"
+                    />
+
+                    <x-link
                         href="{{ '/tasks/create/' . $project->slug }}"
                         title="Crear nueva tarea en este proyecto"
                         color="gray"
