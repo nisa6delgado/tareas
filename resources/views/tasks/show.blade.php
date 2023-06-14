@@ -5,6 +5,15 @@
             <x-slot name="buttons">
                 <div class="flex items-center ml-1">
                     <x-link
+                        href="{{ '/projects/show/' . $task->project->slug }}"
+                        title="Ir a atrás"
+                        color="gray"
+                        icon="fa fa-arrow-left"
+                        id="back"
+                        class="back"
+                    />
+
+                    <x-link
                         href="{{ '/tasks/edit/' . $task->project->slug . '/' . $task->id }}"
                         title="Editar esta tarea"
                         color="gray"
