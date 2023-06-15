@@ -5,6 +5,15 @@
             <x-slot name="buttons">
                 <div class="flex items-center">
                     <x-link
+                        href="{{ '/tasks/show/otros/' . $file->task->id }}"
+                        title="Ir a atrás"
+                        color="gray"
+                        icon="fa fa-arrow-left"
+                        id="back"
+                        class="back"
+                    />
+
+                    <x-link
                         href="{{ '/files/show/' . $file->id . '?download=1' }}"
                         title="Descargar archivo"
                         color="gray"
