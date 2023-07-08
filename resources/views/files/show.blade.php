@@ -1,5 +1,5 @@
 <x-template active="{{ $file->task->project->slug }}">
-    <section class="w-full lg:w-4/5 mb-20">
+    <section class="w-full lg:w-4/5 mb-20 pr-4">
         <!--Title-->
         <x-title icon="{{ $file->icon }}" title="{{ $file->file }}">
             <x-slot name="buttons">
