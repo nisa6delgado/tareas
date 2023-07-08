@@ -1,5 +1,5 @@
 <x-template active="configuration">
-    <section class="w-full lg:w-4/5 mb-20">
+    <section class="w-full lg:w-4/5 mb-20 pr-4">
         <!--Title-->
         <x-title icon="fa fa-wrench" title="Configuración"/>
 

@@ -25,13 +25,13 @@
 <body x-data="app" class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
     <nav id="header" class="bg-white fixed w-full z-0 top-0 shadow">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between my-4">
-            <div class="pl-4 md:pl-0">
+            <div class="pl-4 md:pl-0 ml-4">
                 <a class="flex items-center text-dark text-base xl:text-xl no-underline hover:no-underline font-extrabold font-sans" href="/">
                     <i class="fas fa-tasks mr-2"></i> Tareas
                 </a>
             </div>
 
-            <div class="pr-0 flex justify-end hidden sm:flex">
+            <div class="pr-0 flex justify-end hidden sm:flex mr-4">
                 <div class="flex relative inline-block float-right">
                     <div class="relative text-sm">
                         <a data-tooltip-target="configuration" href="/configurations">
