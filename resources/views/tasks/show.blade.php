@@ -37,7 +37,13 @@
 
         @if($task->description)
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
-                {!! markdown($task->description) !!}
+                @if($task->format == 'html')
+                    {!! $task->description !!}
+                @endif
+
+                @if($task->format == 'markdown')
+                    {!! markdown($task->description) !!}
+                @endif
             </div>
         @else
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white text-center">No hay descripción</div>

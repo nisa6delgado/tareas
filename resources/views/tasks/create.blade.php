@@ -13,6 +13,8 @@
 
                 <x-input required label="Título" key="title" value="{{ old('title') }}"/>
 
+                <x-select required label="Formato" key="format" value="markdown" options="{!! formats() !!}"/>
+
                 <x-textarea label="Descripción" key="description" value="{{ old('description') }}"/>
 
                 <x-input-file label="Archivos adjuntos" multiple key="files[]"/>

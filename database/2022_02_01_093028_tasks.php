@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('description')
                 ->nullable();
 
+            $table->string('format');
+
             $table->boolean('status');
 
             $table->datetime('date_create')
