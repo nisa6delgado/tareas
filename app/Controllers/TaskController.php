@@ -61,6 +61,7 @@ class TaskController extends Controller
             'id_project'    => $project->id,
             'title'         => request('title'),
             'description'   => request('description'),
+            'format'        => request('format'),
             'status'        => 0,
             'date_create'   => now('Y-m-d H:i:s'),
             'date_update'   => now('Y-m-d H:i:s')
@@ -95,6 +96,7 @@ class TaskController extends Controller
     {
         $projects = Project::get();
         $task = Task::find($id);
+
         return view('tasks.edit', compact('projects', 'task'));
     }
 
@@ -110,6 +112,7 @@ class TaskController extends Controller
             'id_project'    => request('id_project'),
             'title'         => request('title'),
             'description'   => request('description'),
+            'format'        => request('format'),
             'status'        => 0,
             'date_update'   => now('Y-m-d H:i:s')
         ]);

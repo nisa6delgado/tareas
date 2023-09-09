@@ -24,6 +24,21 @@ function file_slug(string $file): string
 }
 
 /**
+ * Show format for select.
+ *
+ * @return string
+ */
+function formats(): string
+{
+    $formats = [
+        ['id' => 'markdown', 'name' => 'Markdown'],
+        ['id' => 'html', 'name' => 'HTML']
+    ];
+
+    return json($formats);
+}
+
+/**
  * Get config value for key given.
  *
  * @param string $var

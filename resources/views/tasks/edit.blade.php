@@ -13,6 +13,8 @@
 
                 <x-select required label="Proyecto" key="id_project" value="{{ $task->id_project }}" options="{!! $projects !!}"/>
 
+                <x-select required label="Formato" key="format" value="{{ $task->format }}" options="{!! formats() !!}"/>
+
                 <x-textarea label="Descripción" key="description" value="{!! $task->description !!}"/>
                 <x-input-file label="Archivos adjuntos" multiple key="files[]"/>
 
