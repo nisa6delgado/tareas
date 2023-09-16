@@ -44,6 +44,10 @@
                 @if($task->format == 'markdown')
                     {!! markdown($task->description) !!}
                 @endif
+
+                @if($task->format == 'csv')
+                    {!! csv($task->description) !!}
+                @endif
             </div>
         @else
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white text-center">No hay descripción</div>
