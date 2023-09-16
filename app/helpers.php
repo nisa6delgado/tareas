@@ -5,6 +5,44 @@ use App\Models\Project;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 
 /**
+ * Convert CSV in table HTML.
+ *
+ * @param string $csv
+ * @return void
+ */
+function csv(string $csv): void
+{
+    $lines = explode("\n", $csv);
+
+    echo '<table>';
+    echo '<thead>';
+    echo '<tr>';
+
+    foreach (explode(';', $lines[0]) as $item) {
+        echo '<th>' . $item . '</th>';
+    }
+
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+
+    unset($lines[0]);
+
+    foreach ($lines as $line) {
+        echo '<tr>';
+
+        foreach (explode(';', $line) as $item) {
+            echo '<td>' . $item . '</td>';
+        }
+
+        echo '</tr>';
+    }
+
+    echo '</tbody>';
+    echo '</table>';
+}
+
+/**
  * Return slug for filename given.
  *
  * @param string $file
@@ -32,7 +70,8 @@ function formats(): string
 {
     $formats = [
         ['id' => 'markdown', 'name' => 'Markdown'],
-        ['id' => 'html', 'name' => 'HTML']
+        ['id' => 'html', 'name' => 'HTML'],
+        ['id' => 'csv', 'name' => 'CSV']
     ];
 
     return json($formats);
