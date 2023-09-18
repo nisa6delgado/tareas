@@ -5,6 +5,35 @@ use App\Models\Project;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 
 /**
+ * Convert string in checklist.
+ *
+ * @param string $checklist
+ * @return void
+ */
+function checklist(string $checklist): void
+{
+    $lines = explode("\n", $checklist);
+
+    echo '<div>';
+
+    foreach ($lines as $line) {
+        echo str_replace(
+            [
+                '[ ]',
+                '[x]'
+            ],
+            [
+                '<input type="checkbox" disabled>',
+                '<input type="checkbox" checked disabled>',
+            ],
+            $line
+        ) . '<br>';
+    }
+
+    echo '</div>';
+}
+
+/**
  * Convert CSV in table HTML.
  *
  * @param string $csv
@@ -14,17 +43,13 @@ function csv(string $csv): void
 {
     $lines = explode("\n", $csv);
 
-    echo '<table>';
-    echo '<thead>';
-    echo '<tr>';
+    echo '<table><thead><tr>';
 
     foreach (explode(';', $lines[0]) as $item) {
         echo '<th>' . $item . '</th>';
     }
 
-    echo '</tr>';
-    echo '</thead>';
-    echo '<tbody>';
+    echo '</tr></thead><tbody>';
 
     unset($lines[0]);
 
@@ -38,8 +63,7 @@ function csv(string $csv): void
         echo '</tr>';
     }
 
-    echo '</tbody>';
-    echo '</table>';
+    echo '</tbody></table>';
 }
 
 /**
@@ -68,10 +92,11 @@ function file_slug(string $file): string
  */
 function formats(): string
 {
-    $formats = [
-        ['id' => 'markdown', 'name' => 'Markdown'],
+    $formats = [        
+        ['id' => 'checklist', 'name' => 'Checklist'],
+        ['id' => 'csv', 'name' => 'CSV'],
         ['id' => 'html', 'name' => 'HTML'],
-        ['id' => 'csv', 'name' => 'CSV']
+        ['id' => 'markdown', 'name' => 'Markdown'],
     ];
 
     return json($formats);
