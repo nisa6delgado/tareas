@@ -45,6 +45,14 @@
                     {!! markdown($task->description) !!}
                 @endif
 
+                @if($task->format == 'code')
+                    <code>
+                        <pre>
+                            {!! $task->description !!}
+                        </pre>
+                    </code>
+                @endif
+
                 @if($task->format == 'csv')
                     {!! csv($task->description) !!}
                 @endif

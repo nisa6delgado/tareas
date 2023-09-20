@@ -94,6 +94,7 @@ function formats(): string
 {
     $formats = [        
         ['id' => 'checklist', 'name' => 'Checklist'],
+        ['id' => 'code', 'name' => 'Código'],
         ['id' => 'csv', 'name' => 'CSV'],
         ['id' => 'html', 'name' => 'HTML'],
         ['id' => 'markdown', 'name' => 'Markdown'],
