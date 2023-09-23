@@ -11,7 +11,7 @@
 
                 <x-input required label="Título" key="title" value="{{ $task->title }}"/>
 
-                <x-select required label="Proyecto" key="id_project" value="{{ $task->id_project }}" options="{!! $projects !!}"/>
+                <x-select change="reloadWithParams()" required label="Proyecto" key="id_project" value="{{ $task->id_project }}" options="{!! $projects !!}"/>
 
                 <x-select required label="Formato" key="format" value="{{ $task->format }}" options="{!! formats() !!}"/>
 

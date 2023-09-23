@@ -37,14 +37,10 @@
 
         @if($task->description)
             <div class="p-8 mt-6 m-1 lg:mt-0 leading-normal rounded shadow bg-white">
-                @if($task->format == 'html')
-                    {!! $task->description !!}
+                @if($task->format == 'checklist')
+                    {!! checklist($task->description) !!}
                 @endif
-
-                @if($task->format == 'markdown')
-                    {!! markdown($task->description) !!}
-                @endif
-
+                
                 @if($task->format == 'code')
                     <code>
                         <pre>
@@ -57,8 +53,12 @@
                     {!! csv($task->description) !!}
                 @endif
 
-                @if($task->format == 'checklist')
-                    {!! checklist($task->description) !!}
+                @if($task->format == 'html')
+                    {!! $task->description !!}
+                @endif
+
+                @if($task->format == 'markdown')
+                    {!! markdown($task->description) !!}
                 @endif
             </div>
         @else
