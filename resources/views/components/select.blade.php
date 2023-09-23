@@ -5,7 +5,7 @@
         </label>
     </div>
     <div class="md:w-2/3">
-        <select class="form-input block w-full focus:bg-white p-2" name="{{ $key }}" id="{{ $key }}">
+        <select {!! isset($change) ? 'x-on:change="reloadWithParams()"' : '' !!} class="form-input block w-full focus:bg-white p-2" name="{{ $key }}" id="{{ $key }}">
             <option value=""></option>
 
            @foreach(json($options) as $option)

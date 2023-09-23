@@ -95,6 +95,14 @@ function app() {
                     return window.location.href = element.href;
                 }
             });
+        },
+
+        reloadWithParams() {
+            title = document.getElementById('title').value;
+            format = document.getElementById('format').value;
+            description = document.getElementById('description').value;
+
+            window.location.href = window.location.href + '?title=' + title + '&format=' + format + '&description=' + description;
         }
     }
 }
