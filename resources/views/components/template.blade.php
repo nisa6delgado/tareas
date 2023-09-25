@@ -86,5 +86,7 @@
     <script src="{{ node('sweetalert2/dist/sweetalert2.js') }}"></script>
     <script src="{{ node('flowbite/dist/flowbite.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+
+    {{ $js ?? '' }}
 </body>
 </html>
