@@ -22,6 +22,26 @@
                         class="edit"
                     />
 
+                    @if($task->status)
+                        <x-link
+                            href="{{ '/status/' . $task->id . '/undone' }}"
+                            title="Marcar tarea como pendiente"
+                            color="gray"
+                            icon="far fa-circle"
+                            id="undone"
+                            class="undone"
+                        />
+                    @else
+                        <x-link
+                            href="{{ '/status/' . $task->id . '/done' }}"
+                            title="Marcar tarea como realizada"
+                            color="green"
+                            icon="fa fa-check"
+                            id="done"
+                            class="done"
+                        />
+                    @endif
+
                     <x-link
                         href="{{ '/tasks/delete/' . $task->project->slug . '/' . $task->id }}"
                         title="Eliminar esta tarea"

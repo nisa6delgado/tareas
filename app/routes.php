@@ -40,6 +40,9 @@ $route->post('/tasks/update', [TaskController::class, 'update']);
 
 $route->get('/tasks/delete/{slug}/{id}', [TaskController::class, 'delete']);
 
+// Status
+$route->get('/status/{id_task}/{status}', [StatusController::class, 'update']);
+
 // File
 $route->get('/files/show/{id}', [FileController::class, 'show']);
 $route->get('/files/delete/{id}', [FileController::class, 'delete']);
