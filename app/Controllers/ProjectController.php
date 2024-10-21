@@ -31,7 +31,7 @@ class ProjectController extends Controller
     public function show(string $slug): View
     {
         $project = Project::where('slug', $slug)
-            ->with('tasks')
+            ->with('tasks', fn ($query) => $query->where('status', '!=', 1))
             ->orderByDesc('id')
             ->first();
 

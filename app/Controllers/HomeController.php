@@ -26,6 +26,7 @@ class HomeController extends Controller
     public function index(): View
     {
         $tasks = Task::where('status', 0)
+            ->where('status', '!=', 1)
             ->with('project')
             ->orderByDesc('id')
             ->limit(10)
