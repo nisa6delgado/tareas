@@ -13,6 +13,26 @@
                         class="back"
                     />
 
+                    @if(request('all'))
+                        <x-link
+                            href="{{ '/projects/show/' . $project->slug }}"
+                            title="Ver sólo las tareas pendientes"
+                            color="gray"
+                            icon="fa fa-list-check"
+                            id="view-all-task"
+                            class="view-all-task"
+                        />
+                    @else
+                        <x-link
+                            href="?all=1"
+                            title="Ver todas las tareas"
+                            color="gray"
+                            icon="fa fa-list-check"
+                            id="view-all-task"
+                            class="view-all-task"
+                        />
+                    @endif
+
                     <x-link
                         href="{{ '/tasks/create/' . $project->slug }}"
                         title="Crear nueva tarea en este proyecto"

@@ -35,6 +35,12 @@ class ProjectController extends Controller
             ->orderByDesc('id')
             ->first();
 
+        if (request('all')) {
+            $project = Project::where('slug', $slug)
+                ->orderByDesc('id')
+                ->first();
+        }
+
         return view('projects.show', compact('project'));
     }
 
