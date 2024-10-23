@@ -25,16 +25,64 @@
             </x-slot>
         </x-title>
 
-        @foreach($tasks as $task)
-            <x-task
-                id="{{ $task->id }}"
-                title="{!! $task->title !!}"
-                slug="{{ $task->project->slug }}"
-                color="{{ $task->project->color }}"
-                icon="{{ $task->project->icon }}"
-                project="{{ $task->project->name }}"
-                badge="true"
-            />
-        @endforeach
+        <div class="grid grid-cols-2 gap-3">
+            <div class="bg-white p-5">
+                <div>
+                    Tareas por proyecto
+                </div>
+
+                <div class="px-20">
+                    <canvas id="tasks-for-project"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white p-5">
+                <div>
+                    Tareas por estado
+                </div>
+
+                <div class="px-20">
+                    <canvas id="tasks-for-status"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 mt-3">
+            <div class="bg-white p-5">
+                <div>
+                    Tareas por fecha
+                </div>
+
+                <div class="px-20">
+                    <canvas id="tasks-for-date"></canvas>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <x-slot:js>
+        <script src="{{ node('chart.js/dist/chart.umd.js') }}"></script>
+
+        <script>
+            new Chart('tasks-for-project', {
+                type: 'pie',
+                data: {
+                    labels: {!! $chart['projects'] !!},
+                    datasets: [
+                        {
+                            data: {!! $chart['tasks'] !!},
+                            backgroundColor: {!! $chart['colors'] !!},
+                        },
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
+                }
+            });
+        </script>
+    </x-slot>
 </x-template>
