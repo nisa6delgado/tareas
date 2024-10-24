@@ -26,22 +26,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $chart['projects'] = Project::orderBy('name')
-            ->get()
-            ->pluck('name');
+        $dates = DB::table('tasks')
+            ->select(DB::raw('DATE(date_update) AS datef, STRFTIME("%d/%m", DATE(date_update)) || "/" || SUBSTR(STRFTIME("%Y", date_update), 3, 2) AS date, COUNT(1) AS quantity'))
+            ->groupBy('datef')
+            ->orderBy('datef')
+            ->get();
 
-        $chart['colors'] = Project::orderBy('name')
-            ->get()
-            ->pluck('color');
-
-        $chart['tasks'] = DB::table('tasks')
+        $tasks = DB::table('tasks')
             ->leftJoin('projects', 'tasks.id_project', '=', 'projects.id')
-            ->select(DB::raw('projects.name AS project, COUNT(1) AS quantity'))
+            ->select(DB::raw('projects.name AS project, projects.color, COUNT(1) AS quantity'))
             ->groupBy('tasks.id_project')
-            ->orderBy('project')
-            ->get()
-            ->pluck('quantity');
+            ->orderByDesc('quantity')
+            ->get();
 
-        return view('home.index', compact('chart'));
+        return view('home.index', compact('dates', 'tasks'));
     }
 }

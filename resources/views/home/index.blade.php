@@ -38,22 +38,10 @@
 
             <div class="bg-white p-5">
                 <div>
-                    Tareas por estado
+                    Tareas por día
                 </div>
 
-                <div class="px-20">
-                    <canvas id="tasks-for-status"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 mt-3">
-            <div class="bg-white p-5">
-                <div>
-                    Tareas por fecha
-                </div>
-
-                <div class="px-20">
+                <div class="pt-10">
                     <canvas id="tasks-for-date"></canvas>
                 </div>
             </div>
@@ -67,11 +55,11 @@
             new Chart('tasks-for-project', {
                 type: 'pie',
                 data: {
-                    labels: {!! $chart['projects'] !!},
+                    labels: {!! $tasks->pluck('project') !!},
                     datasets: [
                         {
-                            data: {!! $chart['tasks'] !!},
-                            backgroundColor: {!! $chart['colors'] !!},
+                            data: {!! $tasks->pluck('quantity') !!},
+                            backgroundColor: {!! $tasks->pluck('color') !!},
                         },
                     ]
                 },
@@ -79,6 +67,36 @@
                     plugins: {
                         legend: {
                             display: false,
+                        }
+                    }
+                }
+            });
+
+            new Chart('tasks-for-date', {
+                type: 'line',
+                data: {
+                    labels: {!! $dates->pluck('date') !!},
+                    datasets: [
+                        {
+                            label: 'Tareas por día',
+                            data: {!! $dates->pluck('quantity') !!},
+                            borderColor: '{{ $tasks[0]->color }}'
+                        },
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    },
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: {{ max($dates->pluck('quantity')->toArray()) + 1 }},
+                            ticks: {
+                                stepSize: 1,
+                            }
                         }
                     }
                 }
