@@ -48,11 +48,15 @@
         </div>
     </section>
 
+    <input type="hidden" id="tasks" value='{!! $tasks !!}'>
+
     <x-slot:js>
         <script src="{{ node('chart.js/dist/chart.umd.js') }}"></script>
 
         <script>
-            new Chart('tasks-for-project', {
+            const tasksForProjectElement = document.getElementById('tasks-for-project');
+
+            const tasksForProjectChart = new Chart(tasksForProjectElement, {
                 type: 'pie',
                 data: {
                     labels: {!! $tasks->pluck('project') !!},
@@ -71,6 +75,22 @@
                     }
                 }
             });
+
+            tasksForProjectElement.onclick = (event) => {
+                response = tasksForProjectChart.getElementsAtEventForMode(
+                    event,
+                    'nearest',
+                    { intersect: true },
+                    true
+                );
+
+                if (response.length === 0) {
+                    return;
+                }
+
+                project = tasksForProjectChart.data.labels[response[0].index].toLowerCase();
+                window.location.href = '/projects/show/' + project;
+            };
 
             new Chart('tasks-for-date', {
                 type: 'line',
