@@ -31,19 +31,29 @@
                     Tareas por proyecto
                 </div>
 
-                <div class="px-20">
+                <div class="px-20 mx-10">
                     <canvas id="tasks-for-project"></canvas>
                 </div>
             </div>
 
             <div class="bg-white p-5">
                 <div>
-                    Tareas por día
+                    Tareas por estado
                 </div>
 
-                <div class="pt-10">
-                    <canvas id="tasks-for-date"></canvas>
+                <div class="px-20 mx-10">
+                    <canvas id="tasks-for-status"></canvas>
                 </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-5 mt-3">
+            <div>
+                Tareas por día
+            </div>
+
+            <div class="p-10 m-10">
+                <canvas id="tasks-for-date"></canvas>
             </div>
         </div>
     </section>
@@ -117,6 +127,26 @@
                             ticks: {
                                 stepSize: 1,
                             }
+                        }
+                    }
+                }
+            });
+
+            new Chart('tasks-for-status', {
+                type: 'pie',
+                data: {
+                    labels: {!! $status->pluck('status') !!},
+                    datasets: [
+                        {
+                            data: {!! $status->pluck('quantity') !!},
+                            backgroundColor: {!! $status->pluck('color') !!},
+                        },
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
                         }
                     }
                 }

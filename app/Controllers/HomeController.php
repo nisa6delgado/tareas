@@ -39,6 +39,12 @@ class HomeController extends Controller
             ->orderByDesc('quantity')
             ->get();
 
-        return view('home.index', compact('dates', 'tasks'));
+        $status = DB::table('tasks')
+            ->select(DB::raw('CASE WHEN status THEN "Finalizada" ELSE "Pendiente" END AS status, CASE WHEN status THEN "green" ELSE "orange" END AS color, COUNT(1) AS quantity'))
+            ->groupBy('status')
+            ->orderByDesc('quantity')
+            ->get();
+
+        return view('home.index', compact('dates', 'status', 'tasks'));
     }
 }
