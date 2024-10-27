@@ -2,10 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Models\Project;
+use App\Models\Task;
 use DB;
 use View;
-use Redirect;
 
 class HomeController extends Controller
 {
@@ -24,12 +23,18 @@ class HomeController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(): View
     {
         $dates = DB::table('tasks')
             ->select(DB::raw('DATE(date_update) AS datef, STRFTIME("%d/%m", DATE(date_update)) || "/" || SUBSTR(STRFTIME("%Y", date_update), 3, 2) AS date, COUNT(1) AS quantity'))
             ->groupBy('datef')
             ->orderBy('datef')
+            ->get();
+
+        $items = Task::where('status', 0)
+            ->where('status', '!=', 1)
+            ->with('project')
+            ->orderByDesc('id')
             ->get();
 
         $tasks = DB::table('tasks')
@@ -45,6 +50,6 @@ class HomeController extends Controller
             ->orderByDesc('quantity')
             ->get();
 
-        return view('home.index', compact('dates', 'status', 'tasks'));
+        return view('home.index', compact('dates', 'items', 'status', 'tasks'));
     }
 }
