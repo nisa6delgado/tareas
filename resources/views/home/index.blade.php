@@ -177,7 +177,7 @@
                 }
 
                 project = tasksForProjectChart.data.labels[response[0].index].toLowerCase();
-                window.location.href = '/projects/show/' + project;
+                window.location.href = '/projects/show/' + project.replace(' ', '-');
             };
 
             new Chart('tasks-for-date', {
