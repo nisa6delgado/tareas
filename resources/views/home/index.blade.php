@@ -25,7 +25,7 @@
             </x-slot>
         </x-title>
 
-        <div class="grid grid-cols-2 gap-3">
+        <div id="desktop-graph" class="grid grid-cols-2 gap-3">
             <div class="bg-white p-5">
                 <div>
                     Tareas por proyecto

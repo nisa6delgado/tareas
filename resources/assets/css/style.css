@@ -1,3 +1,9 @@
+@media (max-width: 700px) {
+    #desktop-graph {
+        display: none;
+    }    
+}
+
 #tasks-for-project {
     cursor: pointer;
 }
