@@ -3,7 +3,7 @@
     "description": "Gestión de proyectos y listas de tareas",
     "type": "project",
     "license": "MIT",
-    "version": "1.1.97",
+    "version": "1.2.09",
     "minimum-stability": "stable",
     "authors": [
         {
@@ -12,20 +12,20 @@
         }
     ],
     "require": {
-        "base-php/core": "1.9.30",
-        "illuminate/database": "11.9.2",
-        "illuminate/pagination": "11.9.2",
-        "illuminate/routing": "11.9.2",
-        "illuminate/validation": "11.9.2",
-        "illuminate/view": "11.9.2",
-        "league/flysystem": "3.28.0",
-        "league/commonmark": "2.4.2"
+        "base-php/core": "1.9.35",
+        "illuminate/database": "11.30.0",
+        "illuminate/pagination": "11.30.0",
+        "illuminate/routing": "11.30.0",
+        "illuminate/validation": "11.30.0",
+        "illuminate/view": "11.30.0",
+        "league/flysystem": "3.29.1",
+        "league/commonmark": "2.5.3"
     },
     "require-dev": {
-        "laravel/pint": "1.16.0",
-        "psy/psysh": "0.12.3",
-        "spatie/ignition": "1.14.2",
-        "pestphp/pest": "^3.4"
+        "laravel/pint": "1.18.1",
+        "psy/psysh": "0.12.4",
+        "spatie/ignition": "1.15.0",
+        "pestphp/pest": "3.5.1"
     },
     "autoload": {
         "psr-4": {
@@ -40,7 +40,7 @@
             "type": "package",
             "package": {
                 "name": "base-php/core",
-                "version": "1.9.30",
+                "version": "1.9.35",
                 "dist": {
                     "url": "https://github.com/base-php/core/archive/refs/heads/main.zip",
                     "type": "zip"
