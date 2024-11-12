@@ -177,7 +177,20 @@
                 }
 
                 project = tasksForProjectChart.data.labels[response[0].index].toLowerCase();
-                window.location.href = '/projects/show/' + project.replace(' ', '-');
+
+                project = project.replace('á', 'a');
+                project = project.replace('Á', 'A');
+                project = project.replace('é', 'e');
+                project = project.replace('É', 'E');
+                project = project.replace('í', 'i');
+                project = project.replace('Í', 'I');
+                project = project.replace('ó', 'o');
+                project = project.replace('Ó', 'O');
+                project = project.replace('ú', 'u');
+                project = project.replace('Ú', 'U');
+                project = project.replace(' ', '-');
+
+                window.location.href = '/projects/show/' + project;
             };
 
             new Chart('tasks-for-date', {
