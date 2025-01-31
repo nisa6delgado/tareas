@@ -1,6 +1,0 @@
-#!/usr/bin/env php
-<?php
-
-include 'vendor/autoload.php';
-
-Console::run();
