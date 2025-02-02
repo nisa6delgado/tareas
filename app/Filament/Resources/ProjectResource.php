@@ -31,7 +31,7 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label(__('projects.name'))->required(),
+                Forms\Components\TextInput::make('name')->label(__('projects.name'))->required()->autofocus(),
                 Forms\Components\TextInput::make('icon')->label(__('projects.icon'))->required(),
             ]);
     }

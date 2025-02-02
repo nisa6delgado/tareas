@@ -32,7 +32,8 @@ class AdminPanelProvider extends PanelProvider
             $navigationItems[] = NavigationItem::make()
                 ->label($project->name)
                 ->icon('heroicon-o-' . $project->icon)
-                ->url('/' . $project->slug);
+                ->url('/' . $project->slug)
+                ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug));
         }
 
         return $panel

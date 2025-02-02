@@ -11,6 +11,11 @@ class EditProject extends EditRecord
 {
     protected static string $resource = ProjectResource::class;
 
+    public function getBreadcrumbs(): array
+    {
+        return [];
+    }
+
     protected function getHeaderActions(): array
     {
         return [
