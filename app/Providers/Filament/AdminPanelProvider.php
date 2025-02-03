@@ -24,7 +24,7 @@ class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        $projects = Project::get();
+        $projects = Project::orderBy('name')->get();
 
         $navigationItems = [];
 

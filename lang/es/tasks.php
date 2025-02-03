@@ -18,4 +18,5 @@ return [
     'edit' => 'Editar',
     'show' => 'Ver',
     'edit_task' => 'Editar tarea',
+    'updated' => 'Actualizado'
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Models\File;
 use App\Models\Project;
 use App\Models\Task;
 use Filament\Forms\Contracts\HasForms;
@@ -66,6 +67,7 @@ class EditTask extends Page implements HasForms
 
             Forms\Components\FileUpload::make('files')
                 ->label(__('tasks.files'))
+                ->multiple()
 
         ])->statePath('data');
     }
@@ -89,11 +91,19 @@ class EditTask extends Page implements HasForms
     public function submit()
     {
         $data = collect($this->form->getState());
-        $this->task->update($data->except('files')->toArray());
+
+        $task = $this->task->update($data->except('files')->toArray());
+
+        foreach ($data['files'] as $file) {
+            File::create([
+                'task_id' => $task->id,
+                'name' => $file,
+            ]);
+        }
 
         return Notification::make()
             ->success()
-            ->title(__('tasks.created'))
+            ->title(__('tasks.updated'))
             ->send();
     }
 }
