@@ -11,4 +11,14 @@ class Task extends Model
     {
         return $this->status ? __('tasks.completed') : __('tasks.pending');
     }
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

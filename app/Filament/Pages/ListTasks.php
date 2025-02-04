@@ -88,7 +88,7 @@ class ListTasks extends Page implements HasTable
 
                 Tables\Actions\Action::make('show')
                     ->label(__('tasks.show'))
-                    ->url(fn (Model $record) => '/tasks/' . $record->id)
+                    ->url(fn (Model $record) => $this->project->slug . '/tasks/' . $record->id)
                     ->icon('heroicon-m-eye'),
                     
                 Tables\Actions\DeleteAction::make()

@@ -34,7 +34,14 @@ class EditTask extends Page implements HasForms
     {
         $this->project = Project::where('slug', $slug)->first();
         $this->task = Task::find($task_id);
-        $this->form->fill($this->task->toArray());
+
+        $data = $this->task->toArray();
+        
+        foreach ($this->task->files as $file) {
+            $data['uploaded_files'][] = $file->name;
+        }
+
+        $this->form->fill($data);
     }
 
     public function getTitle(): string|Htmlable
@@ -45,6 +52,10 @@ class EditTask extends Page implements HasForms
     public function form(Form $form): Form
     {
         $projects = Project::pluck('name', 'id');
+
+        foreach ($this->task->files as $file) {
+            $uploaded[$file->name] = $file->name;
+        }
 
         return $form->schema([
             Forms\Components\TextInput::make('title')
@@ -65,8 +76,13 @@ class EditTask extends Page implements HasForms
             Forms\Components\Textarea::make('description')
                 ->label(__('tasks.description')),
 
-            Forms\Components\FileUpload::make('files')
-                ->label(__('tasks.files'))
+            Forms\Components\CheckboxList::make('uploaded_files')
+                ->label(__('tasks.uploaded_files'))
+                ->options($uploaded)
+                ->columns(3),
+
+            Forms\Components\FileUpload::make('files_to_upload')
+                ->label(__('tasks.files_to_upload'))
                 ->multiple()
 
         ])->statePath('data');
@@ -92,12 +108,21 @@ class EditTask extends Page implements HasForms
     {
         $data = collect($this->form->getState());
 
-        $task = $this->task->update($data->except('files')->toArray());
+        $this->task->update($data->except(['uploaded_files', 'files_to_upload'])->toArray());
 
-        foreach ($data['files'] as $file) {
+        File::where('task_id', $this->task->id)->delete();
+
+        foreach ($data['uploaded_files'] as $uploaded) {
             File::create([
-                'task_id' => $task->id,
-                'name' => $file,
+                'task_id' => $this->task->id,
+                'name' => $uploaded,
+            ]);
+        }
+
+        foreach ($data['files_to_upload'] as $upload) {
+            File::create([
+                'task_id' => $this->task->id,
+                'name' => $upload,
             ]);
         }
 

@@ -19,4 +19,9 @@ return [
     'show' => 'Show',
     'edit_task' => 'Edit task',
     'updated' => 'Updated',
+    'uploaded_files' => 'Uploaded files',
+    'files_to_upload' => 'Files to upload',
+    'mark_as_completed' => 'Mark as completed',
+    'delete' => 'Delete',
+    'mark_as_pending' => 'Mark as pending',
 ];

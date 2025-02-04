@@ -18,5 +18,10 @@ return [
     'edit' => 'Editar',
     'show' => 'Ver',
     'edit_task' => 'Editar tarea',
-    'updated' => 'Actualizado'
+    'updated' => 'Actualizado',
+    'uploaded_files' => 'Archivos subidos',
+    'files_to_upload' => 'Archivos a subir',
+    'mark_as_completed' => 'Marcar como completada',
+    'delete' => 'Eliminar',
+    'mark_as_pending' => 'Marcar como pendiente',
 ];
