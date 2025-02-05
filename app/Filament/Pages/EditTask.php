@@ -53,6 +53,8 @@ class EditTask extends Page implements HasForms
     {
         $projects = Project::pluck('name', 'id');
 
+        $uploaded = [];
+
         foreach ($this->task->files as $file) {
             $uploaded[$file->name] = $file->name;
         }
@@ -79,6 +81,7 @@ class EditTask extends Page implements HasForms
             Forms\Components\CheckboxList::make('uploaded_files')
                 ->label(__('tasks.uploaded_files'))
                 ->options($uploaded)
+                ->visible(empty($uploaded) ? false : true)
                 ->columns(3),
 
             Forms\Components\FileUpload::make('files_to_upload')
