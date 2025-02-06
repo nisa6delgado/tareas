@@ -26,6 +26,26 @@ function checklist($checklist)
     return $html;
 }
 
+function colors($quantity)
+{
+    $colors = [
+        '#EF4444',
+        '#3B82F6',
+        '#F59E0B',
+        '#22C55E',
+        '#6366F1',
+        '#EAB308',
+        '#F97316',
+        '#A855F7',
+        '#F43F5E',
+        '#14B8A6',
+    ];
+    
+    shuffle($colors);
+    
+    return array_slice($colors, 0, $quantity);
+}
+
 function csv($csv)
 {
     $lines = explode("\n", $csv);
