@@ -3,4 +3,7 @@
 return [
     'create_project' => 'Create project',
     'tasks_per_project' => 'Tasks per project',
+    'tasks_per_status' => 'Tasks per status',
+    'completed' => 'Completed',
+    'pending' => 'Pending',
 ];

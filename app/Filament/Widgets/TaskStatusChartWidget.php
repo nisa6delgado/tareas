@@ -6,7 +6,7 @@ use DB;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 
-class TaskProjectChartWidget extends ChartWidget
+class TaskStatusChartWidget extends ChartWidget
 {
     protected static ?string $maxHeight = '250px';
 
@@ -34,26 +34,28 @@ class TaskProjectChartWidget extends ChartWidget
 
     public function getHeading(): string|Htmlable
     {
-        return __('dashboard.tasks_per_project');
+        return __('dashboard.tasks_per_status');
     }
-
+    
     protected function getData(): array
     {
-        $db = DB::table('projects')
-            ->join('tasks', 'projects.id', '=', 'tasks.project_id')
-            ->groupBy('projects.id')
-            ->selectRaw('projects.name AS project, count(1) AS quantity')
+        $completed = __('dashboard.completed');
+        $pending = __('dashboard.pending');
+
+        $db = DB::table('tasks')
+            ->groupBy('tasks.status')
+            ->selectRaw('IIF (tasks.status, "' . $completed . '", "' . $pending . '") AS status, count(1) AS quantity')
             ->get()
             ->toArray();
 
-        $labels = array_column($db, 'project');
+        $labels = array_column($db, 'status');
         $data = array_column($db, 'quantity');
         $colors = count($data);
 
         return [
             'datasets' => [
                 [
-                    'label' => __('dashboard.tasks_per_project'),
+                    'label' => __('dashboard.tasks_per_status'),
                     'data' => $data,
                     'backgroundColor' => colors($colors),
                 ],
