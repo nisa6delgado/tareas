@@ -6,23 +6,19 @@ use DB;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 
-class TaskStatusChartWidget extends ChartWidget
+class TaskDateChart extends ChartWidget
 {
+    protected int|string|array $columnSpan = 'full';
+
     protected static ?string $maxHeight = '250px';
 
     protected static ?array $options = [
         'scales' => [
-            'x' => [
-                'display' => false,
-                'grid' => [
-                    'drawOnChartArea' => false,
-                ]
-            ],
             'y' => [
-                'display' => false,
-                'grid' => [
-                    'drawOnChartArea' => false,
-                ]
+                'min' => 0,
+                'ticks' => [
+                    'stepSize' => 1,
+                ],
             ],
         ],
         'plugins' => [
@@ -34,31 +30,29 @@ class TaskStatusChartWidget extends ChartWidget
 
     public function getHeading(): string|Htmlable
     {
-        return __('dashboard.tasks_per_status');
+        return __('dashboard.tasks_per_date');
     }
-    
+
     protected function getData(): array
     {
-        $completed = __('dashboard.completed');
-        $pending = __('dashboard.pending');
-
         $db = DB::table('tasks')
-            ->groupBy('tasks.status')
-            ->selectRaw('IIF (tasks.status, "' . $completed . '", "' . $pending . '") AS status, count(1) AS quantity')
+            ->selectRaw('STRFTIME("%d/%m/%Y", DATE(updated_at)) AS date, COUNT(*) AS quantity')
+            ->groupBy('date')
+            ->orderBy('date')
             ->get()
             ->toArray();
 
-        $labels = array_column($db, 'status');
+        $labels = array_column($db, 'date');
         $data = array_column($db, 'quantity');
         $colors = count($data);
 
         return [
             'datasets' => [
                 [
-                    'label' => __('dashboard.tasks_per_status'),
+                    'label' => __('dashboard.tasks_per_project'),
                     'data' => $data,
-                    'backgroundColor' => colors($colors),
-                ],
+                    'borderColor' => '#3B82F6',
+                ]
             ],
             'labels' => $labels,
         ];
@@ -66,6 +60,6 @@ class TaskStatusChartWidget extends ChartWidget
 
     protected function getType(): string
     {
-        return 'pie';
+        return 'line';
     }
 }

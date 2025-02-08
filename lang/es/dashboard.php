@@ -6,4 +6,5 @@ return [
     'tasks_per_status' => 'Tareas por estado',
     'completed' => 'Completada',
     'pending' => 'Pendiente',
+    'tasks_per_date' => 'Tareas por fecha',
 ];

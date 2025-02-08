@@ -6,7 +6,7 @@ use DB;
 use Filament\Widgets\ChartWidget;
 use Illuminate\Contracts\Support\Htmlable;
 
-class TaskProjectChartWidget extends ChartWidget
+class TaskProjectChart extends ChartWidget
 {
     protected static ?string $maxHeight = '250px';
 
