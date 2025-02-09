@@ -6,6 +6,7 @@ use App\Filament\Pages;
 use App\Filament\Widgets\TaskDateChart;
 use App\Filament\Widgets\TaskProjectChart;
 use App\Filament\Widgets\TaskStatusChart;
+use App\Filament\Widgets\TaskTable;
 use App\Models\Project;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -56,6 +57,7 @@ class AdminPanelProvider extends PanelProvider
                 TaskProjectChart::class,
                 TaskStatusChart::class,
                 TaskDateChart::class,
+                TaskTable::class
             ])
             ->middleware([
                 EncryptCookies::class,

@@ -7,4 +7,5 @@ return [
     'completed' => 'Completed',
     'pending' => 'Pending',
     'tasks_per_date' => 'Tasks per date',
+    'tasks' => 'Tasks',
 ];
