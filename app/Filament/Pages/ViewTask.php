@@ -4,6 +4,7 @@ namespace App\Filament\Pages;
 
 use App\Models\Task;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
 
@@ -42,17 +43,31 @@ class ViewTask extends Page
         if ($this->task->status) {
             $actions[] = Actions\Action::make('pending')
                 ->label(__('tasks.mark_as_pending'))
-                ->action(fn () => $this->task->update(['status' => 0]))
-                ->successRedirectUrl('/' . $this->task->project->slug . '/tasks/' . $this->task->id)
-                ->successNotificationTitle(__('tasks.pending'))
+                ->action(function () {
+                    $this->task->update(['status' => 0]);
+                    
+                    Notification::make()
+                        ->success()
+                        ->title(__('tasks.pending'))
+                        ->send();
+
+                    return redirect('/' . $this->task->project->slug . '/tasks/' . $this->task->id);
+                })
                 ->icon('heroicon-o-exclamation-circle');
 
         } else {
             $actions[] = Actions\Action::make('completed')
                 ->label(__('tasks.mark_as_completed'))
-                ->action(fn () => $this->task->update(['status' => 1]))
-                ->successRedirectUrl('/' . $this->task->project->slug . '/tasks/' . $this->task->id)
-                ->successNotificationTitle(__('tasks.completed'))
+                ->action(function () {
+                    $this->task->update(['status' => 1]);
+                    
+                    Notification::make()
+                        ->success()
+                        ->title(__('tasks.pending'))
+                        ->send();
+
+                    return redirect('/' . $this->task->project->slug . '/tasks/' . $this->task->id);
+                })
                 ->icon('heroicon-o-check-circle')
                 ->color('success');
         }
