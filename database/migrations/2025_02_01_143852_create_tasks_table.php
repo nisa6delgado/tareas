@@ -18,7 +18,12 @@ return new class extends Migration
             $table->string('format');
             $table->text('description')->nullable();
             $table->boolean('status')->default(0);
-            $table->foreign('project_id')->references('id')->on('projects');
+
+            $table->foreign('project_id')
+                ->references('id')
+                ->on('projects')
+                ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }
