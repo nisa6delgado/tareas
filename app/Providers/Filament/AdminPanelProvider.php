@@ -12,6 +12,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -50,6 +51,12 @@ class AdminPanelProvider extends PanelProvider
             ->navigationItems($navigationItems)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->userMenuItems([
+                MenuItem::make()
+                    ->label(__('dashboard.config'))
+                    ->url(fn (): string => Pages\Config::getUrl())
+                    ->icon('heroicon-o-cog-6-tooth'),
+            ])
             ->pages([
                 Pages\Dashboard::class,
             ])

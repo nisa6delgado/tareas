@@ -8,4 +8,5 @@ return [
     'pending' => 'Pendiente',
     'tasks_per_date' => 'Tareas por fecha',
     'tasks' => 'Tareas',
+    'config' => 'Configuración'
 ];
