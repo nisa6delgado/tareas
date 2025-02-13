@@ -13,7 +13,7 @@
         @endif
 
         @if($task->format == 'markdown')
-            {!! markdown($task->description) !!}
+            {!! markdown($task->description ?? '') !!}
         @endif
     </div>
 </x-filament-panels::page>

@@ -64,7 +64,7 @@ class ListTasks extends Page implements HasTable
     public function table(Table $table): Table
     {
         return $table
-            ->query(Task::where('project_id', $this->project->id))
+            ->query(Task::where('project_id', $this->project->id)->where('status', 0))
             ->columns([
                 Tables\Columns\TextColumn::make('title')->label(__('tasks.title')),
 
