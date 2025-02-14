@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'user' => 'Usuario',
+    'email' => 'Correo electrónico',
     'password' => 'Contraseña',
     'name' => 'Nombre',
     'photo' => 'Foto',

@@ -115,14 +115,16 @@ class EditTask extends Page implements HasForms
 
         File::where('task_id', $this->task->id)->delete();
 
-        foreach ($data['uploaded_files'] as $uploaded) {
-            File::create([
-                'task_id' => $this->task->id,
-                'name' => $uploaded,
-            ]);
+        if (isset($data->all()['uploaded_files'])) {
+            foreach ($data->all()['uploaded_files'] as $uploaded) {
+                File::create([
+                    'task_id' => $this->task->id,
+                    'name' => $uploaded,
+                ]);
+            }
         }
 
-        foreach ($data['files_to_upload'] as $upload) {
+        foreach ($data->all()['files_to_upload'] as $upload) {
             File::create([
                 'task_id' => $this->task->id,
                 'name' => $upload,

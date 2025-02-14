@@ -2,9 +2,12 @@
 
 namespace App\Filament\Pages;
 
+use App\Models\Config as Model;
+use App\Models\User;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
 
@@ -13,6 +16,8 @@ class Config extends Page implements HasForms
     protected static string $view = 'filament.pages.config';
 
     protected static ?string $slug = '/config';
+
+    public ?array $data = [];
 
     public static function shouldRegisterNavigation(): bool
     {
@@ -24,6 +29,21 @@ class Config extends Page implements HasForms
         return __('dashboard.config');
     }
 
+    public function mount()
+    {
+        $user = User::first();
+        $config = Model::get();
+
+        $data['name'] = $user->name;
+        $data['email'] = $user->email;
+
+        foreach ($config as $item) {
+            $data[$item->key] = $item->value;
+        }
+
+        $this->form->fill($data);
+    }
+
     public function form(Form $form): Form
     {
         return $form->schema([
@@ -32,26 +52,23 @@ class Config extends Page implements HasForms
                 ->required()
                 ->autofocus(),
 
-            Forms\Components\TextInput::make('user')
-                ->label(__('config.user'))
+            Forms\Components\TextInput::make('email')
+                ->label(__('config.email'))
+                ->email()
                 ->required(),
 
             Forms\Components\TextInput::make('password')
                 ->label(__('config.password'))
-                ->password()
-                ->required(),
+                ->password(),
 
             Forms\Components\TextInput::make('photo')
-                ->label(__('config.photo'))
-                ->required(),
+                ->label(__('config.photo')),
             
             Forms\Components\TextInput::make('icon')
-                ->label(__('config.icon'))
-                ->required(),
+                ->label(__('config.icon')),
 
             Forms\Components\TextInput::make('color')
-                ->label(__('config.color'))
-                ->required(),
+                ->label(__('config.color')),
 
         ])->statePath('data');
     }
@@ -70,5 +87,29 @@ class Config extends Page implements HasForms
                 ->icon('heroicon-o-x-circle')
                 ->color('danger'),
         ];
+    }
+
+    public function submit()
+    {
+        $data = collect($this->form->getState());
+        
+        $user = User::first();
+        $user->update($data->only('name', 'email')->toArray());
+
+        if ($data->all()['password']) {
+            $user->update(['password' => $data->all()['password']]);
+        }
+
+        foreach ($data->only('photo', 'icon', 'color') as $key => $value) {
+            Model::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value],
+            );
+        }
+        
+        return Notification::make()
+            ->success()
+            ->title(__('tasks.created'))
+            ->send();
     }
 }

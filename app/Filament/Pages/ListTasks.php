@@ -36,6 +36,11 @@ class ListTasks extends Page implements HasTable
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('view-all-tasks')
+                ->label(__('tasks.view_all_tasks'))
+                ->url('?all=1')
+                ->icon('heroicon-o-list-bullet'),
+
             Actions\Action::make('create')
                 ->label(__('tasks.create_task'))
                 ->url('/tasks/' . $this->project->slug . '/create')
@@ -63,10 +68,16 @@ class ListTasks extends Page implements HasTable
 
     public function table(Table $table): Table
     {
+        $tasks = Task::where('project_id', $this->project->id)->where('status', 0);
+
+        if (request()->all) {
+            $tasks = Task::where('project_id', $this->project->id);
+        }
+
         return $table
-            ->query(Task::where('project_id', $this->project->id)->where('status', 0))
+            ->query($tasks)
             ->columns([
-                Tables\Columns\TextColumn::make('title')->label(__('tasks.title')),
+                Tables\Columns\TextColumn::make('title')->label(__('tasks.title'))->searchable(),
 
                 Tables\Columns\TextColumn::make('status_name')
                     ->label(__('tasks.status'))

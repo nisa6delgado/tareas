@@ -7,6 +7,7 @@ use App\Filament\Widgets\TaskDateChart;
 use App\Filament\Widgets\TaskProjectChart;
 use App\Filament\Widgets\TaskStatusChart;
 use App\Filament\Widgets\TaskTable;
+use App\Models\Config;
 use App\Models\Project;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -40,13 +41,21 @@ class AdminPanelProvider extends PanelProvider
                 ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug));
         }
 
+        $color = Config::where('key', 'color')->first();
+        $color = $color ? $color->value : '#000000';
+
         return $panel
             ->default()
             ->id('admin')
+            ->brandLogo(function () {
+                $logo = Config::where('key', 'icon')->first();
+                $logo = $logo ? $logo->value : '';
+                return view('filament.admin.logo', compact('logo'));
+            })
             ->path('/')
             ->login()
             ->colors([
-                'primary' => Color::hex('#000'),
+                'primary' => Color::hex($color),
             ])
             ->navigationItems($navigationItems)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
