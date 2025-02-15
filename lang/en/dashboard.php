@@ -9,4 +9,5 @@ return [
     'tasks_per_date' => 'Tasks per date',
     'tasks' => 'Tasks',
     'config' => 'Config',
+    'download_backup' => 'Download backup',
 ];

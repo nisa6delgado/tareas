@@ -8,5 +8,6 @@ return [
     'pending' => 'Pendiente',
     'tasks_per_date' => 'Tareas por fecha',
     'tasks' => 'Tareas',
-    'config' => 'Configuración'
+    'config' => 'Configuración',
+    'download_backup' => 'Descargar copia de seguridad',
 ];

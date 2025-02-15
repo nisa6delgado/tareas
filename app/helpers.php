@@ -50,7 +50,7 @@ function csv($csv)
 {
     $lines = explode("\n", $csv);
 
-    $html = '<table><thead><tr>';
+    $html = '<table class="csv"><thead><tr>';
 
     foreach (explode(';', $lines[0]) as $item) {
         $html .= '<th>' . $item . '</th>';

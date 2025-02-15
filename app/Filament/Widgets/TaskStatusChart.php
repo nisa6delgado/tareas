@@ -44,7 +44,7 @@ class TaskStatusChart extends ChartWidget
 
         $db = DB::table('tasks')
             ->groupBy('tasks.status')
-            ->selectRaw('IIF (tasks.status, "' . $completed . '", "' . $pending . '") AS status, count(1) AS quantity')
+            ->selectRaw("(CASE tasks.status WHEN 1 THEN '$completed' ELSE '$pending' END) AS status, count(1) AS quantity")
             ->get()
             ->toArray();
 
