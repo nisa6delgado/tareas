@@ -17,6 +17,7 @@ use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Assets\Css;
 use Filament\Support\Colors\Color;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -44,12 +45,14 @@ class AdminPanelProvider extends PanelProvider
         $color = Config::where('key', 'color')->first();
         $color = $color ? $color->value : '#000000';
 
+        $logo = Config::where('key', 'icon')->first();
+        $logo = $logo ? $logo->value : '';
+
         return $panel
             ->default()
             ->id('admin')
-            ->brandLogo(function () {
-                $logo = Config::where('key', 'icon')->first();
-                $logo = $logo ? $logo->value : '';
+            ->favicon($logo)
+            ->brandLogo(function () use ($logo) {
                 return view('filament.admin.logo', compact('logo'));
             })
             ->path('/')
@@ -88,6 +91,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->assets([
+                Css::make('app', resource_path('css/app.css')),
             ])
             ->sidebarCollapsibleOnDesktop();
     }

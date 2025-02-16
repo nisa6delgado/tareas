@@ -8,7 +8,6 @@ use App\Models\Task;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
 
@@ -78,7 +77,8 @@ class CreateTask extends Page implements HasForms
             Forms\Components\Actions\Action::make('submit')
                 ->submit('submit')
                 ->label(__('tasks.save'))
-                ->icon('heroicon-o-check-circle'),
+                ->icon('heroicon-o-check-circle')
+                ->keyBindings(['ctrl+s']),
 
             Forms\Components\Actions\Action::make('cancel')
                 ->url('/' . $this->project->slug)
@@ -94,16 +94,13 @@ class CreateTask extends Page implements HasForms
 
         $task = Task::create($data->except('files')->toArray());
 
-        foreach ($data['files'] as $file) {
+        foreach ($data->all()['files'] as $file) {
             File::create([
                 'task_id' => $task->id,
                 'name' => $file,
             ]);
         }
 
-        return Notification::make()
-            ->success()
-            ->title(__('tasks.created'))
-            ->send();
+        return redirect('/' . $task->project->slug . '/tasks/' . $task->id);
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
-use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\Table\TableExtension;
+use League\CommonMark\MarkdownConverter;
 
 function checklist($checklist)
 {
@@ -87,10 +90,30 @@ function formts()
 
 function markdown($text)
 {
-    $converter = new CommonMarkConverter([
-        'html_input' => 'strip',
-        'allow_unsafe_links' => false,
-    ]);
+    $config = [
+        'table' => [
+            'wrap' => [
+                'enabled' => false,
+                'tag' => 'div',
+                'attributes' => [],
+            ],
+            'alignment_attributes' => [
+                'left'   => ['align' => 'left'],
+                'center' => ['align' => 'center'],
+                'right'  => ['align' => 'right'],
+            ],
+        ],
+    ];
+
+    $environment = new Environment($config);
+    $environment->addExtension(new CommonMarkCoreExtension());
+
+    $environment->addExtension(new TableExtension());
+
+    $converter = new MarkdownConverter($environment);
     
-    return $converter->convert($text);
+    $converter = $converter->convert($text);
+    $converter = str_replace('<a href', '<a target="_blank" href', $converter);
+
+    return $converter;
 }

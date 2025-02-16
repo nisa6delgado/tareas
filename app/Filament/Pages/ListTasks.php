@@ -44,12 +44,14 @@ class ListTasks extends Page implements HasTable
             Actions\Action::make('create')
                 ->label(__('tasks.create_task'))
                 ->url('/tasks/' . $this->project->slug . '/create')
-                ->icon('heroicon-o-plus-circle'),
+                ->icon('heroicon-o-plus-circle')
+                ->keyBindings(['ctrl+n']),
 
             Actions\Action::make('edit')
                 ->label(__('tasks.edit_this_project'))
                 ->url('/projects/' . $this->project->id . '/edit')
-                ->icon('heroicon-o-pencil-square'),
+                ->icon('heroicon-o-pencil-square')
+                ->keyBindings(['ctrl+e']),
 
             Actions\DeleteAction::make('delete')
                 ->requiresConfirmation()
@@ -57,7 +59,8 @@ class ListTasks extends Page implements HasTable
                 ->successRedirectUrl('/')
                 ->successNotificationTitle(__('tasks.deleted'))
                 ->icon('heroicon-o-trash')
-                ->color('danger'),
+                ->color('danger')
+                ->keyBindings(['ctrl+d']),
         ];
     }
 
@@ -68,16 +71,19 @@ class ListTasks extends Page implements HasTable
 
     public function table(Table $table): Table
     {
-        $tasks = Task::where('project_id', $this->project->id)->where('status', 0);
+        $tasks = Task::where('project_id', $this->project->id)->where('status', 0)->orderByDesc('updated_at');
 
         if (request()->all) {
-            $tasks = Task::where('project_id', $this->project->id);
+            $tasks = Task::where('project_id', $this->project->id)->orderByDesc('updated_at');
         }
 
         return $table
             ->query($tasks)
             ->columns([
-                Tables\Columns\TextColumn::make('title')->label(__('tasks.title'))->searchable(),
+                Tables\Columns\TextColumn::make('title')
+                    ->label(__('tasks.title'))
+                    ->url(fn ($record): string => '/' . $record->project->slug . '/tasks/' . $record->id)
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('status_name')
                     ->label(__('tasks.status'))

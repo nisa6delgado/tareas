@@ -17,7 +17,8 @@ class Dashboard extends \Filament\Pages\Dashboard
             Actions\CreateAction::make()
                 ->label(__('dashboard.create_project'))
                 ->url('/projects/create')
-                ->icon('heroicon-o-plus-circle'),
+                ->icon('heroicon-o-plus-circle')
+                ->keyBindings(['ctrl+n']),
         ];
     }
 }

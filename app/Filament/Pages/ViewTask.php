@@ -38,7 +38,8 @@ class ViewTask extends Page
         $actions[] = Actions\Action::make('edit')
             ->label(__('tasks.edit'))
             ->url('/' . $this->task->project->slug . '/tasks/' . $this->task->id . '/edit')
-            ->icon('heroicon-o-pencil-square');
+            ->icon('heroicon-o-pencil-square')
+            ->keyBindings(['ctrl+e']);
 
         if ($this->task->status) {
             $actions[] = Actions\Action::make('pending')
@@ -78,7 +79,8 @@ class ViewTask extends Page
             ->successRedirectUrl('/')
             ->successNotificationTitle(__('tasks.deleted'))
             ->icon('heroicon-o-trash')
-            ->color('danger');
+            ->color('danger')
+            ->keyBindings(['ctrl+d']);
 
         return $actions;
     }

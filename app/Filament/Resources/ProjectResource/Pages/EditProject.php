@@ -29,4 +29,9 @@ class EditProject extends EditRecord
         $model->update($data);
         return $model;
     }
+
+    protected function getRedirectUrl(): string
+    {
+        return '/' . $this->record->slug;
+    }
 }

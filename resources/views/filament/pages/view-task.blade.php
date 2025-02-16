@@ -1,19 +1,3 @@
-<style>
-    .csv {
-        width: 100%;
-    }
-
-    .csv,
-    .csv tbody,
-    .csv tr,
-    .csv th,
-    .csv td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-    }
-</style>
-
 <x-filament-panels::page>
     @if($task->description || $task->files)
         <div class="bg-white border rounded shadow-sm p-30" style="padding: 30px">
@@ -30,7 +14,9 @@
             @endif
 
             @if($task->format == 'markdown')
-                {!! markdown($task->description) !!}
+                <div class="markdown">
+                    {!! markdown($task->description ?? '') !!}
+                </div>
             @endif
 
             @if($task->files->count())

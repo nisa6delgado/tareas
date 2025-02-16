@@ -18,10 +18,14 @@ class TaskTable extends BaseWidget
         return $table
             ->heading(__('dashboard.tasks'))
             ->query(
-                Task::query()->orderByDesc('id')->where('status', 0)
+                Task::query()->where('status', 0)->orderByDesc('updated_at')
             )
             ->columns([
-                Tables\Columns\TextColumn::make('title')->label(__('tasks.title'))->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('title')
+                    ->label(__('tasks.title'))
+                    ->url(fn ($record): string => '/' . $record->project->slug . '/tasks/' . $record->id)
+                    ->searchable()
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('project.name')
                     ->label(__('tasks.project'))
