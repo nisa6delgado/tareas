@@ -18,6 +18,7 @@ use Filament\Navigation\NavigationItem;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Js;
 use Filament\Support\Colors\Color;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -39,7 +40,8 @@ class AdminPanelProvider extends PanelProvider
                 ->label($project->name)
                 ->icon('heroicon-o-' . $project->icon)
                 ->url('/' . $project->slug)
-                ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug));
+                ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug))
+                ->group(__('dashboard.projects'));
         }
 
         $color = Config::where('key', 'color')->first();
@@ -94,6 +96,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->assets([
                 Css::make('app', resource_path('css/app.css')),
+                Js::make('app', resource_path('js/app.js')),
             ])
             ->sidebarCollapsibleOnDesktop();
     }

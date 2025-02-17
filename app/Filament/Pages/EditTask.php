@@ -75,7 +75,8 @@ class EditTask extends Page implements HasForms
                 ->required(),
 
             Forms\Components\Textarea::make('description')
-                ->label(__('tasks.description')),
+                ->label(__('tasks.description'))
+                ->rows(8),
 
             Forms\Components\CheckboxList::make('uploaded_files')
                 ->label(__('tasks.uploaded_files'))

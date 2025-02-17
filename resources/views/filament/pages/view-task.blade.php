@@ -1,6 +1,6 @@
 <x-filament-panels::page>
     @if($task->description || $task->files)
-        <div class="bg-white border rounded shadow-sm p-30" style="padding: 30px">
+        <div class="bg-white rounded shadow-sm p-30 dark:bg-gray-900" style="padding: 30px">
             @if($task->format == 'checklist')
                 {{ checklist($task->description) }}
             @endif

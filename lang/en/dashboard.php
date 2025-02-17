@@ -10,4 +10,5 @@ return [
     'tasks' => 'Tasks',
     'config' => 'Config',
     'download_backup' => 'Download backup',
+    'projects' => 'Projects',
 ];
