@@ -49,7 +49,7 @@ class TaskDateChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => __('dashboard.tasks_per_project'),
+                    'label' => __('dashboard.tasks_in_this_date'),
                     'data' => $data,
                     'borderColor' => '#3B82F6',
                     'pointBackgroundColor' => '#3B82F6',

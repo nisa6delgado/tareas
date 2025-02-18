@@ -11,4 +11,5 @@ return [
     'config' => 'Config',
     'download_backup' => 'Download backup',
     'projects' => 'Projects',
+    'tasks_in_this_date' => 'Tasks in this date',
 ];
