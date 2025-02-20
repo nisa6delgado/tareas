@@ -12,6 +12,7 @@ use Filament\Tables\Table;
 use Filament\Tables;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
+use stdClass;
 
 class ListTasks extends Page implements HasTable
 {
@@ -80,10 +81,19 @@ class ListTasks extends Page implements HasTable
         return $table
             ->query($tasks)
             ->columns([
+                Tables\Columns\TextColumn::make('#')->state(
+                    static function (HasTable $livewire, stdClass $rowLoop): string {
+                        return (string) (
+                            $rowLoop->iteration + ($livewire->getTableRecordsPerPage() * ($livewire->getTablePage() - 1))
+                        );
+                    }
+                ),
+                
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('tasks.title'))
                     ->url(fn ($record): string => '/' . $record->project->slug . '/tasks/' . $record->id)
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('status_name')
                     ->label(__('tasks.status'))
@@ -101,14 +111,16 @@ class ListTasks extends Page implements HasTable
                 Tables\Actions\Action::make('edit')
                     ->label(__('tasks.edit'))
                     ->url(fn (Model $record) => $this->project->slug . '/tasks/' . $record->id . '/edit')
-                    ->icon('heroicon-m-pencil-square'),
+                    ->icon('heroicon-m-pencil-square')
+                    ->extraAttributes(['class' => 'hidden md:flex']),
 
                 Tables\Actions\Action::make('show')
                     ->label(__('tasks.show'))
                     ->url(fn (Model $record) => $this->project->slug . '/tasks/' . $record->id)
-                    ->icon('heroicon-m-eye'),
+                    ->icon('heroicon-m-eye')
+                    ->extraAttributes(['class' => 'hidden md:flex']),
                     
-                Tables\Actions\DeleteAction::make()
+                Tables\Actions\DeleteAction::make()->extraAttributes(['class' => 'hidden md:flex'])
             ]);
     }
 }
