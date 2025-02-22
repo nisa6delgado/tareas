@@ -44,15 +44,14 @@ class TaskDateChart extends ChartWidget
 
         $labels = array_column($db, 'date');
         $data = array_column($db, 'quantity');
-        $colors = count($data);
 
         return [
             'datasets' => [
                 [
                     'label' => __('dashboard.tasks_in_this_date'),
                     'data' => $data,
-                    'borderColor' => '#3B82F6',
-                    'pointBackgroundColor' => '#3B82F6',
+                    'borderColor' => colors(1),
+                    'pointBackgroundColor' => colors(1),
                 ]
             ],
             'labels' => $labels,

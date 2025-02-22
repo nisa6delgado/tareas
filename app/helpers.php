@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Config;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\Table\TableExtension;
@@ -31,22 +32,18 @@ function checklist($checklist)
 
 function colors($quantity)
 {
-    $colors = [
-        '#EF4444',
-        '#3B82F6',
-        '#F59E0B',
-        '#22C55E',
-        '#6366F1',
-        '#EAB308',
-        '#F97316',
-        '#A855F7',
-        '#F43F5E',
-        '#14B8A6',
-    ];
-    
-    shuffle($colors);
-    
-    return array_slice($colors, 0, $quantity);
+    $color = Config::where('key', 'color')->first();
+    $color = $color ? $color->value : '#000000';
+
+    if ($quantity > 1) {
+        for ($i = 1; $i <= $quantity; $i++) {
+            $colors[] = $color;
+        }
+    } else {
+        $colors = $color;
+    }
+
+    return $colors;
 }
 
 function csv($csv)
