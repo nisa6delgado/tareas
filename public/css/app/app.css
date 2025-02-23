@@ -1,3 +1,8 @@
+.description-task {
+    padding: 30px;
+    overflow-x: auto;
+}
+
 .csv,
 .markdown table {
     width: 100%;
