@@ -49,7 +49,7 @@ class ViewTask extends Page
                     
                     Notification::make()
                         ->success()
-                        ->title(__('tasks.pending'))
+                        ->title(__('tasks.updated'))
                         ->send();
 
                     return redirect('/' . $this->task->project->slug . '/tasks/' . $this->task->id);
@@ -64,7 +64,7 @@ class ViewTask extends Page
                     
                     Notification::make()
                         ->success()
-                        ->title(__('tasks.pending'))
+                        ->title(__('tasks.updated'))
                         ->send();
 
                     return redirect('/' . $this->task->project->slug . '/tasks/' . $this->task->id);
