@@ -36,13 +36,13 @@ class TaskDateChart extends ChartWidget
     protected function getData(): array
     {
         $db = DB::table('tasks')
-            ->selectRaw('STRFTIME("%d/%m/%Y", DATE(updated_at)) AS date, COUNT(*) AS quantity')
-            ->groupBy('date')
+            ->selectRaw('STRFTIME("%d/%m/%Y", DATE(updated_at)) AS datef, DATE(updated_at) AS date, COUNT(*) AS quantity')
+            ->groupBy('datef')
             ->orderBy('date')
             ->get()
             ->toArray();
 
-        $labels = array_column($db, 'date');
+        $labels = array_column($db, 'datef');
         $data = array_column($db, 'quantity');
 
         return [
