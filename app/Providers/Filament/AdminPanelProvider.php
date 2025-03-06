@@ -9,6 +9,7 @@ use App\Filament\Widgets\TaskStatusChart;
 use App\Filament\Widgets\TaskTable;
 use App\Models\Config;
 use App\Models\Project;
+use DB;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -25,30 +26,42 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
-        $projects = Project::orderBy('name')->get();
-
+        $projects = [];
         $navigationItems = [];
 
-        foreach ($projects as $project) {
-            $navigationItems[] = NavigationItem::make()
-                ->label($project->name)
-                ->icon('heroicon-o-' . $project->icon)
-                ->url('/' . $project->slug)
-                ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug))
-                ->group(__('dashboard.projects'));
+        $defaultColor = '#000000';
+        $defaultLogo = '';
+
+        $projectTableExists = DB::select("SELECT name FROM sqlite_master WHERE type='table' AND name = 'projects'");
+        $configTableExists = DB::select("SELECT name FROM sqlite_master WHERE type='table' AND name = 'configs'");
+
+        if ($projectTableExists) {
+            $projects = Project::orderBy('name')->get();
+
+            foreach ($projects as $project) {
+                $navigationItems[] = NavigationItem::make()
+                    ->label($project->name)
+                    ->icon('heroicon-o-' . $project->icon)
+                    ->url('/' . $project->slug)
+                    ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug))
+                    ->group(__('dashboard.projects'));
+            }
         }
 
-        $color = Config::where('key', 'color')->first();
-        $color = $color ? $color->value : '#000000';
+        if ($configTableExists) {
+            $color = Config::where('key', 'color')->first();
+            $color = isset($color->value) ? $color->value : $defaultColor;
 
-        $logo = Config::where('key', 'icon')->first();
-        $logo = $logo ? $logo->value : '';
+            $logo = Config::where('key', 'icon')->first();
+            $logo = isset($logo->value) ? $logo->value : $defaultLogo;
+        }
 
         return $panel
             ->default()
