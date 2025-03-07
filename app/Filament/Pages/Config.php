@@ -109,7 +109,7 @@ class Config extends Page implements HasForms
         
         return Notification::make()
             ->success()
-            ->title(__('tasks.created'))
+            ->title(__('tasks.updated'))
             ->send();
     }
 }

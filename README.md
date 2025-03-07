@@ -5,7 +5,6 @@ Gestión de proyectos y lista de tareas
 ~~~
 git clone https://github.com/nisa6delgado/tareas
 cd tareas
-composer install
 npm install
-php artisan migrate --seed
+composer install
 ~~~
