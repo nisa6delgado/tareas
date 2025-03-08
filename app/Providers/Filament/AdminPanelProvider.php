@@ -39,8 +39,8 @@ class AdminPanelProvider extends PanelProvider
         $defaultColor = '#000000';
         $defaultLogo = '';
 
-        $projectTableExists = DB::select("SELECT name FROM sqlite_master WHERE type='table' AND name = 'projects'");
-        $configTableExists = DB::select("SELECT name FROM sqlite_master WHERE type='table' AND name = 'configs'");
+        $projectTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'projects'");
+        $configTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'configs'");
 
         if ($projectTableExists) {
             $projects = Project::orderBy('name')->get();
@@ -61,6 +61,9 @@ class AdminPanelProvider extends PanelProvider
 
             $logo = Config::where('key', 'icon')->first();
             $logo = isset($logo->value) ? $logo->value : $defaultLogo;
+        } else {
+            $logo = $defaultLogo;
+            $color = $defaultColor;
         }
 
         return $panel
