@@ -25,4 +25,5 @@ return [
     'delete' => 'Delete',
     'mark_as_pending' => 'Mark as pending',
     'view_all_tasks' => 'View all tasks',
+    'code' => 'Code',
 ];

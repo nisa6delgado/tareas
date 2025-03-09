@@ -78,7 +78,7 @@ function formts()
 {
     return collect([
         'checklist' => 'Checklist',
-        'code' => 'Código',
+        'code' => __('tasks.code'),
         'csv' => 'CSV',
         'html' => 'HTML',
         'markdown' => 'Markdown',
