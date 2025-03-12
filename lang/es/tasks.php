@@ -25,5 +25,6 @@ return [
     'delete' => 'Eliminar',
     'mark_as_pending' => 'Marcar como pendiente',
     'view_all_tasks' => 'Ver todas las tareas',
+    'view_pending_tasks' => 'Ver tareas pendientes',
     'code' => 'Código',
 ];

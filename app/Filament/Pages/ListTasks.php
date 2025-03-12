@@ -40,7 +40,14 @@ class ListTasks extends Page implements HasTable
             Actions\Action::make('view-all-tasks')
                 ->label(__('tasks.view_all_tasks'))
                 ->url('?all=1')
-                ->icon('heroicon-o-list-bullet'),
+                ->icon('heroicon-o-list-bullet')
+                ->visible(! isset($_GET['all']) ?? false),
+
+            Actions\Action::make('view-pending-tasks')
+                ->label(__('tasks.view_pending_tasks'))
+                ->url('?')
+                ->icon('heroicon-o-list-bullet')
+                ->visible(isset($_GET['all']) ?? false),
 
             Actions\Action::make('create')
                 ->label(__('tasks.create_task'))
