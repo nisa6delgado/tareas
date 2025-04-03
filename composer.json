@@ -10,7 +10,8 @@
         "filament/filament": "^3.2",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-        "league/commonmark": "^2.6"
+        "league/commonmark": "^2.6",
+        "rmsramos/activitylog": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
