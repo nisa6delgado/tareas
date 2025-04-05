@@ -28,28 +28,32 @@ class CreateUser extends Command
      */
     public function handle()
     {
-        $name = text(
-            label: 'Name:',
-            required: true
-        );
+        $users = User::count();
 
-        $email = text(
-            label: 'Email:',
-            required: true,
-            validate: ['email' => 'email']
-        );
-
-        $password = password(
-            label: 'Password:',
-            required: true
-        );
-
-        User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => $password,
-        ]);
-
-        $this->info('User created');
+        if (! $users) {
+            $name = text(
+                label: 'Name:',
+                required: true
+            );
+    
+            $email = text(
+                label: 'Email:',
+                required: true,
+                validate: ['email' => 'email']
+            );
+    
+            $password = password(
+                label: 'Password:',
+                required: true
+            );
+    
+            User::create([
+                'name' => $name,
+                'email' => $email,
+                'password' => $password,
+            ]);
+    
+            $this->info('User created');
+        }
     }
 }
