@@ -12,6 +12,7 @@ class Config extends Model
     
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()
+            ->logOnly(['key', 'value']);
     }
 }

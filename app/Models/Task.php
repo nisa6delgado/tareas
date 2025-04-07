@@ -12,7 +12,8 @@ class Task extends Model
     
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()
+            ->logOnly(['project_id', 'title', 'format', 'description', 'status']);
     }
     
     public function getStatusNameAttribute()

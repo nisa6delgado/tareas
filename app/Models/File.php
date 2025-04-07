@@ -12,6 +12,7 @@ class File extends Model
     
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()
+            ->logOnly(['task_id', 'name']);
     }
 }
