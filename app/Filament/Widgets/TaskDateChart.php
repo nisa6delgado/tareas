@@ -8,42 +8,56 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class TaskDateChart extends ChartWidget
 {
+    public $db;
+    public $min;
+    public $max;
+
     protected int|string|array $columnSpan = 'full';
 
     protected static ?string $maxHeight = '250px';
 
-    protected static ?array $options = [
-        'scales' => [
-            'y' => [
-                'min' => 0,
-                'ticks' => [
-                    'stepSize' => 1,
-                ],
-            ],
-        ],
-        'plugins' => [
-            'legend' => [
-                'display' => false,
-            ],
-        ],
-    ];
-
-    public function getHeading(): string|Htmlable
+    public function __construct()
     {
-        return __('dashboard.tasks_per_date');
-    }
-
-    protected function getData(): array
-    {
-        $db = DB::table('activity_log')
+        $this->db = DB::table('activity_log')
             ->selectRaw('STRFTIME("%d/%m/%Y", DATE(updated_at)) AS datef, DATE(updated_at) AS date, COUNT(*) AS quantity')
             ->groupBy('datef')
             ->orderBy('date')
             ->get()
             ->toArray();
 
-        $labels = array_column($db, 'datef');
-        $data = array_column($db, 'quantity');
+        $this->min = min(array_column($this->db, 'quantity')) - 1;
+        $this->max = max(array_column($this->db, 'quantity')) + 1;
+    }
+
+    public function getHeading(): string|Htmlable
+    {
+        return __('dashboard.tasks_per_date');
+    }
+
+    protected function getOptions(): array
+    {
+        return [
+            'scales' => [
+                'y' => [
+                    'min' => $this->min,
+                    'max' => $this->max,
+                    'ticks' => [
+                        'stepSize' => 1,
+                    ],
+                ],
+            ],
+            'plugins' => [
+                'legend' => [
+                    'display' => false,
+                ],
+            ],
+        ];
+    }
+
+    protected function getData(): array
+    {
+        $labels = array_column($this->db, 'datef');
+        $data = array_column($this->db, 'quantity');
 
         return [
             'datasets' => [
