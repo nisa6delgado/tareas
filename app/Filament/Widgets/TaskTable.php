@@ -33,14 +33,12 @@ class TaskTable extends BaseWidget
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('tasks.title'))
                     ->url(fn ($record): string => '/' . $record->project->slug . '/tasks/' . $record->id)
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('project.name')
                     ->label(__('tasks.project'))
                     ->url(fn ($record): string => '/' . $record->project->slug)
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(),
             ])
             ->actions([
                 Tables\Actions\Action::make('edit')

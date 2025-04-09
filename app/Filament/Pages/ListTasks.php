@@ -99,8 +99,7 @@ class ListTasks extends Page implements HasTable
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('tasks.title'))
                     ->url(fn ($record): string => '/' . $record->project->slug . '/tasks/' . $record->id)
-                    ->searchable()
-                    ->sortable(),
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('status_name')
                     ->label(__('tasks.status'))
