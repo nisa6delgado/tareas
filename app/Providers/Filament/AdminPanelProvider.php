@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages;
+use App\Filament\Resources\ActivityResource;
 use App\Filament\Widgets\TaskDateChart;
 use App\Filament\Widgets\TaskProjectChart;
 use App\Filament\Widgets\TaskStatusChart;
@@ -84,6 +85,11 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->userMenuItems([
                 MenuItem::make()
+                    ->label(__('dashboard.activity'))
+                    ->url('activity/log')
+                    ->icon('heroicon-o-list-bullet'),
+
+                MenuItem::make()
                     ->label(__('dashboard.config'))
                     ->url(fn (): string => Pages\Config::getUrl())
                     ->icon('heroicon-o-cog-6-tooth'),
@@ -114,6 +120,11 @@ class AdminPanelProvider extends PanelProvider
             ->assets([
                 Css::make('app', resource_path('css/app.css')),
                 Js::make('app', resource_path('js/app.js')),
+            ])
+            ->plugins([
+                ActivitylogPlugin::make()
+                    ->resource(ActivityResource::class)
+                    ->navigationItem(false),
             ])
             ->sidebarCollapsibleOnDesktop();
     }
