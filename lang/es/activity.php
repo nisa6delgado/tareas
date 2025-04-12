@@ -12,4 +12,8 @@ return [
     'file' => 'Archivo',
     'project' => 'Proyecto',
     'user' => 'Usuario',
+    'description' => 'Descripción',
+    'attributes' => 'Atributos',
+    'old' => 'Antiguo',
+    'deleted' => 'Eliminado',
 ];

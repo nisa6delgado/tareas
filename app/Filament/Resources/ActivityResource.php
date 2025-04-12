@@ -50,7 +50,7 @@ class ActivityResource extends ActivitylogResource
                             ->afterStateHydrated(function ($component, ?Model $record) {
                                 return $component->state($record->causer?->name);
                             })
-                            ->label(__('activitylog::forms.fields.causer.label')),
+                            ->label(__('activity.user')),
 
                         TextInput::make('subject_type')
                             ->formatStateUsing(function ($state, Model $record) {
@@ -60,10 +60,10 @@ class ActivityResource extends ActivitylogResource
         
                                 return __('activity.' . strtolower(Str::of($state)->afterLast('\\'))) . ' #' . $record->subject_id;
                             })
-                            ->label(__('activitylog::forms.fields.subject_type.label')),
+                            ->label(__('activity.record')),
 
                         Textarea::make('description')
-                            ->label(__('activitylog::forms.fields.description.label'))
+                            ->label(__('activity.description'))
                             ->formatStateUsing(fn ($state) => __('activity.' . $state))
                             ->rows(2)
                             ->columnSpan('full'),
@@ -73,12 +73,12 @@ class ActivityResource extends ActivitylogResource
                             ->content(function (?Model $record): string {
                                 return $record?->event ? __('activity.' . strtolower(ucwords($record?->event))) : '-';
                             })
-                            ->label(__('activitylog::forms.fields.event.label')),
+                            ->label(__('activity.event')),
 
                         Placeholder::make('created_at')
-                            ->label(__('activitylog::forms.fields.created_at.label'))
+                            ->label(__('activity.date'))
                             ->content(function (?Model $record): string {
-                                return $record->created_at ? "{$record->created_at->format(config('filament-activitylog.datetime_format', 'd/m/Y H:i:s'))}" : '-';
+                                return $record->created_at ? "{$record->created_at->format('d/m/Y h:ia')}" : '-';
                             }),
                     ])->grow(false),
                 ])->from('md'),
@@ -93,20 +93,20 @@ class ActivityResource extends ActivitylogResource
 
                         if ($properties->count()) {
                             $schema[] = KeyValue::make('properties')
-                                ->label(__('activitylog::forms.fields.properties.label'))
+                                ->label(__('activity.attributes'))
                                 ->columnSpan('full');
                         }
 
                         if ($old = $record->properties->get('old')) {
                             $schema[] = KeyValue::make('old')
                                 ->formatStateUsing(fn () => self::formatDateValues($old))
-                                ->label(__('activitylog::forms.fields.old.label'));
+                                ->label(__('activity.old'));
                         }
 
                         if ($attributes = $record->properties->get('attributes')) {
                             $schema[] = KeyValue::make('attributes')
                                 ->formatStateUsing(fn () => self::formatDateValues($attributes))
-                                ->label(__('activitylog::forms.fields.attributes.label'));
+                                ->label(__('activity.attributes'));
                         }
 
                         return $schema;
