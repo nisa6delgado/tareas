@@ -89,9 +89,11 @@ class ListTasks extends Page implements HasTable
             ->query($tasks)
             ->columns([
                 Tables\Columns\TextColumn::make('#')->state(
-                    static function (HasTable $livewire, stdClass $rowLoop): string {
+                    static function (HasTable $livewire, stdClass $rowLoop) use ($tasks) {
+                        $recordsPerPage = $livewire->getTableRecordsPerPage() == 'all' ? $tasks->count() : $livewire->getTableRecordsPerPage();
+                        
                         return (string) (
-                            $rowLoop->iteration + ($livewire->getTableRecordsPerPage() * ($livewire->getTablePage() - 1))
+                            $rowLoop->iteration + ($recordsPerPage * ($livewire->getTablePage() - 1))
                         );
                     }
                 ),
