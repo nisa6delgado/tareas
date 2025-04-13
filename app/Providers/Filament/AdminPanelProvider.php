@@ -86,7 +86,7 @@ class AdminPanelProvider extends PanelProvider
             ->userMenuItems([
                 MenuItem::make()
                     ->label(__('dashboard.activity'))
-                    ->url('/activity/log')
+                    ->url(fn (): string => ActivityResource::getUrl())
                     ->icon('heroicon-o-list-bullet'),
 
                 MenuItem::make()

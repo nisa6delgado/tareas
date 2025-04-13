@@ -129,6 +129,7 @@ class ListTasks extends Page implements HasTable
                     ->extraAttributes(['class' => 'hidden md:flex']),
                     
                 Tables\Actions\DeleteAction::make()->extraAttributes(['class' => 'hidden md:flex'])
-            ]);
+            ])
+            ->paginated(request()->all ? false : true);
     }
 }

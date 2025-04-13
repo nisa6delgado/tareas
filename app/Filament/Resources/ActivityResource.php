@@ -3,8 +3,10 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ActivityResource\Pages;
+use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use Carbon\Exceptions\InvalidFormatException;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
@@ -13,9 +15,12 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ViewColumn;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
@@ -176,7 +181,11 @@ class ActivityResource extends ActivitylogResource
                     })
                     ->searchable(),
 
-                static::getPropertiesColumnComponent(),
+                ViewColumn::make('properties')
+                    ->searchable()
+                    ->label(__('activity.attributes'))
+                    ->view('activitylog::filament.tables.columns.activity-logs-properties')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 
                 TextColumn::make('created_at')
                     ->label(__('activity.date'))
@@ -189,9 +198,40 @@ class ActivityResource extends ActivitylogResource
                 config('filament-activitylog.resources.default_sort_direction', 'asc')
             )
             ->filters([
-                static::getDateFilterComponent(),
+                Filter::make('created_at')
+                    ->label(__('activity.created_at'))
+                    ->indicateUsing(function (array $data): array {
+                        $indicators = [];
+
+                        if ($data['created_from'] ?? null) {
+                            $indicators['created_from'] = __('activity.date_from') . ': ' . Carbon::parse($data['created_from'])->toFormattedDateString();
+                        }
+
+                        if ($data['created_until'] ?? null) {
+                            $indicators['created_until'] = __('activity.date_until') . ': ' . Carbon::parse($data['created_until'])->toFormattedDateString();
+                        }
+
+                        return $indicators;
+                    })
+                    ->form([
+                        DatePicker::make('created_from')
+                            ->label(__('activity.date_from')),
+                        DatePicker::make('created_until')
+                            ->label(__('activity.date_until')),
+                    ])
+                    ->query(function (Builder $query, array $data): Builder {
+                        return $query
+                            ->when(
+                                $data['created_from'],
+                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '>=', $date),
+                            )
+                            ->when(
+                                $data['created_until'],
+                                fn (Builder $query, $date): Builder => $query->whereDate('created_at', '<=', $date),
+                            );
+                    }),
                 SelectFilter::make('event')
-                    ->label(__('activitylog::tables.filters.event.label'))
+                    ->label(__('activity.event'))
                     ->options($events)
             ]);
     }

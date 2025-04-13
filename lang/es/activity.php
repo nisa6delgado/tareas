@@ -16,4 +16,6 @@ return [
     'attributes' => 'Atributos',
     'old' => 'Antiguo',
     'deleted' => 'Eliminado',
+    'date_from' => 'Fecha desde',
+    'date_until' => 'Fecha hasta',
 ];
