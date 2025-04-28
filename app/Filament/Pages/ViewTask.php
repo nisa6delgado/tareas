@@ -54,7 +54,8 @@ class ViewTask extends Page
 
                     return redirect('/' . $this->task->project->slug . '/tasks/' . $this->task->id);
                 })
-                ->icon('heroicon-o-exclamation-circle');
+                ->icon('heroicon-o-exclamation-circle')
+                ->keyBindings(['ctrl+q']);
 
         } else {
             $actions[] = Actions\Action::make('completed')
@@ -70,7 +71,8 @@ class ViewTask extends Page
                     return redirect('/' . $this->task->project->slug . '/tasks/' . $this->task->id);
                 })
                 ->icon('heroicon-o-check-circle')
-                ->color('success');
+                ->color('success')
+                ->keyBindings(['ctrl+q']);
         }
 
         $actions[] = Actions\DeleteAction::make('delete')
