@@ -79,7 +79,8 @@ class Config extends Page implements HasForms
             Forms\Components\Actions\Action::make('submit')
                 ->submit('submit')
                 ->label(__('tasks.save'))
-                ->icon('heroicon-o-check-circle'),
+                ->icon('heroicon-o-check-circle')
+                ->keyBindings(['ctrl+s']),
 
             Forms\Components\Actions\Action::make('cancel')
                 ->url('/')

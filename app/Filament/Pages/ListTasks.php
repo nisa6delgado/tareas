@@ -41,19 +41,21 @@ class ListTasks extends Page implements HasTable
                 ->label(__('tasks.view_all_tasks'))
                 ->url('?all=1')
                 ->icon('heroicon-o-list-bullet')
-                ->visible(! isset($_GET['all']) ?? false),
+                ->visible(! request()->all ?? false)
+                ->keyBindings(['ctrl+a']),
 
             Actions\Action::make('view-pending-tasks')
                 ->label(__('tasks.view_pending_tasks'))
                 ->url('?')
                 ->icon('heroicon-o-list-bullet')
-                ->visible(isset($_GET['all']) ?? false),
+                ->visible(request()->all ?? false)
+                ->keyBindings(['ctrl+a']),
 
             Actions\Action::make('create')
                 ->label(__('tasks.create_task'))
                 ->url('/tasks/' . $this->project->slug . '/create')
                 ->icon('heroicon-o-plus-circle')
-                ->keyBindings(['ctrl+n']),
+                ->keyBindings(['ctrl+m']),
 
             Actions\Action::make('edit')
                 ->label(__('tasks.edit_this_project'))
