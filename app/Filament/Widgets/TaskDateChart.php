@@ -45,6 +45,14 @@ class TaskDateChart extends ChartWidget
                         'stepSize' => 1,
                     ],
                 ],
+                'x' => [
+                    'ticks' => [
+                        'display' => false
+                    ],
+                    'gridLines' => [
+                        'display' => false
+                    ]
+                ]
             ],
             'plugins' => [
                 'legend' => [
