@@ -39,6 +39,7 @@ function colors($quantity)
         for ($i = 1; $i <= $quantity; $i++) {
             $colors[] = $color;
         }
+        
     } else {
         $colors = $color;
     }
