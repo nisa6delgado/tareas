@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\UserScope;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
+#[ScopedBy([UserScope::class])]
 class Task extends Model
 {
     use LogsActivity;
