@@ -26,10 +26,24 @@ class ProjectResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $icons = config('icons');
+        $icons = array_combine($icons, $icons);
+
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label(__('projects.name'))->required()->autofocus(),
-                Forms\Components\TextInput::make('icon')->label(__('projects.icon'))->required(),
+                Forms\Components\TextInput::make('name')
+                    ->label(__('projects.name'))
+                    ->required()
+                    ->autofocus(),
+
+                Forms\Components\Select::make('icon')
+                    ->label(__('projects.icon'))
+                    ->options($icons)
+                    ->searchable()
+                    ->required(),
+
+                Forms\Components\Hidden::make('user_id')
+                    ->default(auth()->user()->id),
             ]);
     }
 
