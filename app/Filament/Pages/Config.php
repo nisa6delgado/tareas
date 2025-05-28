@@ -31,7 +31,7 @@ class Config extends Page implements HasForms
 
     public function mount()
     {
-        $user = User::first();
+        $user = User::find(auth()->user()->id);
         $config = Model::get();
 
         $data['name'] = $user->name;
@@ -94,7 +94,7 @@ class Config extends Page implements HasForms
     {
         $data = collect($this->form->getState());
         
-        $user = User::first();
+        $user = User::find(auth()->user()->id);
         $user->update($data->only('name', 'email')->toArray());
 
         if ($data->all()['password']) {
@@ -102,10 +102,12 @@ class Config extends Page implements HasForms
         }
 
         foreach ($data->only('photo', 'icon', 'color') as $key => $value) {
-            Model::updateOrCreate(
-                ['key' => $key],
-                ['value' => $value],
-            );
+            if ($value) {
+                Model::updateOrCreate(
+                    ['key' => $key, 'user_id' => auth()->user()->id],
+                    ['value' => $value],
+                );
+            }
         }
         
         return Notification::make()

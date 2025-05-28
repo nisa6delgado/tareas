@@ -67,7 +67,10 @@ class CreateTask extends Page implements HasForms
 
             Forms\Components\FileUpload::make('files')
                 ->label(__('tasks.files'))
-                ->multiple()
+                ->multiple(),
+
+            Forms\Components\Hidden::make('user_id')
+                    ->default(auth()->user()->id),
 
         ])->statePath('data');
     }

@@ -20,13 +20,16 @@ class TaskDateChart extends ChartWidget
     {
         $this->db = DB::table('activity_log')
             ->selectRaw('STRFTIME("%d/%m/%Y", DATE(updated_at)) AS datef, DATE(updated_at) AS date, COUNT(*) AS quantity')
+            ->where('causer_id', auth()->user()->id)
             ->groupBy('datef')
             ->orderBy('date')
             ->get()
             ->toArray();
 
-        $this->min = min(array_column($this->db, 'quantity')) - 1;
-        $this->max = max(array_column($this->db, 'quantity')) + 1;
+        if (count($this->db)) {
+            $this->min = min(array_column($this->db, 'quantity')) - 1;
+            $this->max = max(array_column($this->db, 'quantity')) + 1;
+        }
     }
 
     public function getHeading(): string|Htmlable

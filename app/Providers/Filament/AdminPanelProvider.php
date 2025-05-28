@@ -11,6 +11,7 @@ use App\Filament\Widgets\TaskTable;
 use App\Models\Config;
 use App\Models\Project;
 use DB;
+use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -21,66 +22,79 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
-use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentColor;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Rmsramos\Activitylog\ActivitylogPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
+    public function boot(): void
+    {
+        Filament::serving(function ($panel) {
+            $projects = [];
+            $navigationItems = [];
+
+            $defaultColor = '#000000';
+
+            $projectTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'projects'");
+            $configTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'configs'");
+
+            if ($projectTableExists) {
+                $projects = Project::orderBy('name')->get();
+
+                foreach ($projects as $project) {
+                    $navigationItems[] = NavigationItem::make()
+                        ->label($project->name)
+                        ->icon('heroicon-o-' . $project->icon)
+                        ->url('/' . $project->slug)
+                        ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug))
+                        ->group(__('dashboard.projects'));
+                }
+            }
+
+            Filament::registerNavigationItems($navigationItems);
+
+            if ($configTableExists) {
+                $color = Config::where('key', 'color')->first();
+                $color = isset($color->value) ? $color->value : $defaultColor;
+            } else {
+                $color = $defaultColor;
+            }
+
+            FilamentColor::register(['primary' => $color]);
+        });
+    }
+
     public function panel(Panel $panel): Panel
     {
-        $projects = [];
-        $navigationItems = [];
-
-        $defaultColor = '#000000';
         $defaultLogo = '';
-
-        $projectTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'projects'");
-        $configTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'configs'");
-
-        if ($projectTableExists) {
-            $projects = Project::orderBy('name')->get();
-
-            foreach ($projects as $project) {
-                $navigationItems[] = NavigationItem::make()
-                    ->label($project->name)
-                    ->icon('heroicon-o-' . $project->icon)
-                    ->url('/' . $project->slug)
-                    ->isActiveWhen(fn () => strpos(request()->getPathInfo(), $project->slug))
-                    ->group(__('dashboard.projects'));
-            }
-        }
-
-        if ($configTableExists) {
-            $color = Config::where('key', 'color')->first();
-            $color = isset($color->value) ? $color->value : $defaultColor;
-
-            $logo = Config::where('key', 'icon')->first();
-            $logo = isset($logo->value) ? $logo->value : $defaultLogo;
-        } else {
-            $logo = $defaultLogo;
-            $color = $defaultColor;
-        }
 
         return $panel
             ->default()
             ->id('admin')
-            ->favicon($logo)
-            ->brandLogo(function () use ($logo) {
-                return view('filament.admin.logo', compact('logo'));
-            })
             ->path('/')
             ->login()
-            ->colors([
-                'primary' => Color::hex($color),
-            ])
-            ->navigationItems($navigationItems)
+            ->favicon(function () use ($defaultLogo) {
+                $logo = $defaultLogo;
+
+                $logo = Config::where('key', 'icon')->first();
+                $logo = isset($logo->value) ? $logo->value : $defaultLogo;
+
+                return $logo;
+            })
+            ->brandLogo(function () use ($defaultLogo) {
+                $logo = $defaultLogo;
+
+                $logo = Config::where('key', 'icon')->first();
+                $logo = isset($logo->value) ? $logo->value : $defaultLogo;
+
+                return view('filament.admin.logo', compact('logo'));
+            })
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->userMenuItems([

@@ -13,7 +13,8 @@ class Dashboard extends \Filament\Pages\Dashboard
                 ->label(__('dashboard.download_backup'))
                 ->url('/download/backup')
                 ->icon('heroicon-o-arrow-down-tray')
-                ->keyBindings(['ctrl+b']),
+                ->keyBindings(['ctrl+b'])
+                ->visible(auth()->user()->id == 1),
 
             Actions\CreateAction::make()
                 ->label(__('dashboard.create_project'))
