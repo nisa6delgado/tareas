@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\User;
+use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -27,18 +28,30 @@ class OptimizeActivityTable extends Command
      */
     public function handle()
     {
-        $users = User::get();
+        try {
+            $users = User::get();
 
-        foreach ($users as $user) {
-            $ids = DB::table('activity_log')
-                ->where('user_id', $user->id)
-                ->orderByDesc('id')
-                ->skip(1000)
-                ->pluck('id');
+            foreach ($users as $user) {
+                $ids = DB::table('activity_log')
+                    ->where('user_id', $user->id)
+                    ->orderByDesc('id')
+                    ->skip(1000)
+                    ->pluck('id');
 
-            DB::table('activity_log')
-                ->whereIn('id', $ids)
-                ->delete();
+                DB::table('activity_log')
+                    ->whereIn('id', $ids)
+                    ->delete();
+            }
+        }
+
+        catch (Exception $exception) {
+            $subject = env('app_name') . ' | Optimize activity table cron error';
+
+            mail(
+                env('email_cron_error'),
+                $subject,
+                $exception->getMessage()
+            );
         }
     }
 }
