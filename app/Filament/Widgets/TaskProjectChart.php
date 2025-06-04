@@ -10,6 +10,8 @@ class TaskProjectChart extends ChartWidget
 {
     protected static ?string $maxHeight = '250px';
 
+    protected static ?string $pollingInterval = null;
+
     protected static ?array $options = [
         'scales' => [
             'x' => [

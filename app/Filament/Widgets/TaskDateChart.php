@@ -16,6 +16,8 @@ class TaskDateChart extends ChartWidget
 
     protected static ?string $maxHeight = '250px';
 
+    protected static ?string $pollingInterval = null;
+
     public function __construct()
     {
         $this->db = DB::table('activity_log')

@@ -28,30 +28,18 @@ class OptimizeActivityTable extends Command
      */
     public function handle()
     {
-        try {
-            $users = User::get();
+        $users = User::get();
 
-            foreach ($users as $user) {
-                $ids = DB::table('activity_log')
-                    ->where('user_id', $user->id)
-                    ->orderByDesc('id')
-                    ->skip(1000)
-                    ->pluck('id');
+        foreach ($users as $user) {
+            $ids = DB::table('activity_log')
+                ->where('user_id', $user->id)
+                ->orderByDesc('id')
+                ->skip(1000)
+                ->pluck('id');
 
-                DB::table('activity_log')
-                    ->whereIn('id', $ids)
-                    ->delete();
-            }
-        }
-
-        catch (Exception $exception) {
-            $subject = env('app_name') . ' | Optimize activity table cron error';
-
-            mail(
-                env('email_cron_error'),
-                $subject,
-                $exception->getMessage()
-            );
+            DB::table('activity_log')
+                ->whereIn('id', $ids)
+                ->delete();
         }
     }
 }
