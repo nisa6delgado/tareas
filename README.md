@@ -7,4 +7,5 @@ git clone https://github.com/nisa6delgado/tareas
 cd tareas
 npm install
 composer install
+php artisan app:create-user
 ~~~

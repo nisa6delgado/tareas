@@ -31,9 +31,10 @@ class OptimizeActivityTable extends Command
 
         foreach ($users as $user) {
             $ids = DB::table('activity_log')
-                ->where('user_id', $user->id)
+                ->where('causer_id', $user->id)
                 ->orderByDesc('id')
-                ->skip(1000)
+                ->limit(1000)
+                ->offset(1000)
                 ->pluck('id');
 
             DB::table('activity_log')
