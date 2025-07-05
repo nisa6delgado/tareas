@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages;
 use App\Filament\Resources\ActivityResource;
+use App\Filament\Resources\ProjectResource;
 use App\Filament\Widgets\TaskDateChart;
 use App\Filament\Widgets\TaskProjectChart;
 use App\Filament\Widgets\TaskStatusChart;
@@ -45,7 +46,9 @@ class AdminPanelProvider extends PanelProvider
             $configTableExists = DB::select("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'configs'");
 
             if ($projectTableExists) {
-                $projects = Project::orderBy('name')->get();
+                $projects = Project::where('archived', 0)
+                    ->orderBy('name')
+                    ->get();
 
                 foreach ($projects as $project) {
                     $navigationItems[] = NavigationItem::make()
@@ -101,6 +104,11 @@ class AdminPanelProvider extends PanelProvider
                 MenuItem::make()
                     ->label(__('dashboard.activity'))
                     ->url(fn (): string => ActivityResource::getUrl())
+                    ->icon('heroicon-o-list-bullet'),
+
+                MenuItem::make()
+                    ->label(__('dashboard.projects'))
+                    ->url(fn (): string => ProjectResource::getUrl())
                     ->icon('heroicon-o-list-bullet'),
 
                 MenuItem::make()

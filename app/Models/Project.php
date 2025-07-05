@@ -16,6 +16,12 @@ class Project extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-            ->logOnly(['name', 'icon', 'slug']);
+            ->logOnly([
+                'project_id',
+                'name',
+                'icon',
+                'archived',
+                'user_id',
+            ]);
     }
 }

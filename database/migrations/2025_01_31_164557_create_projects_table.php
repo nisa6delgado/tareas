@@ -13,10 +13,16 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+
+            $table->unsignedBigInteger('user_id')
+                ->nullable();
+
             $table->string('name');
             $table->string('icon');
             $table->string('slug');
+
+            $table->boolean('archived')
+                ->default(0);
 
             $table->foreign('user_id')
                 ->references('id')
