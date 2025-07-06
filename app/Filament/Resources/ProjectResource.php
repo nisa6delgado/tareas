@@ -42,6 +42,15 @@ class ProjectResource extends Resource
                     ->searchable()
                     ->required(),
 
+                Forms\Components\Select::make('archived')
+                    ->label(__('projects.status'))
+                    ->options([
+                        '0' => __('projects.active'),
+                        '1' => __('projects.archived'),
+                    ])
+                    ->required()
+                    ->default(0),
+
                 Forms\Components\Hidden::make('user_id')
                     ->default(auth()->user()->id),
             ]);
@@ -51,22 +60,48 @@ class ProjectResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label(__('projects.name'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('icon')->label(__('projects.icon'))->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('name')
+                    ->label(__('projects.name'))
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\IconColumn::make('icon')
+                    ->label(__('projects.icon'))
+                    ->icon(fn (string $state): string => match ($state) {
+                        $state => 'heroicon-o-' . $state,
+                    })
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('archived')
+                    ->label(__('projects.status'))
+                    ->badge()
+                    ->formatStateUsing(function ($state) {
+                        return $state ? __('projects.archived') : __('projects.active');
+                    })
+                    ->color(fn (string $state): string => match ($state) {
+                        '0' => 'success',
+                        '1' => 'warning',
+                    })
+                    ->icon(fn (string $state): string => match ($state) {
+                        '0' => 'heroicon-o-check-circle',
+                        '1' => 'heroicon-o-archive-box-arrow-down',
+                    })
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('updated_at', 'desc');
     }
 
     public static function getRelations(): array

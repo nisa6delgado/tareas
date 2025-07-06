@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use App\Models\Project;
 use App\Models\Task;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Concerns\InteractsWithTable;
@@ -37,6 +38,36 @@ class ListTasks extends Page implements HasTable
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('archive')
+                ->label(__('tasks.archive'))
+                ->icon('heroicon-o-archive-box-arrow-down')
+                ->action(function () {
+                    $this->project->update(['archived' => '1']);
+
+                    Notification::make()
+                        ->success()
+                        ->title(__('tasks.archived'))
+                        ->send();
+
+                    return redirect('/' . $this->project->slug);
+                })
+                ->visible(! $this->project->archived),
+
+            Actions\Action::make('unarchive')
+                ->label(__('tasks.unarchive'))
+                ->icon('heroicon-o-archive-box')
+                ->action(function () {
+                    $this->project->update(['archived' => '0']);
+
+                    Notification::make()
+                        ->success()
+                        ->title(__('tasks.unarchived'))
+                        ->send();
+
+                    return redirect('/' . $this->project->slug);
+                })
+                ->visible($this->project->archived),
+
             Actions\Action::make('view-all-tasks')
                 ->label(__('tasks.view_all_tasks'))
                 ->url('?all=1')

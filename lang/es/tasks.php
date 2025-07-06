@@ -27,4 +27,8 @@ return [
     'view_all_tasks' => 'Ver todas las tareas',
     'view_pending_tasks' => 'Ver tareas pendientes',
     'code' => 'Código',
+    'archive' => 'Archivar',
+    'unarchive' => 'Desarchivar',
+    'archived' => 'Archivado',
+    'unarchived' => 'Desarchivado',
 ];

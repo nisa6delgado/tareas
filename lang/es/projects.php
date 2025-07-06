@@ -5,4 +5,7 @@ return [
     'name' => 'Nombre',
     'icon' => 'Ícono',
     'color' => 'Color',
+    'status' => 'Estado',
+    'active' => 'Activo',
+    'archived' => 'Archivado',
 ];

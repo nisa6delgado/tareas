@@ -46,6 +46,7 @@ class TaskProjectChart extends ChartWidget
             ->groupBy('projects.id')
             ->selectRaw('projects.name AS project, count(1) AS quantity')
             ->where('tasks.user_id', auth()->user()->id)
+            ->where('archived', '0')
             ->get()
             ->toArray();
 

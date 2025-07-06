@@ -19,7 +19,12 @@ class TaskTable extends BaseWidget
         return $table
             ->heading(__('dashboard.tasks'))
             ->query(
-                Task::query()->where('status', 0)->orderByDesc('updated_at')
+                Task::query()
+                    ->where('status', 0)
+                    ->whereHas('project', function ($query) {
+                        $query->where('archived', '0');
+                    })
+                    ->orderByDesc('updated_at')
             )
             ->columns([
                 Tables\Columns\TextColumn::make('#')->state(
