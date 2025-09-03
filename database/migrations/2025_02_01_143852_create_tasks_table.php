@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('format');
             $table->text('description')->nullable();
@@ -22,6 +23,11 @@ return new class extends Migration
             $table->foreign('project_id')
                 ->references('id')
                 ->on('projects')
+                ->cascadeOnDelete();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
                 ->cascadeOnDelete();
 
             $table->timestamps();
